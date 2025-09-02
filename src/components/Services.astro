@@ -12,28 +12,33 @@ const mock = [
     name: 'Website Development',
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque temporibus perspiciatis animi a? Nulla quisquam voluptatum doloribus provident eius dignissimos!',
     icon: CodeBracket,
-    isPopular: true
+    isPopular: true,
+    href: '/services/web-development'
   },
   {
     name: 'AI Automation',
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque temporibus perspiciatis animi a? Nulla quisquam voluptatum doloribus provident eius dignissimos!',
     icon: Sparkles,
-    isPopular: true
+    isPopular: true,
+    href: '/services/ai-automation'
   },
   {
     name: 'Application Development',
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque temporibus perspiciatis animi a? Nulla quisquam voluptatum doloribus provident eius dignissimos!',
-    icon: DevicePhoneMobile
+    icon: DevicePhoneMobile,
+    href: '/services/application-development'
   },
   {
     name: 'Brand Design',
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque temporibus perspiciatis animi a? Nulla quisquam voluptatum doloribus provident eius dignissimos!',
-    icon: Pencil
+    icon: Pencil,
+    href: '/services/brand-design'
   },
   {
     name: 'SEO Optimization',
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque temporibus perspiciatis animi a? Nulla quisquam voluptatum doloribus provident eius dignissimos!',
-    icon: MagnifyingGlass
+    icon: MagnifyingGlass,
+    href: '/services/seo-optimization'
   }
 ]
 ---
@@ -45,13 +50,15 @@ const mock = [
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 group">
     {
       mock.map((service, index) => (
-        <ServiceCard
-          name={service.name.toUpperCase()}
-          description={service.description}
-          icon={service.icon}
-          index={index+1}
-          isPopular={ service.isPopular || null }
-        />
+        <a href={service.href}>
+          <ServiceCard
+            name={service.name.toUpperCase()}
+            description={service.description}
+            icon={service.icon}
+            index={index+1}
+            isPopular={ service.isPopular || null }
+          />
+        </a>
       ))
     }
 

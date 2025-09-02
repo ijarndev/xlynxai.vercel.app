@@ -1,0 +1,60 @@
+---
+import TestimonialCard from "./ui/TestimonialCard.astro"
+
+const mock = [
+  {
+    name: 'John Doe',
+    position: 'CEO at Lorem LLC',
+    testimonial: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque temporibus perspiciatis animi a? Nulla quisquam voluptatum doloribus provident eius dignissimos!'
+  },
+  {
+    name: 'Jane Doe',
+    position: 'CEO at Ipsum Inc',
+    testimonial: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque temporibus perspiciatis animi a? Nulla quisquam voluptatum doloribus provident eius dignissimos!'
+  }
+]
+---
+
+<section class="px-8 lg:px-40 2xl:px-80 md:px-14 pt-10 pb-20 relative z-1 border-b-2 border-dashed border-gray-400/10">
+  <h1 class="text-2xl sm:text-7xl text-center text-primary mb-10">Our Clients Say</h1>
+
+  <div class="flex justify-center sm:*:max-w-6/8">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        {
+          mock.map((testimonial) => (
+          <TestimonialCard
+              name={testimonial.name}
+              position={testimonial.position}
+              testimonial={testimonial.testimonial}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import Swiper from 'swiper'
+  import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+  import 'swiper/css';
+  import 'swiper/css/navigation';
+  import 'swiper/css/pagination';
+
+  const swiper = new Swiper('.swiper', {
+    modules: [Pagination, Autoplay],
+    direction: 'horizontal',
+    loop: true,
+    autoplay: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+      dynamicBullets: true
+    },
+    scrollbar: {
+      el: '.swiper-scrollbar',
+      draggable: true,
+    },
+  })
+</script>

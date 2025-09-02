@@ -1,0 +1,19 @@
+---
+import Anchor from "./ui/Anchor.astro"
+---
+
+<header class="sticky top-0 background-default px-8 md:px-14 lg:px-40 xl:px-60 2xl:px-80 flex justify-between items-center py-4 sm:py-8 z-2">
+  <span class="text-primary font-semibold text-4xl">
+    <span class="text-theme">x</span>Lynx
+  </span>
+
+  <nav class="sm:block hidden">
+    <ul class="text-secondary flex gap-x-8 *:hover:text-zinc-100 z-1 relative">
+      <li><Anchor href="#">Home</Anchor></li>
+      <li><Anchor href="#">About us</Anchor></li>
+      <li><Anchor href="#">Portfolio</Anchor></li>
+      <li><Anchor href="#">Reviews</Anchor></li>
+      <li><Anchor href="#">Contact</Anchor></li>
+    </ul>
+  </nav>
+</header>

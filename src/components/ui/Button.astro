@@ -1,0 +1,12 @@
+---
+interface Props {
+  fullWidth?: boolean;
+}
+
+const { fullWidth = false } = Astro.props;
+const extraClasses = fullWidth ? 'w-full' : 'w-fit';
+---
+
+<button class={`py-3 px-5 background-theme text-zinc-900 hover:-translate-y-1 transition-transform cursor-pointer ${extraClasses}`}>
+  <slot />
+</button>

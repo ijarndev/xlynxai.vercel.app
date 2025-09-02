@@ -1,0 +1,65 @@
+---
+import ServiceCard from "./ui/ServiceCard.astro"
+import CodeBracket from 'astro-heroicons/outline/CodeBracket.astro'
+import DevicePhoneMobile from 'astro-heroicons/outline/DevicePhoneMobile.astro'
+import Sparkles from 'astro-heroicons/outline/Sparkles.astro'
+import Pencil from 'astro-heroicons/outline/Pencil.astro'
+import MagnifyingGlass from 'astro-heroicons/outline/MagnifyingGlass.astro'
+import RocketLaunch from 'astro-heroicons/outline/RocketLaunch.astro'
+
+const mock = [
+  {
+    name: 'Website Development',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque temporibus perspiciatis animi a? Nulla quisquam voluptatum doloribus provident eius dignissimos!',
+    icon: CodeBracket,
+    isPopular: true
+  },
+  {
+    name: 'AI Automation',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque temporibus perspiciatis animi a? Nulla quisquam voluptatum doloribus provident eius dignissimos!',
+    icon: Sparkles,
+    isPopular: true
+  },
+  {
+    name: 'Application Development',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque temporibus perspiciatis animi a? Nulla quisquam voluptatum doloribus provident eius dignissimos!',
+    icon: DevicePhoneMobile
+  },
+  {
+    name: 'Brand Design',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque temporibus perspiciatis animi a? Nulla quisquam voluptatum doloribus provident eius dignissimos!',
+    icon: Pencil
+  },
+  {
+    name: 'SEO Optimization',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque temporibus perspiciatis animi a? Nulla quisquam voluptatum doloribus provident eius dignissimos!',
+    icon: MagnifyingGlass
+  }
+]
+---
+
+<section class="px-8 md:px-14 lg:px-40 xl:px-60 2xl:px-80 pb-20 mt-10 z-1 relative border-b-2 border-dashed border-gray-400/10"> 
+  <h2 class="text-3xl sm:text-7xl text-primary mb-2">Our Services</h2>
+  <p class="text-secondary text-sm sm:max-w-3/4 mb-12">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque temporibus perspiciatis animi a? Nulla quisquam voluptatum doloribus provident eius dignissimos!</p>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 group">
+    {
+      mock.map((service, index) => (
+        <ServiceCard
+          name={service.name.toUpperCase()}
+          description={service.description}
+          icon={service.icon}
+          index={index+1}
+          isPopular={ service.isPopular || null }
+        />
+      ))
+    }
+
+  <article class="grid place-content-center text-center text-theme hover:!text-zinc-800 hover:scale-105 border-2 cursor-pointer border-[#00FAB5] border-dashed min-h-40 p-4 group-hover:opacity-20 hover:opacity-100 transition-all hover:!bg-[#00FAB5]">
+    <div class="flex flex-col gap-y-4 items-center">
+      <RocketLaunch width={32} class="margin-auto" />
+      <p>START A PROJECT</p>
+    </div>
+  </article>
+  </div>
+</section>

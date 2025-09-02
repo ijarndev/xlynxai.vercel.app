@@ -1,0 +1,25 @@
+---
+import quotationIcon from '../../assets/svg/quotation.svg'
+
+interface Props {
+  name: string
+  position: string
+  testimonial: string
+}
+
+const { name, position, testimonial }: Props = Astro.props
+---
+
+<article class="!flex flex-col sm:flex-row gap-x-10 swiper-slide">
+  <div class="">
+    <img class="w-18 sm:w-28" src={quotationIcon.src} alt="quotation_icon">
+  </div>
+
+  <div
+    class="py-4"
+  >
+    <p class="text-primary italic">"{testimonial}"</p>
+    <p class="mt-6 text-primary font-bold">{name}</p>
+    <p class="text-sm text-secondary">{position}</p>
+  </div>
+</article>

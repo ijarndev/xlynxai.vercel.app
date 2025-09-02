@@ -1,0 +1,30 @@
+---
+interface Props {
+  name: string
+  description: string
+  icon: any
+  index: number
+  isPopular?: boolean | null
+}
+
+const { name, description, icon: Icon, index, isPopular }: Props = Astro.props
+---
+
+<article class="cursor-default hover:scale-105 background-light min-h-40 p-4 group-hover:opacity-20 hover:opacity-100 transition-all hover:!bg-[#00FAB5]">
+  <div class="flex justify-between items-center mb-6">
+    <Icon width={32} class="text-zinc-700" />
+
+    <div class="space-x-4 *:inline-block items-center flex">
+      {
+        isPopular && (
+          <span class="animate-pulse text-xs text-zinc-700/80 p-1 font-semibold border border-dashed border-zinc-700/80">Highly Requested</span>
+        )
+      }
+      <span class="text-secondary">0{index}</span>
+    </div>
+  </div>
+
+  <h3 class="mb-4 text-zinc-900/80 font-bold">{name}</h3>
+
+  <p class="text-sm">{description}</p>
+</article>

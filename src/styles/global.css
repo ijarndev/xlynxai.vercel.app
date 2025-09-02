@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Italic.ttf') format('truetype');
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Medium.ttf') format('truetype');
+  font-weight: 500;
+}
+
+.font-regular {
+  font-family: 'Poppins';
+  font-weight: normal;
+}
+
+.font-bold {
+  font-family: 'Poppins';
+  font-weight: bold;
+}
+
+.font-extrabold {
+  font-family: 'Poppins';
+  font-weight: 800;
+}
+
+.font-italic {
+  font-family: 'Poppins';
+  font-style: italic;
+}
+
+.font-medium {
+  font-family: 'Poppins';
+  font-weight: 500;
+}
+
+.background-default {
+  background: #151515;
+}
+.background-light {
+  background: #FFFFFF;
+}
+.background-theme {
+  background: #00FAB5;
+}
+.text-primary {
+  color: #FFFFFF
+}
+.text-secondary {
+  color: #818181;
+}
+.text-theme {
+  color: #00FAB5;
+}

@@ -1,0 +1,48 @@
+---
+import Anchor from "./ui/Anchor.astro";
+---
+
+<footer class="px-8 lg:px-40 2xl:px-80 xl:px-60 md:px-14 relative z-1 background-default">
+  <div class="pt-20 grid gap-8 grid-cols-2 sm:grid-cols-4">
+    <div>
+      <span class="text-primary font-semibold text-4xl">
+        <span class="text-theme">x</span>Lynx
+      </span>
+  
+      <p class="mt-4 text-secondary text-sm max-w-7/8">Your reliable web development team.</p>
+    </div>
+  
+    <div>
+      <h4 class="text-theme font-medium">Links</h4>
+  
+      <ul class="mt-4 space-y-2 *:text-sm">
+        <li><Anchor href="#">Home</Anchor></li>
+        <li><Anchor href="#">About us</Anchor></li>
+        <li><Anchor href="#">Portfolio</Anchor></li>
+        <li><Anchor href="#">Reviews</Anchor></li>
+      </ul>
+    </div>
+  
+    <div>
+      <h4 class="text-theme font-medium">Legal</h4>
+  
+      <ul class="mt-4 space-y-2 *:text-sm">
+        <li><Anchor href="#">Privacy Policy</Anchor></li>
+        <li><Anchor href="#">Terms of Service</Anchor></li>
+      </ul>
+    </div>
+  
+    <div>
+      <h4 class="text-theme font-medium">Contact</h4>
+  
+      <ul class="mt-4 space-y-2 *:text-sm">
+        <li><Anchor href="mailto:#">contact@xlynxai.com</Anchor></li>
+        <li><Anchor href="tel:+155512344321">+1 (555) 1234 4321</Anchor></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="py-5 mt-8 text-center border-t border-zinc-800/40">
+    <p class="text-sm text-secondary">&copy; All rights reserved.</p>
+  </div>
+</footer>

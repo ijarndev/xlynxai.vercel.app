@@ -29,6 +29,10 @@
   font-weight: 500;
 }
 
+body {
+  scroll-behavior: smooth !important;
+}
+
 .font-regular {
   font-family: 'Poppins';
   font-weight: normal;

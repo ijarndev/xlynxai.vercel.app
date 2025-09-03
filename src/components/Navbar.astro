@@ -1,9 +1,25 @@
 ---
 import Anchor from "./ui/Anchor.astro"
 import lynx from '../assets/img/lynx.png'
+import Bars3 from 'astro-heroicons/outline/Bars3.astro'
 ---
 
-<header class="sticky top-0 background-default px-8 md:px-14 lg:px-40 xl:px-60 2xl:px-80 flex justify-between items-center py-4 z-2">
+<style>
+  .navbar-bg-scroll {
+    animation-name: navbarBg;
+    animation-duration: 1s;
+    animation-timeline: scroll(100, 100);
+  }
+  @keyframes navbarBg {
+    from {
+      background: transparent;
+    }
+    to {
+      background: white;
+    }
+  }
+</style>
+<header class="fixed w-full top-0 background-default px-8 md:px-14 lg:px-40 xl:px-60 2xl:px-80 flex justify-between items-center py-2 z-2">
   <a href="/" class="text-primary font-semibold text-4xl">
     <img src={lynx.src} alt="lynx_logo" class="size-18">
   </a>
@@ -11,10 +27,14 @@ import lynx from '../assets/img/lynx.png'
   <nav class="sm:block hidden">
     <ul class="text-secondary flex gap-x-8 *:hover:text-zinc-100 z-1 relative">
       <li><Anchor href="/">Home</Anchor></li>
-      <li><Anchor href="#">About us</Anchor></li>
-      <li><Anchor href="#">Portfolio</Anchor></li>
-      <li><Anchor href="#">Reviews</Anchor></li>
-      <li><Anchor href="#">Contact</Anchor></li>
+      <li><Anchor href="#about">About us</Anchor></li>
+      <!-- <li><Anchor href="#">Portfolio</Anchor></li> -->
+      <li><Anchor href="#reviews">Reviews</Anchor></li>
+      <li><Anchor href="/contact">Contact</Anchor></li>
     </ul>
   </nav>
+
+  <button class="cursor-pointer sm:hidden">
+    <Bars3 width={48} color='#fff' />
+  </button>
 </header>

@@ -4,11 +4,15 @@ interface Props {
   title: string
 }
 
-const { icon, title } = Astro.props
+const { icon: Icon, title } = Astro.props
 ---
 
 <article class="text-center py-4 px-6 bg-zinc-800 border border-zinc-400/20">
-  <div class="size-20"></div>
+  <div class="flex justify-center pt-2 pb-4 text-theme">
+    {
+      Icon ? <Icon width={56} /> : null
+    }
+  </div>
   
   <h4 class="text-xl text-zinc-100 font-medium">{title}</h4>
 </article>

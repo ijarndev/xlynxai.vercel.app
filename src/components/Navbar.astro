@@ -1,10 +1,11 @@
 ---
 import Anchor from "./ui/Anchor.astro"
+import lynx from '../assets/img/lynx.png'
 ---
 
-<header class="sticky top-0 background-default px-8 md:px-14 lg:px-40 xl:px-60 2xl:px-80 flex justify-between items-center py-4 sm:py-8 z-2">
+<header class="sticky top-0 background-default px-8 md:px-14 lg:px-40 xl:px-60 2xl:px-80 flex justify-between items-center py-4 z-2">
   <a href="/" class="text-primary font-semibold text-4xl">
-    <span class="text-theme">x</span>Lynx
+    <img src={lynx.src} alt="lynx_logo" class="size-18">
   </a>
 
   <nav class="sm:block hidden">

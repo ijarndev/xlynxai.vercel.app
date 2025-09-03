@@ -1,12 +1,13 @@
 ---
 import Anchor from "./ui/Anchor.astro";
+import lynx from '../assets/img/lynx.png'
 ---
 
 <footer class="px-8 lg:px-40 2xl:px-80 xl:px-60 md:px-14 relative z-1 background-default">
   <div class="pt-20 grid gap-8 grid-cols-2 sm:grid-cols-4">
     <div>
       <span class="text-primary font-semibold text-4xl">
-        <span class="text-theme">x</span>Lynx
+        <img src={lynx.src} alt="lynx_logo" class="size-18">
       </span>
   
       <p class="mt-4 text-secondary text-sm max-w-7/8">Your reliable web development team.</p>

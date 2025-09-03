@@ -1,4 +1,19 @@
-[
+import Briefcase from 'astro-heroicons/outline/Briefcase.astro'
+import ComputerDesktop from 'astro-heroicons/outline/ComputerDesktop.astro'
+import Cog6Tooth from 'astro-heroicons/outline/Cog6Tooth.astro'
+import ShoppingCart from 'astro-heroicons/outline/ShoppingCart.astro'
+
+import hostinger from '../assets/svg/hostinger.svg'
+import vercel from '../assets/svg/vercel.svg'
+import wordpress from '../assets/svg/wordpress.svg'
+import astro from '../assets/svg/astro.svg'
+
+import Bolt from 'astro-heroicons/outline/Bolt.astro'
+import MagnifyingGlass from 'astro-heroicons/outline/MagnifyingGlass.astro'
+import DevicePhoneMobile from 'astro-heroicons/outline/DevicePhoneMobile.astro'
+import ChartBarSquare from 'astro-heroicons/outline/ChartBarSquare.astro'
+
+export const services = [
   {
     "slug": "web-development",
     "title": "Expert Web Development Services | Modern & Fast Websites",
@@ -11,24 +26,24 @@
       "subtitle": "We develop websites that not only look good but also work exceptionally well",
       "items": [
         {
-          "icon": null,
+          "icon": ShoppingCart,
+          "title": "E-commerce Portals",
+          "description": "Scalable online stores with seamless shopping and payment experiences."
+        },
+        {
+          "icon": Briefcase,
           "title": "Corporate Websites",
           "description": "Professional and polished websites that represent your brand effectively."
         },
         {
-          "icon": null,
+          "icon": ComputerDesktop,
           "title": "Landing Pages",
           "description": "High-converting landing pages designed to capture leads and drive action."
         },
         {
-          "icon": null,
+          "icon": Cog6Tooth,
           "title": "Web Applications",
           "description": "Custom web applications tailored to your business needs and workflows."
-        },
-        {
-          "icon": null,
-          "title": "E-commerce Portals",
-          "description": "Scalable online stores with seamless shopping and payment experiences."
         }
       ]
     },
@@ -37,24 +52,24 @@
       "subtitle": "We use a cutting-edge technology stack for optimal performance",
       "items": [
         {
-          "icon": "/icons/astro.svg",
+          "icon": astro,
           "name": "Astro",
           "description": "Amazingly fast websites"
         },
         {
-          "icon": "/icons/react.svg",
-          "name": "React",
-          "description": "Escalable web applications"
-        },
-        {
-          "icon": "/icons/nextjs.svg",
+          "icon": wordpress,
           "name": "Wordpress",
-          "description": "All-in-one web solution"
+          "description": "Content-driven manageable web applications"
         },
         {
-          "icon": null,
+          "icon": hostinger,
           "name": "Hostinger",
-          "description": "Top #1 world's web hosting provider"
+          "description": "Top #1 Wordpress hosting provider"
+        },
+        {
+          "icon": vercel,
+          "name": "Vercel",
+          "description": "Hosting for modern applications"
         }
       ]
     },
@@ -62,22 +77,22 @@
       "title": "Benefits of our web development services",
       "items": [
         {
-          "icon": null,
+          "icon": Bolt,
           "title": "Performance Optimization",
           "description": "We ensure your website loads quickly and performs well across all devices."
         },
         {
-          "icon": null,
+          "icon": MagnifyingGlass,
           "title": "SEO Friendly",
           "description": "Our websites are built with SEO best practices to help you rank higher in search results."
         },
         {
-          "icon": null,
+          "icon": DevicePhoneMobile,
           "title": "Responsive Design",
           "description": "We create websites that look great and function perfectly on any screen size."
         },
         {
-          "icon": null,
+          "icon": ChartBarSquare,
           "title": "Scalability",
           "description": "Our solutions are designed to grow with your business, accommodating increasing traffic and features."
         }

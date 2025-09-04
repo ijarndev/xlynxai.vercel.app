@@ -1,228 +1,187 @@
+// web development
 import Briefcase from 'astro-heroicons/outline/Briefcase.astro'
 import ComputerDesktop from 'astro-heroicons/outline/ComputerDesktop.astro'
 import Cog6Tooth from 'astro-heroicons/outline/Cog6Tooth.astro'
 import ShoppingCart from 'astro-heroicons/outline/ShoppingCart.astro'
-
 import hostinger from '../assets/svg/hostinger.svg'
 import vercel from '../assets/svg/vercel.svg'
 import wordpress from '../assets/svg/wordpress.svg'
 import astro from '../assets/svg/astro.svg'
-
 import Bolt from 'astro-heroicons/outline/Bolt.astro'
 import MagnifyingGlass from 'astro-heroicons/outline/MagnifyingGlass.astro'
 import DevicePhoneMobile from 'astro-heroicons/outline/DevicePhoneMobile.astro'
 import ChartBarSquare from 'astro-heroicons/outline/ChartBarSquare.astro'
+import CodeBracket from 'astro-heroicons/outline/CodeBracket.astro'
+
+// ai automation
+import AdjustmentsHorizontal from 'astro-heroicons/outline/AdjustmentsHorizontal.astro'
+import CircleStack from 'astro-heroicons/outline/CircleStack.astro'
+import ChatBubbleLeftRight from 'astro-heroicons/outline/ChatBubbleLeftRight.astro'
+import ArrowTrendingUp from 'astro-heroicons/outline/ArrowTrendingUp.astro'
+import n8n from '../assets/svg/n8n.svg'
+import CurrencyDollar from 'astro-heroicons/outline/CurrencyDollar.astro'
+import Clock from 'astro-heroicons/outline/Clock.astro'
+import Sparkles from 'astro-heroicons/outline/Sparkles.astro'
 
 export const services = [
   {
-    "slug": "web-development",
-    "title": "Expert Web Development Services | Modern & Fast Websites",
-    "subtitle": "We create fast, modern and scalable websites using the latest technologies like Astro, React, and TailwindCSS.",
-    "ctaText": "Get started",
-    "ctaSubtitle": "Contact us to create your next web project",
-    "ctaHref": "/",
-    "solutions": {
-      "title": "Custom Web Solutions",
-      "subtitle": "We develop websites that not only look good but also work exceptionally well",
-      "items": [
+    slug: "web-development",
+    name: "Web Development",
+    icon: CodeBracket,
+    title: "Expert Web Development Services | Modern & Fast Websites",
+    subtitle: "We create fast, modern and scalable websites using the latest technologies like Astro, React, and TailwindCSS.",
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque temporibus perspiciatis animi a? Nulla quisquam voluptatum doloribus provident eius dignissimos!',
+    ctaText: "Get started",
+    ctaSubtitle: "Contact us to create your next web project",
+    ctaHref: "/",
+    homeHref: "/services/web-development",
+    isPopular: true,
+    solutions: {
+      title: "Custom Web Solutions",
+      subtitle: "We develop websites that not only look good but also work exceptionally well",
+      items: [
         {
-          "icon": ShoppingCart,
-          "title": "E-commerce Portals",
-          "description": "Scalable online stores with seamless shopping and payment experiences."
+          icon: ShoppingCart,
+          title: "E-commerce Portals",
+          description: "Scalable online stores with seamless shopping and payment experiences."
         },
         {
-          "icon": Briefcase,
-          "title": "Corporate Websites",
-          "description": "Professional and polished websites that represent your brand effectively."
+          icon: Briefcase,
+          title: "Corporate Websites",
+          description: "Professional and polished websites that represent your brand effectively."
         },
         {
-          "icon": ComputerDesktop,
-          "title": "Landing Pages",
-          "description": "High-converting landing pages designed to capture leads and drive action."
+          icon: ComputerDesktop,
+          title: "Landing Pages",
+          description: "High-converting landing pages designed to capture leads and drive action."
         },
         {
-          "icon": Cog6Tooth,
-          "title": "Web Applications",
-          "description": "Custom web applications tailored to your business needs and workflows."
+          icon: Cog6Tooth,
+          title: "Web Applications",
+          description: "Custom web applications tailored to your business needs and workflows."
         }
       ]
     },
-    "technologies": {
-      "title": "Technologies we use",
-      "subtitle": "We use a cutting-edge technology stack for optimal performance",
-      "items": [
+    technologies: {
+      title: "Technologies we use",
+      subtitle: "We use a cutting-edge technology stack for optimal performance",
+      items: [
         {
-          "icon": astro,
-          "name": "Astro",
-          "description": "Amazingly fast websites"
+          icon: astro,
+          name: "Astro",
+          description: "Amazingly fast websites"
         },
         {
-          "icon": wordpress,
-          "name": "Wordpress",
-          "description": "Content-driven manageable web applications"
+          icon: wordpress,
+          name: "Wordpress",
+          description: "Content-driven manageable web applications"
         },
         {
-          "icon": hostinger,
-          "name": "Hostinger",
-          "description": "Top #1 Wordpress hosting provider"
+          icon: hostinger,
+          name: "Hostinger",
+          description: "Top #1 Wordpress hosting provider"
         },
         {
-          "icon": vercel,
-          "name": "Vercel",
-          "description": "Hosting for modern applications"
+          icon: vercel,
+          name: "Vercel",
+          description: "Hosting for modern applications"
         }
       ]
     },
-    "benefits": {
-      "title": "Benefits of our web development services",
-      "items": [
+    benefits: {
+      title: "Benefits of our web development services",
+      items: [
         {
-          "icon": Bolt,
-          "title": "Performance Optimization",
-          "description": "We ensure your website loads quickly and performs well across all devices."
+          icon: Bolt,
+          title: "Performance Optimization",
+          description: "We ensure your website loads quickly and performs well across all devices."
         },
         {
-          "icon": MagnifyingGlass,
-          "title": "SEO Friendly",
-          "description": "Our websites are built with SEO best practices to help you rank higher in search results."
+          icon: MagnifyingGlass,
+          title: "SEO Friendly",
+          description: "Our websites are built with SEO best practices to help you rank higher in search results."
         },
         {
-          "icon": DevicePhoneMobile,
-          "title": "Responsive Design",
-          "description": "We create websites that look great and function perfectly on any screen size."
+          icon: DevicePhoneMobile,
+          title: "Responsive Design",
+          description: "We create websites that look great and function perfectly on any screen size."
         },
         {
-          "icon": ChartBarSquare,
-          "title": "Scalability",
-          "description": "Our solutions are designed to grow with your business, accommodating increasing traffic and features."
+          icon: ChartBarSquare,
+          title: "Scalability",
+          description: "Our solutions are designed to grow with your business, accommodating increasing traffic and features."
         }
       ]
     }
   },
   {
-    "slug": "ai-automation",
-    "title": "Transform your business with AI-powered automation solutions",
-    "subtitle": "Streamline operations and boost efficiency",
-    "ctaText": "Learn More",
-    "ctaHref": "/",
-    "solutions": {
-      "title": "Intelligent automation solutions for your business",
-      "items": [
+    slug: "ai-automation",
+    name: "AI Automation",
+    icon: Sparkles,
+    title: "Transform your business with AI-powered automation solutions",
+    subtitle: "Streamline operations and boost efficiency",
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque temporibus perspiciatis animi a? Nulla quisquam voluptatum doloribus provident eius dignissimos!',
+    ctaText: "Learn More",
+    ctaHref: "/",
+    homeHref: "/services/ai-automation",
+    solutions: {
+      title: "Intelligent automation solutions for your business",
+      items: [
         {
-          "icon": null,
-          "title": "Process Automation",
-          "description": "Automate repetitive tasks and workflows with AI-driven solutions."
+          icon: AdjustmentsHorizontal,
+          title: "Process Automation",
+          description: "Automate repetitive tasks and workflows with AI-driven solutions."
         },
         {
-          "icon": null,
-          "title": "Data Analysis",
-          "description": "Extract valuable insights from your data using machine learning."
+          icon: CircleStack,
+          title: "Data Analysis",
+          description: "Extract valuable insights from your data using machine learning."
         },
         {
-          "icon": null,
-          "title": "Chatbots & Virtual Assistants",
-          "description": "Enhance customer service with AI-powered conversation agents."
+          icon: ChatBubbleLeftRight,
+          title: "Chatbots & Virtual Assistants",
+          description: "Enhance customer service with AI-powered conversation agents."
         },
         {
-          "icon": null,
-          "title": "Predictive Analytics",
-          "description": "Make data-driven decisions with AI forecasting capabilities."
+          icon: ArrowTrendingUp,
+          title: "Predictive Analytics",
+          description: "Make data-driven decisions with AI forecasting capabilities."
         }
       ]
-    }
-  },
-  {
-    "slug": "application-development",
-    "title": "Custom application development for your unique business needs",
-    "subtitle": "From concept to deployment",
-    "ctaText": "Start Building",
-    "ctaHref": "/",
-    "solutions": {
-      "title": "Comprehensive application development services",
-      "items": [
+    },
+    technologies: {
+      title: "Technologies we use",
+      subtitle: "We use a cutting-edge technology stack for optimal performance",
+      items: [
         {
-          "icon": null,
-          "title": "Mobile Apps",
-          "description": "Native and cross-platform mobile applications."
-        },
-        {
-          "icon": null,
-          "title": "Desktop Software",
-          "description": "Custom desktop applications for Windows, Mac, and Linux."
-        },
-        {
-          "icon": null,
-          "title": "Cloud Solutions",
-          "description": "Scalable cloud-based applications and services."
-        },
-        {
-          "icon": null,
-          "title": "API Development",
-          "description": "Robust APIs for system integration and data exchange."
+          icon: n8n,
+          name: "n8n",
+          description: "Top-notch automation tool"
         }
       ]
-    }
-  },
-  {
-    "slug": "brand-design",
-    "title": "Create a memorable brand identity that resonates with your audience",
-    "subtitle": "Design that tells your story",
-    "ctaText": "Begin Design",
-    "ctaHref": "/",
-    "solutions": {
-      "title": "Comprehensive branding solutions",
-      "items": [
+    },
+    benefits: {
+      title: "Benefits of our AI automation services",
+      items: [
         {
-          "icon": null,
-          "title": "Logo Design",
-          "description": "Distinctive logos that capture your brand essence."
+          icon: ArrowTrendingUp,
+          title: "Increased Efficiency",
+          description: "Reduce manual work and save time with automated processes and workflows."
         },
         {
-          "icon": null,
-          "title": "Brand Guidelines",
-          "description": "Consistent visual language and brand standards."
+          icon: CurrencyDollar,
+          title: "Cost Reduction",
+          description: "Lower operational costs by automating repetitive tasks and reducing human error."
         },
         {
-          "icon": null,
-          "title": "Marketing Materials",
-          "description": "Cohesive design across all marketing channels."
+          icon: MagnifyingGlass,
+          title: "Data-Driven Insights",
+          description: "Make informed decisions with real-time analytics and predictive modeling."
         },
         {
-          "icon": null,
-          "title": "Brand Strategy",
-          "description": "Strategic positioning and brand messaging."
-        }
-      ]
-    }
-  },
-  {
-    "slug": "seo-optimization",
-    "title": "Improve your online visibility and drive organic traffic",
-    "subtitle": "Data-driven SEO strategies",
-    "ctaText": "Boost Rankings",
-    "ctaHref": "/",
-    "solutions": {
-      "title": "Comprehensive SEO services",
-      "items": [
-        {
-          "icon": null,
-          "title": "Technical SEO",
-          "description": "Optimize your website's technical foundation for search engines."
-        },
-        {
-          "icon": null,
-          "title": "Content Strategy",
-          "description": "Create SEO-optimized content that ranks and converts."
-        },
-        {
-          "icon": null,
-          "title": "Link Building",
-          "description": "Build authority through quality backlinks."
-        },
-        {
-          "icon": null,
-          "title": "Local SEO",
-          "description": "Improve visibility in local search results."
+          icon: Clock,
+          title: "24/7 Operation",
+          description: "Maintain continuous business operations with automated systems that never sleep."
         }
       ]
     }

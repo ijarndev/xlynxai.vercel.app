@@ -7,40 +7,7 @@ import Pencil from 'astro-heroicons/outline/Pencil.astro'
 import MagnifyingGlass from 'astro-heroicons/outline/MagnifyingGlass.astro'
 import RocketLaunch from 'astro-heroicons/outline/RocketLaunch.astro'
 
-const mock = [
-  {
-    name: 'Website Development',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque temporibus perspiciatis animi a? Nulla quisquam voluptatum doloribus provident eius dignissimos!',
-    icon: CodeBracket,
-    isPopular: true,
-    href: '/services/web-development'
-  },
-  {
-    name: 'AI Automation',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque temporibus perspiciatis animi a? Nulla quisquam voluptatum doloribus provident eius dignissimos!',
-    icon: Sparkles,
-    isPopular: true,
-    href: '/services/ai-automation'
-  },
-  {
-    name: 'Application Development',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque temporibus perspiciatis animi a? Nulla quisquam voluptatum doloribus provident eius dignissimos!',
-    icon: DevicePhoneMobile,
-    href: '/services/application-development'
-  },
-  {
-    name: 'Brand Design',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque temporibus perspiciatis animi a? Nulla quisquam voluptatum doloribus provident eius dignissimos!',
-    icon: Pencil,
-    href: '/services/brand-design'
-  },
-  {
-    name: 'SEO Optimization',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque temporibus perspiciatis animi a? Nulla quisquam voluptatum doloribus provident eius dignissimos!',
-    icon: MagnifyingGlass,
-    href: '/services/seo-optimization'
-  }
-]
+import { services } from '../data/services.ts'
 ---
 
 <section class="px-8 md:px-14 lg:px-40 xl:px-60 2xl:px-80 pb-20 pt-10 z-1 relative border-b-2 border-dashed border-gray-400/10"> 
@@ -49,8 +16,8 @@ const mock = [
 
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 group">
     {
-      mock.map((service, index) => (
-        <a href={service.href}>
+      services.map((service, index) => (
+        <a href={service.homeHref}>
           <ServiceCard
             name={service.name.toUpperCase()}
             description={service.description}

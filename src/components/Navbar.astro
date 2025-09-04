@@ -21,20 +21,21 @@ import Bars3 from 'astro-heroicons/outline/Bars3.astro'
 </style>
 <header class="fixed w-full top-0 background-default px-8 md:px-14 lg:px-40 xl:px-60 2xl:px-80 flex justify-between items-center py-2 z-2">
   <a href="/" class="text-primary font-semibold text-4xl">
-    <img src={lynx.src} alt="lynx_logo" class="size-18">
+    <img src={lynx.src} alt="lynx_logo" class="size-12 sm:size-18">
   </a>
 
-  <nav class="sm:block hidden">
+  <nav class="xl:block hidden">
     <ul class="text-secondary flex gap-x-8 *:hover:text-zinc-100 z-1 relative">
       <li><Anchor href="/">Home</Anchor></li>
       <li><Anchor href="#about">About us</Anchor></li>
-      <!-- <li><Anchor href="#">Portfolio</Anchor></li> -->
+      <li><Anchor href="/services/web-development">Web Development</Anchor></li>
+      <li><Anchor href="/services/ai-automation">AI Integration</Anchor></li>
       <li><Anchor href="#reviews">Reviews</Anchor></li>
       <li><Anchor href="/contact">Contact</Anchor></li>
     </ul>
   </nav>
 
-  <button class="cursor-pointer sm:hidden">
-    <Bars3 width={48} color='#fff' />
+  <button class="cursor-pointer sm:hidden menu-show-btn">
+    <Bars3 width={32} color='#fff' />
   </button>
 </header>

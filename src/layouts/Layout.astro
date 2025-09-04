@@ -1,6 +1,10 @@
 ---
 import Footer from '../components/Footer.astro'
+import Navbar from '../components/Navbar.astro'
+import Anchor from '../components/ui/Anchor.astro'
+import Button from '../components/ui/Button.astro'
 import '../styles/global.css'
+import XMark from 'astro-heroicons/outline/XMark.astro'
 ---
 
 <!doctype html>
@@ -15,6 +19,25 @@ import '../styles/global.css'
 	<body
 		class="background-default font-regular"
 	>
+		<aside class="bg-zinc-800/90 p-8 flex flex-col backdrop-blur-sm fixed h-[100dvh] w-4/5 z-4 -right-full transition-all side-menu">
+			<div class="flex justify-end">
+				<button class="text-theme menu-hide-btn"><XMark width={28} stroke-width={3} /></button>
+			</div>
+
+			<ul class="flex-1 text-lg font-medium space-y-3 *:*:!text-zinc-100 pt-2">
+				<li><Anchor href="/">Home</Anchor></li>
+				<li><Anchor href="/about">About Us</Anchor></li>
+				<li><Anchor href="/services/web-development">Web Development</Anchor></li>
+				<li><Anchor href="/services/ai-integration">AI Integration</Anchor></li>
+				<li><Anchor href="/contact">Contact</Anchor></li>
+			</ul>
+
+			<div class="*:w-full">
+				<Button>GET A QUOTE</Button>
+			</div>
+		</aside>
+
+		<Navbar />
 		<slot />
 		<Footer />
 	</body>
@@ -27,3 +50,12 @@ import '../styles/global.css'
 		width: 100%;
 	}
 </style>
+
+<script>
+	const $menu = document.querySelector('.side-menu')
+	const $menuHideBtn = document.querySelector('.menu-hide-btn')
+	const $menuShowBtn = document.querySelector('.menu-show-btn')
+
+	$menuHideBtn?.addEventListener('click', () => $menu?.classList.replace('right-0', '-right-full'))
+	$menuShowBtn?.addEventListener('click', () => $menu?.classList.replace('-right-full', 'right-0'))
+</script>

@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar.astro'
 import '../styles/global.css'
 import Button from '../components/ui/Button.astro'
 import ArrowRight from 'astro-heroicons/solid/ArrowRight.astro'
+import Layout from './Layout.astro'
 
 const {
   frontmatter,
@@ -14,43 +15,20 @@ const {
 } = Astro.props
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body
-		class="background-default font-regular"
-	>
-    <Navbar />
-		<section class="relative px-8 md:px-20 pt-28 pb-20 bg-gradient-to-br from-[#151515] via-[#151515] to-[#00B4FB]/10"> <!-- hero -->			
-			<h1 class="text-center text-zinc-100 md:text-5xl xl:text-7xl font-semibold"><span class="xl:max-w-2/3 inline-block text-center">{title}</span></h1>
-			<p class="mt-4 text-zinc-300 text-center text-2xl w-full"><span class="inline-block xl:max-w-1/2 text-center">{subtitle}</span></p>
+<Layout>
+	<section class="relative px-8 md:px-20 pt-28 pb-20 bg-gradient-to-br from-[#151515] via-[#151515] to-[#00B4FB]/10"> <!-- hero -->			
+		<h1 class="text-center text-zinc-100 md:text-5xl xl:text-7xl font-semibold"><span class="xl:max-w-2/3 inline-block text-center">{title}</span></h1>
+		<p class="mt-4 text-zinc-300 text-center text-2xl w-full"><span class="inline-block xl:max-w-1/2 text-center">{subtitle}</span></p>
 
-			<a class="*:flex *:gap-x-2 mt-12 flex justify-center" href={ctaHref}>
-				<Button>
-					{ctaText}
-					<ArrowRight width={22} />
-				</Button>
-			</a>
-		</section>
+		<a class="*:flex *:gap-x-2 mt-12 flex justify-center" href={ctaHref}>
+			<Button>
+				{ctaText}
+				<ArrowRight width={22} />
+			</Button>
+		</a>
+	</section>
 
-		<section class="grid markdown px-8 md:px-14 lg:px-40 xl:px-60 2xl:px-80 pb-20 relative z-1 border-b-2 border-dashed border-gray-400/10">
-      <slot />
-    </section>
-
-		<Footer />
-	</body>
-</html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-	}
-</style>
+	<section class="grid markdown px-8 md:px-14 lg:px-40 xl:px-60 2xl:px-80 pb-20 relative z-1 border-b-2 border-dashed border-gray-400/10">
+		<slot />
+	</section>
+</Layout>

@@ -5,52 +5,35 @@ import teamMeetingIllustration from '../assets/img/team-meeting.jpeg'
 import Anchor from './ui/Anchor.astro'
 ---
 
-<section class="overflow-hidden group h-screen bg-gradient-to-br from-transparent via-[#00B4FB]/3 to-[#00B4FB]/15 px-8 md:px-14 lg:px-40 xl:px-60 2xl:px-80 pt-20 md:pt-50 lg:pt-40 sm:pt-40 pb-30 mb-10 relative z-1 border-b-2 border-dashed border-gray-400/10">
+<section class="overflow-hidden group h-screen bg-gradient-to-br from-transparent via-[#00B4FB]/3 to-[#00B4FB]/15 px-8 md:px-14 lg:px-40 xl:px-50 pt-20 md:pt-50 lg:pt-40 sm:pt-40 pb-30 mb-10 relative z-1 border-b-2 border-dashed border-gray-400/10">
 
-  <div class="flex pt-10 mb-10 xl:mb-0">
-    <div class="flex-1">
-      <h1 class="text-center sm:text-left text-4xl sm:text-9xl md:text-6xl lg:text-6xl xl:text-7xl 2xl:text-8xl 2xl:max-w-4/5 font-bold text-primary">
-        NEXT-GEN <span class="text-theme">WEB DEVELOPMENT</span> & <span class="text-theme">AI INTEGRATION</span>
+  <div class="flex pt-10 xl:mb-0">
+    <div>
+      <h1 class="mb-8 text-center sm:text-left text-4xl sm:text-9xl md:text-6xl lg:text-6xl xl:text-7xl 2xl:text-8xl 2xl:max-w-4/5 font-bold text-primary">
+        NEXT-GEN
+        <span class="text-theme">WEB DEVELOPMENT</span>
+        &
+        <span class="text-theme">AI INTEGRATION</span>
       </h1>
+
+      <h2 class="xl:w-2/5 text-secondary mb-20 text-xl">
+        Launch your website, automate your business, and scale with AI-Powered systems — we take care of everything.
+      </h2>
     </div>
-  
-    <div class="*:mb-2 text-secondary w-1/8 *:block hidden sm:block" id="particles1">
-      <Anchor href="#">Instagram</Anchor>
-      <Anchor href="#">LinkedIn</Anchor>
-    </div>
+
+    <div id="particles1" class="hidden lg:block xl:min-w-1/6"></div>
   </div>
 
-  <div class="flex flex-col sm:flex-row gap-x-20">
-    <div class="md:w-2/5">
-      <div class="flex justify-start gap-x-6 mb-8">
-        <div class="flex gap-x-3 items-center">
-          <div class="p-[4px] sm:w-6 sm:h-6 grid place-content-center rounded-full bg-zinc-200">
-            <Check width={18} />
-          </div>
-          <span class="text-secondary text-xs sm:text-sm">Fast</span>
-        </div>
-  
-        <div class="flex gap-x-3 items-center">
-          <div class="p-[4px] sm:w-6 sm:h-6 grid place-content-center rounded-full bg-zinc-200">
-            <Check width={18} />
-          </div>
-          <span class="text-secondary text-xs sm:text-sm">Tailored</span>
-        </div>
-
-        <div class="flex gap-x-3 items-center">
-          <div class="p-[4px] sm:w-6 sm:h-6 grid place-content-center rounded-full bg-zinc-200">
-            <Check width={18} />
-          </div>
-          <span class="text-secondary text-xs sm:text-sm">Automatic</span>
-        </div>
+  <div class="flex items-start justify-start flex-col sm:flex-row gap-x-20">
+    <div class="flex flex-wrap items-center gap-x-10">
+      <div class="*:text-nowrap *:w-full sm:*:w-auto relative mb-8 sm:mb-0">
+        <Button freeBadge>LAUNCH YOUR WEBSITE</Button>
       </div>
-  
 
-      <div class="text-secondary mb-8 text-lg">
-        Launch your website, automate your business, and scale with AI-Powered systems — we take care of everything.
-      </div>
-      <div class="*:w-full sm:*:w-auto relative mb-8 sm:mb-0">
-        <Button freeBadge>REQUEST A QUOTE</Button>
+      <div class="*:text-nowrap">
+        <Anchor href='#'>
+          AUTOMATE YOUR BUSSINESS
+        </Anchor>
       </div>
     </div>
 

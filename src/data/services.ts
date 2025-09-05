@@ -31,7 +31,7 @@ export const services = [
     title: "Expert Web Development Services | Modern & Fast Websites",
     subtitle: "We create fast, modern and scalable websites using the latest technologies like Astro, React, and TailwindCSS.",
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque temporibus perspiciatis animi a? Nulla quisquam voluptatum doloribus provident eius dignissimos!',
-    ctaText: "Get started",
+    ctaText: "Launch My Website",
     ctaSubtitle: "Contact us to create your next web project",
     ctaHref: "/",
     homeHref: "/services/web-development",
@@ -121,7 +121,7 @@ export const services = [
     title: "Transform your business with AI-powered automation solutions",
     subtitle: "Streamline operations and boost efficiency",
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque temporibus perspiciatis animi a? Nulla quisquam voluptatum doloribus provident eius dignissimos!',
-    ctaText: "Learn More",
+    ctaText: "Automate My Bussiness",
     ctaHref: "/",
     homeHref: "/services/ai-automation",
     solutions: {

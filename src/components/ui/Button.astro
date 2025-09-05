@@ -2,16 +2,18 @@
 import freeHighlightSvg from '../../assets/svg/free-highlight.svg'
 
 interface Props {
-  fullWidth?: boolean;
+  fullWidth?: boolean
   freeBadge?: boolean
 }
 
 const { fullWidth = false, freeBadge = false } = Astro.props;
 const extraClasses = fullWidth ? 'w-full' : 'w-fit';
-const freeBadgeClass = freeBadge ? null : 'hidden'
+const freeBadgeClass = freeBadge ? '!block' : 'hidden'
+
+console.log(freeBadge)
 ---
 
 <button class={`relative py-3 px-5 background-theme text-zinc-900 hover:-translate-y-1 transition-transform cursor-pointer ${extraClasses}`}>
   <slot />
-  <img class={`${freeBadgeClass} sm:block absolute -bottom-16 left-1/2 w-[200px] opacity-80`} src={freeHighlightSvg.src} alt="free">
+  <img class={`${freeBadgeClass} absolute -bottom-16 left-1/2 w-[200px] opacity-80`} src={freeHighlightSvg.src} alt="free">
 </button>

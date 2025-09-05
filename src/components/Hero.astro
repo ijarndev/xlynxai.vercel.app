@@ -7,14 +7,14 @@ import Anchor from './ui/Anchor.astro'
 
 <section class="overflow-hidden group h-screen bg-gradient-to-br from-transparent via-[#00B4FB]/3 to-[#00B4FB]/15 px-8 md:px-14 lg:px-40 xl:px-60 2xl:px-80 pt-20 md:pt-50 lg:pt-40 sm:pt-40 pb-30 relative z-1 border-b-2 border-dashed border-gray-400/10">
 
-  <div class="flex pt-10 mb-10">
+  <div class="flex pt-10 mb-10 xl:mb-0">
     <div class="flex-1">
       <h1 class="text-center sm:text-left text-4xl sm:text-9xl md:text-6xl lg:text-6xl xl:text-7xl 2xl:text-8xl 2xl:max-w-4/5 font-bold text-primary">
-        NEXT-GEN <span class="text-theme">WEB</span> DEVELOPMENT & <span class="text-theme">AI</span> INTEGRATION
+        NEXT-GEN <span class="text-theme">WEB DEVELOPMENT</span> & <span class="text-theme">AI INTEGRATION</span>
       </h1>
     </div>
   
-    <div class="*:mb-2 text-secondary w-1/8 *:block hidden sm:block">
+    <div class="*:mb-2 text-secondary w-1/8 *:block hidden sm:block" id="particles1">
       <Anchor href="#">Instagram</Anchor>
       <Anchor href="#">LinkedIn</Anchor>
     </div>
@@ -22,7 +22,7 @@ import Anchor from './ui/Anchor.astro'
 
   <div class="flex flex-col sm:flex-row gap-x-20">
     <div class="md:w-2/5">
-      <div class="flex justify-between gap-x-8 mb-8">
+      <div class="flex justify-start gap-x-6 mb-8">
         <div class="flex gap-x-3 items-center">
           <div class="p-[4px] sm:w-6 sm:h-6 grid place-content-center rounded-full bg-zinc-200">
             <Check width={18} />
@@ -54,17 +54,12 @@ import Anchor from './ui/Anchor.astro'
       </div>
     </div>
 
-    <div id="particles-js" class="lg:-rotate-45 xl:mb-10 lg:block flex-1 flex justify-end">
-      <!-- <img src={teamMeetingIllustration.src} class="aspect-video rounded-sm" alt=""> -->
-    </div>
+    <div id="particles2" class="lg:-rotate-45 xl:mb-10 lg:block flex-1 flex justify-end"></div>
   </div>
 
 </section>
 
-<script is:inline src="/script/particles.min.js"></script>
 <script is:inline>
-  const base = location.href
-  particlesJS.load('particles-js', `${base}script/particlesjs-config.json`, function() {
-    console.log('callback - particles.js config loaded');
-  });
+  particlesJS.load('particles1', PARTICLES_CONFIG_URL);
+  particlesJS.load('particles2', PARTICLES_CONFIG_URL);
 </script>

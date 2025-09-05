@@ -24,6 +24,12 @@ import XMark from 'astro-heroicons/outline/XMark.astro'
 		<meta name="robots" content="index, follow" />
 		<meta name="author" content="XLynX AI" />
 		<link rel="canonical" href={Astro.url} />
+
+		<script is:inline src="/script/particles.min.js"></script>
+		<script is:inline>
+			const base = location.origin
+			const PARTICLES_CONFIG_URL = `${base}/script/particlesjs-config.json`
+		</script>
 	</head>
 	<body
 		class="background-default font-regular"

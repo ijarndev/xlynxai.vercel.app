@@ -1,10 +1,5 @@
 ---
 import ServiceCard from "./ui/ServiceCard.astro"
-import CodeBracket from 'astro-heroicons/outline/CodeBracket.astro'
-import DevicePhoneMobile from 'astro-heroicons/outline/DevicePhoneMobile.astro'
-import Sparkles from 'astro-heroicons/outline/Sparkles.astro'
-import Pencil from 'astro-heroicons/outline/Pencil.astro'
-import MagnifyingGlass from 'astro-heroicons/outline/MagnifyingGlass.astro'
 import RocketLaunch from 'astro-heroicons/outline/RocketLaunch.astro'
 
 import { services } from '../data/services.ts'
@@ -14,7 +9,7 @@ import { services } from '../data/services.ts'
   <h2 class="text-3xl sm:text-7xl text-primary mb-2">Our Services</h2>
   <p class="text-secondary text-sm sm:max-w-3/4 mb-12">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque temporibus perspiciatis animi a? Nulla quisquam voluptatum doloribus provident eius dignissimos!</p>
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 group">
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
     {
       services.map((service, index) => (
         <a href={service.homeHref}>

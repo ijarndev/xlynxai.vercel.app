@@ -2,6 +2,7 @@
 import Anchor from "./ui/Anchor.astro"
 import lynx from '../assets/img/lynx.png'
 import Bars3 from 'astro-heroicons/outline/Bars3.astro'
+import Button from "./ui/Button.astro"
 --- 
 
 <style>
@@ -24,13 +25,15 @@ import Bars3 from 'astro-heroicons/outline/Bars3.astro'
     <img src={lynx.src} alt="lynx_logo" class="size-12 sm:size-18">
   </a>
 
-  <nav class="xl:block hidden">
-    <ul class="text-secondary flex gap-x-8 *:hover:text-zinc-100 z-1 relative">
+  <nav class="xl:flex items-center hidden">
+    <ul class="text-secondary *:flex *:items-center flex gap-x-8 *:hover:text-zinc-100 z-1 relative">
       <li><Anchor href="/">Home</Anchor></li>
       <li><Anchor href="/services/web-development">Web Development</Anchor></li>
       <li><Anchor href="/services/ai-automation">AI Integration</Anchor></li>
       <li><Anchor href="/#about">About us</Anchor></li>
-      <li><Anchor href="/contact">Contact</Anchor></li>
+      <!-- <li><Anchor href="/contact">Contact</Anchor></li> -->
+
+      <Button>GET A QUOTE</Button>
     </ul>
   </nav>
 

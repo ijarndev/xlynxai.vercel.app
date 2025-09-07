@@ -27,7 +27,9 @@ import Anchor from './ui/Anchor.astro'
   <div class="flex items-start justify-start flex-col sm:flex-row gap-x-20">
     <div class="flex flex-wrap items-center gap-x-10">
       <div class="*:text-nowrap *:w-full sm:*:w-auto relative mb-8 sm:mb-0">
-        <Button freeBadge>LAUNCH YOUR WEBSITE</Button>
+        <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ravenlrlg/bussiness-meeting'});return false;">
+          <Button freeBadge>LAUNCH YOUR WEBSITE</Button>
+        </a>
       </div>
 
       <div class="*:text-nowrap">
@@ -41,6 +43,8 @@ import Anchor from './ui/Anchor.astro'
   </div>
 
 </section>
+
+
 
 <script is:inline>
   particlesJS.load('particles1', PARTICLES_CONFIG_URL);

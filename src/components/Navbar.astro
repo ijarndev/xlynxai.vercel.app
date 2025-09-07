@@ -31,9 +31,10 @@ import Button from "./ui/Button.astro"
       <li><Anchor href="/services/web-development">Web Development</Anchor></li>
       <li><Anchor href="/services/ai-automation">AI Integration</Anchor></li>
       <li><Anchor href="/#about">About us</Anchor></li>
-      <!-- <li><Anchor href="/contact">Contact</Anchor></li> -->
 
-      <Button>GET A QUOTE</Button>
+      <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ravenlrlg/bussiness-meeting'});return false;">
+        <Button>GET A QUOTE</Button>
+      </a>
     </ul>
   </nav>
 

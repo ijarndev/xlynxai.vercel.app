@@ -5,6 +5,7 @@ import Anchor from "../components/ui/Anchor.astro";
 import Button from "../components/ui/Button.astro";
 import "../styles/global.css";
 import XMark from "astro-heroicons/outline/XMark.astro";
+import Analytics from '@vercel/analytics/astro'
 ---
 
 <!doctype html>
@@ -36,6 +37,8 @@ import XMark from "astro-heroicons/outline/XMark.astro";
     <meta name="robots" content="index, follow" />
     <meta name="author" content="XLynX AI" />
     <link rel="canonical" href={Astro.url} />
+
+		<Analytics />
 
     <!-- Cal floating-popup embed code begins -->
     <script type="text/javascript">

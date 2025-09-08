@@ -26,15 +26,26 @@ import Anchor from './ui/Anchor.astro'
   <div class="flex items-start justify-start flex-col sm:flex-row gap-x-20">
     <div class="flex flex-wrap items-center gap-x-10">
       <div class="*:text-nowrap *:w-full sm:*:w-auto relative mb-8 sm:mb-0">
-        <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ravenlrlg/bussiness-meeting'});return false;">
+        <a
+          href="javascript:void(0)"
+					data-cal-link="luis-roberto-leyva-galban-kze0qq/30min"
+					data-cal-namespace="30min"
+					data-cal-config='{"layout":"month_view"}'
+        >
           <Button freeBadge>LAUNCH YOUR WEBSITE</Button>
         </a>
       </div>
 
       <div class="*:text-nowrap">
-        <Anchor href='#'>
-          AUTOMATE YOUR BUSSINESS
-        </Anchor>
+        <div
+          data-cal-link="luis-roberto-leyva-galban-kze0qq/30min"
+          data-cal-namespace="30min"
+          data-cal-config='{"layout":"month_view"}'
+        >
+          <Anchor href='#'>
+            AUTOMATE YOUR BUSSINESS
+          </Anchor>
+        </div>
       </div>
     </div>
 

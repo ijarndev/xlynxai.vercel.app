@@ -12,6 +12,7 @@ import MagnifyingGlass from 'astro-heroicons/outline/MagnifyingGlass.astro'
 import DevicePhoneMobile from 'astro-heroicons/outline/DevicePhoneMobile.astro'
 import ChartBarSquare from 'astro-heroicons/outline/ChartBarSquare.astro'
 import CodeBracket from 'astro-heroicons/outline/CodeBracket.astro'
+import webDevHeroImage from '../assets/svg/website-building.svg'
 
 // ai automation
 import AdjustmentsHorizontal from 'astro-heroicons/outline/AdjustmentsHorizontal.astro'
@@ -22,6 +23,7 @@ import n8n from '../assets/svg/n8n.svg'
 import CurrencyDollar from 'astro-heroicons/outline/CurrencyDollar.astro'
 import Clock from 'astro-heroicons/outline/Clock.astro'
 import Sparkles from 'astro-heroicons/outline/Sparkles.astro'
+import aiHeroImage from '../assets/svg/ai-agent.svg'
 
 export const services = [
   {
@@ -30,6 +32,7 @@ export const services = [
     icon: CodeBracket,
     title: "Expert Web Development Services | Modern & Fast Websites",
     subtitle: "We create fast, modern and scalable websites using the latest technologies like Astro, React, and TailwindCSS.",
+    heroImage: webDevHeroImage,
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque temporibus perspiciatis animi a? Nulla quisquam voluptatum doloribus provident eius dignissimos!',
     ctaText: "Launch My Website",
     ctaSubtitle: "Contact us to create your next web project",
@@ -120,6 +123,7 @@ export const services = [
     icon: Sparkles,
     title: "Transform your business with AI-powered automation solutions",
     subtitle: "Streamline operations and boost efficiency",
+    heroImage: aiHeroImage,
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque temporibus perspiciatis animi a? Nulla quisquam voluptatum doloribus provident eius dignissimos!',
     ctaText: "Automate My Bussiness",
     ctaHref: "/",

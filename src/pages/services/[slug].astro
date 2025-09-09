@@ -28,6 +28,7 @@ if (!currentService) return Astro.redirect('/404')
   subtitle={currentService.subtitle}
   ctaText={currentService.ctaText}
   ctaHref={currentService.ctaHref}
+  heroImage={currentService.heroImage?.src}
 >
   <!-- solutions -->
   <section class="mt-20 py-6">

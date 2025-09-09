@@ -1,10 +1,30 @@
 ---
-import Bolt from "astro-heroicons/outline/Bolt.astro"
-import Eye from 'astro-heroicons/outline/Eye.astro'
 import Button from "./ui/Button.astro"
+import MemberCard from "./about/MemberCard.astro"
+
+const members = [
+  {
+    image: null,
+    name: "Lalo",
+    description: "Lorem ipsum dolor sit amet...",
+    position: "CEO"
+  },
+  {
+    image: null,
+    name: "Luis",
+    description: "Lorem ipsum dolor sit amet...",
+    position: "Marketing Engineer"
+  },
+  {
+    image: null,
+    name: "Randy",
+    description: "Lorem ipsum dolor sit amet...",
+    position: "Senior Developer"
+  },
+]
 ---
 
-<section id="about" class="px-8 md:px-14 lg:px-40 xl:px-50 pb-20 mb-20 pt-10 sm:pt-20 relative z-1">
+<section id="about" class="px-8 md:px-14 lg:px-40 xl:px-50 mb-20 pt-10 sm:pt-20 relative z-1">
   <div class="mb-32 flex justify-start">
     <div class="md:max-w-6/8">
       <h1 class="text-4xl sm:text-7xl text-zinc-100 mb-4">About Us</h1>
@@ -15,65 +35,30 @@ import Button from "./ui/Button.astro"
     </div>
   </div>
 
-  <div class="grid md:grid-cols-2 gap-16 mb-32">
-    <div class="">
-      <div class="mb-4 flex items-center gap-x-4">
-        <Bolt width={48} class='text-theme' />
-        <h4 class="text-4xl font-semibold text-theme">Mission</h4>
-      </div>
-
-      <p class="text-secondary text-lg">
-        To empower businesses and entrepreneurs with efficient, secure, and scalable digital solutions.
-      </p>
-    </div>
-
-    <div class="">
-      <div class="mb-4 flex items-center gap-x-4">
-        <Eye width={48} class='text-theme' />
-        <h4 class="text-4xl font-semibold text-theme">Vision</h4>
-      </div>
-
-      <p class="text-secondary text-lg">
-        To be leaders in AI integration worldwide, creating projects that make a difference.
-      </p>
-    </div>
+  <div class="grid grid-cols-1 justify-items-stretch lg:grid-cols-2 2xl:grid-cols-3 gap-10">
+    {
+      members.map(member => (
+        <MemberCard
+          image={member.image}
+          name={member.name}
+          description={member.description}
+          position={member.position}
+        />
+      ))
+    }
   </div>
 
-  <div class="mb-32">
-    <h3 class="text-4xl mb-12 text-center font-medium text-zinc-100">Our Values</h3>
-
-    <div class="grid gap-y-10 grid-cols-2 md:grid-cols-4">
-      <div class="flex items-center flex-col gap-y-3">
-        <div class="size-22 rounded-full background-theme grid place-content-center">
-          <span class="text-3xl">🚀</span>
-        </div>
-        <p class="font-medium text-zinc-100">Innovation</p>
-      </div>
-      <div class="flex items-center flex-col gap-y-3">
-        <div class="size-22 rounded-full background-theme grid place-content-center">
-          <span class="text-3xl">🤝</span>
-        </div>
-        <p class="font-medium text-zinc-100">Collaboration</p>
-      </div>
-      <div class="flex items-center flex-col gap-y-3">
-        <div class="size-22 rounded-full background-theme grid place-content-center">
-          <span class="text-3xl">⚡</span>
-        </div>
-        <p class="font-medium text-zinc-100">Efficiency</p>
-      </div>
-      <div class="flex items-center flex-col gap-y-3">
-        <div class="size-22 rounded-full background-theme grid place-content-center">
-          <span class="text-3xl">🔒</span>
-        </div>
-        <p class="font-medium text-zinc-100">Trust</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="">
+  <div class="mt-24">
     <h3 class="text-zinc-100 mb-10 text-center text-2xl">Ready to get to know us better? Let's talk about your next project.</h3>
     <div class="text-center">
-      <Button>Contact Us</Button>
+      <a
+        href="javascript:void(0)"
+        data-cal-link="luis-roberto-leyva-galban-kze0qq/30min"
+        data-cal-namespace="30min"
+        data-cal-config='{"layout":"month_view"}'
+      >
+        <Button freeBadge>GET A QUOTE</Button>
+      </a>
     </div>
   </div>
 </section>

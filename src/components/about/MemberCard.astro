@@ -1,0 +1,23 @@
+---
+import lynx from '../../assets/img/lynx.png'
+
+interface Props {
+  image: string | null
+  name: string
+  description: string
+  position: string
+}
+
+const { image, name, description, position } = Astro.props
+---
+
+<article class="relative flex px-6 py-4 overflow-hidden border-2 border-zinc-800/50 bg-gradient-to-br from-transparent via-zinc-800/60 to-zinc-900 hover:!bg-gradient-to-tl transition-all flex-col justify-center">
+  <img src={lynx.src} class="min-w-[500px] absolute -right-[200px] grayscale-100 opacity-20" alt="lynx">
+  <div class="size-28 bg-zinc-950 rounded-full"></div>
+
+  <div class="mt-6">
+    <h4 class="text-2xl text-zinc-100 font-medium">{name}</h4>
+    <p class="text-xs text-theme">{position}</p>
+    <p class="mt-4 text-secondary max-w-[xl]">{description}</p>
+  </div>
+</article>

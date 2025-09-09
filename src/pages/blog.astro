@@ -1,0 +1,48 @@
+---
+import Layout from '../layouts/Layout.astro';
+import RecentPostCard from '../components/blog/RecentPostCard.astro';
+
+const mock = [
+  {
+    featuredImage: 'http://localhost:4321/@fs/C:/Users/jarndev/dev/kiuban-landing/src/assets/img/lynx.png?origWidth=120&origHeight=120&origFormat=png',
+    title: 'Hello World!',
+    content: 'Lorem ipsum dolor sit amet...',
+    createdAt: new Date(),
+    slug: 'hello-world'
+  },
+  {
+    featuredImage: 'http://localhost:4321/@fs/C:/Users/jarndev/dev/kiuban-landing/src/assets/img/lynx.png?origWidth=120&origHeight=120&origFormat=png',
+    title: 'Hello World!',
+    content: 'Lorem ipsum dolor sit amet...',
+    createdAt: new Date(),
+    slug: 'hello-world'
+  },
+  {
+    featuredImage: 'http://localhost:4321/@fs/C:/Users/jarndev/dev/kiuban-landing/src/assets/img/lynx.png?origWidth=120&origHeight=120&origFormat=png',
+    title: 'Hello World!',
+    content: 'Lorem ipsum dolor sit amet...',
+    createdAt: new Date(),
+    slug: 'hello-world'
+  }
+]
+---
+
+<Layout>
+  <section class="px-8 md:px-14 lg:px-40 xl:px-50 pt-20 md:pt-50 lg:pt-40">
+    <h2 class="text-zinc-100 text-4xl mb-8">Recent Entries</h2>
+  
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      {
+        mock.map(entry => (
+          <RecentPostCard
+            featuredImageUrl={entry.featuredImage}
+            title={entry.title}
+            description={entry.content}
+            createdAt={entry.createdAt.toLocaleDateString()}
+            slug={entry.slug}
+          />
+        ))
+      }
+    </div>
+  </section>
+</Layout>

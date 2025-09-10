@@ -1,6 +1,10 @@
 ---
 import Button from "./ui/Button.astro"
 import MemberCard from "./about/MemberCard.astro"
+import collaboration from '../assets/img/collaboration.png'
+import efficiency from '../assets/img/efficiency.png'
+import innovation from '../assets/img/innovation.png'
+import trust from '../assets/img/trust.png'
 
 const members = [
   {
@@ -28,14 +32,13 @@ const members = [
   <div class="mb-32 flex justify-start">
     <div class="md:max-w-6/8">
       <h1 class="text-4xl sm:text-7xl text-zinc-100 mb-4">About Us</h1>
-      <h4 class="text-xl sm:text-2xl text-zinc-300 mb-8">A passionate team focused on web development and artificial intelligence, transforming ideas into digital solutions that create impact.</h4>
-      <p class="text-sm sm:text-md text-secondary">
+      <p class="text sm:text-md text-secondary">
         We were born from the conviction that technology should be accessible and transformative. Our team combines years of experience in web development with artificial intelligence innovation to create solutions that not only work, but drive our clients' growth. We believe in the power of well-executed ideas and the importance of building lasting relationships based on trust and exceptional results.
       </p>
     </div>
   </div>
 
-  <div class="grid grid-cols-1 justify-items-stretch lg:grid-cols-2 2xl:grid-cols-3 gap-10">
+  <div class="grid grid-cols-1 justify-items-stretch lg:grid-cols-2 2xl:grid-cols-3 gap-10 mb-32">
     {
       members.map(member => (
         <MemberCard
@@ -46,6 +49,29 @@ const members = [
         />
       ))
     }
+  </div>
+
+  <div class="mb-32">
+    <h3 class="text-4xl mb-12 text-center font-medium text-zinc-100">Our Values</h3>
+
+    <div class="grid gap-y-10 grid-cols-2 md:grid-cols-4">
+      <div class="flex items-center flex-col gap-y-3">
+        <img src={innovation.src} alt="innovation">
+        <p class="font-medium text-lg text-zinc-100">Innovation</p>
+      </div>
+      <div class="flex items-center flex-col gap-y-3">
+        <img src={collaboration.src} alt="collaboration">
+        <p class="font-medium text-lg text-zinc-100">Collaboration</p>
+      </div>
+      <div class="flex items-center flex-col gap-y-3">
+        <img src={efficiency.src} alt="efficiency">
+        <p class="font-medium text-lg text-zinc-100">Efficiency</p>
+      </div>
+      <div class="flex items-center flex-col gap-y-3">
+        <img src={trust.src} alt="trust">
+        <p class="font-medium text-lg text-zinc-100">Trust</p>
+      </div>
+    </div>
   </div>
 
   <div class="mt-24">

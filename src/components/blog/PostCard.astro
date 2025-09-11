@@ -1,0 +1,33 @@
+---
+interface Props {
+  featuredImageUrl: string
+  title: string
+  description?: string
+  createdAt?: string
+  slug: string
+  extraClasses?: string,
+  date: string
+}
+
+const { featuredImageUrl, title, description, createdAt, slug, extraClasses, date } = Astro.props
+---
+
+<a class=`${extraClasses}` href={`/blog/${slug}`}>
+  <article
+    class=`background-light hover:-translate-y-1 cursor-pointer transition-transform`
+  >
+    <div class="flex flex-col">
+      <div class="bg-zinc-900 grid place-content-center relative overflow-hidden min-h-30">
+        <img class="min-w-[300px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" src={featuredImageUrl} alt="">
+      </div>
+      <div class="px-4 py-2">
+        <h3 class="text-lg font-medium text-zinc-800 mb-1">{title}</h3>
+        <p class="text-secondary text-xs">{date}</p>
+      </div>
+
+      <div class="flex px-4 mt-2 justify-between items-center">
+        <span class="text-xs">{createdAt}</span>
+      </div>
+    </div>
+  </article>
+</a>

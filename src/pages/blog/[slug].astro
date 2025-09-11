@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro"
 import { getAllPosts } from '../../lib/wpapi'
 import type { WpPost } from '../../types'
 import Anchor from "../../components/ui/Anchor.astro"
+import ReadAlsoItem from "../../components/blog/ReadAlsoItem.astro"
 
 export const getStaticPaths = (async () => {
   const posts = await getAllPosts()
@@ -17,12 +18,13 @@ export const getStaticPaths = (async () => {
       content: post.content,
       author: post.author,
       authorAvatar: post.authorAvatar,
-      slug: post.slug
+      slug: post.slug,
+      readAlsoPosts: post.readAlsoPosts
     }
   }))
 })
 
-const { featuredImage, title, slug, content, author, authorAvatar } = Astro.props
+const { featuredImage, title, slug, content, author, authorAvatar, readAlsoPosts } = Astro.props
 ---
 
 <Layout>
@@ -38,6 +40,18 @@ const { featuredImage, title, slug, content, author, authorAvatar } = Astro.prop
     <div class="grid grid-cols-1 md:grid-cols-[1fr_3fr_1fr] justify-items-stretch">
       <div class="">
         <h4 class="text-lg text-zinc-100">Read Also</h4>
+      
+        <div class="mt-4 space-y-2">
+          {
+            readAlsoPosts?.map(post => (
+              <ReadAlsoItem
+                imageUrl={post.featuredImageUrl}
+                title={post.title}
+                slug={post.slug}
+              />
+            ))
+          }
+        </div>
       </div>
 
       <div>

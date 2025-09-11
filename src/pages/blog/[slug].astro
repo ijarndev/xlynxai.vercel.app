@@ -1,8 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro"
-import { getAllPosts } from '../../lib/wpapi.ts'
+import { getAllPosts } from '../../lib/wpapi'
 import type { WpPost } from '../../types'
-import ChevronRight from 'astro-heroicons/outline/ChevronRight.astro'
 import Anchor from "../../components/ui/Anchor.astro"
 
 export const getStaticPaths = (async () => {
@@ -27,7 +26,7 @@ const { featuredImage, title, slug, content, author, authorAvatar } = Astro.prop
 ---
 
 <Layout>
-  <div class="px-8 md:px-14 lg:px-40 xl:px-50 pt-10 md:pt-50 lg:pt-24 sm:pt-40 border-b border-zinc-800/50">
+  <div class="sticky top-10 background-default px-8 md:px-14 lg:px-40 xl:px-50 pt-10 md:pt-50 lg:pt-18 border-b border-zinc-800/50">
     <div class="pb-4 text-sm">
       <Anchor href="/blog">Blog</Anchor>
       <span class="mx-2 text-secondary">/</span>
@@ -35,7 +34,7 @@ const { featuredImage, title, slug, content, author, authorAvatar } = Astro.prop
     </div>
   </div>
 
-  <div class="px-8 md:px-14 lg:px-40 xl:px-50 pt-10">
+  <div class="px-8 md:px-14 lg:px-40 xl:px-50 pt-18">
     <div class="grid grid-cols-1 md:grid-cols-[1fr_3fr_1fr] justify-items-stretch">
       <div class="">
         <h4 class="text-lg text-zinc-100">Read Also</h4>

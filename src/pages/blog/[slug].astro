@@ -8,6 +8,8 @@ import ReadAlsoItem from "../../components/blog/ReadAlsoItem.astro"
 export const getStaticPaths = (async () => {
   const posts = await getAllPosts()
 
+  if (!posts || posts.length == 0) return
+
   return posts.map((post: WpPost) => ({
     params: {
       slug: post.slug
@@ -27,7 +29,10 @@ export const getStaticPaths = (async () => {
 const { featuredImage, title, content, author, authorAvatar, readAlsoPosts } = Astro.props
 ---
 
-<Layout>
+<Layout
+  title={`${title} | XLynx AI`}
+  description={`Read ${title} on XLynx AI's blog. Written by ${author}`}
+>
   <div class="sticky top-10 background-default px-8 md:px-14 lg:px-40 xl:px-50 pt-10 md:pt-50 lg:pt-18 border-b border-zinc-800/50">
     <div class="pb-4 text-sm">
       <Anchor href="/blog">Blog</Anchor>

@@ -1,6 +1,4 @@
 ---
-import Footer from '../components/Footer.astro'
-import Navbar from '../components/Navbar.astro'
 import '../styles/global.css'
 import Button from '../components/ui/Button.astro'
 import ArrowRight from 'astro-heroicons/solid/ArrowRight.astro'
@@ -16,7 +14,10 @@ const {
 } = Astro.props
 ---
 
-<Layout>
+<Layout
+	title={`${title} | XLynX AI`}
+	description={`${title} - ${subtitle}. Professional AI services and solutions by XLynX AI.`}
+>
 	<section class="relative px-8 md:px-14 lg:px-40 xl:px-50 md:pt-50 lg:pt-40 pt-28 pb-20 bg-gradient-to-br from-[#151515] via-[#151515] to-[#00B4FB]/10"> <!-- hero -->			
 		<div class="grid grid-cols-1 xl:grid-cols-2 gap-10">
 			<div class="">

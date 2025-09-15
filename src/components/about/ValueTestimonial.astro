@@ -1,0 +1,11 @@
+---
+interface Props {
+  testimonial: string
+}
+
+const { testimonial } = Astro.props
+---
+
+<article class="text-center py-10 text-lg italic text-zinc-100 font-medium">
+  "{testimonial}"
+</article>

@@ -5,24 +5,30 @@ import collaboration from '../assets/img/collaboration.png'
 import efficiency from '../assets/img/efficiency.png'
 import innovation from '../assets/img/innovation.png'
 import trust from '../assets/img/trust.png'
+import Bolt from "astro-heroicons/outline/Bolt.astro"
+import Eye from 'astro-heroicons/outline/Eye.astro'
+import ValueTestimonial from "./about/ValueTestimonial.astro"
+
+import randy from '../assets/img/randy.jpg'
+import raven from '../assets/img/raven.jpg'
 
 const members = [
   {
     image: null,
     name: "Lalo",
-    description: "Lorem ipsum dolor sit amet...",
+    description: "Visionary and strategic leader, passionated by AI integration on bussinesses.",
     position: "CEO"
   },
   {
-    image: null,
+    image: raven.src,
     name: "Luis",
-    description: "Lorem ipsum dolor sit amet...",
+    description: "Project manager and organizer.",
     position: "Marketing Engineer"
   },
   {
-    image: null,
+    image: randy.src,
     name: "Randy",
-    description: "Lorem ipsum dolor sit amet...",
+    description: "Technical pillar, responsible for creating solid and scalable solutions.",
     position: "Senior Developer"
   },
 ]
@@ -31,9 +37,9 @@ const members = [
 <section id="about" class="px-8 md:px-14 lg:px-40 xl:px-50 mb-20 pt-10 sm:pt-20 relative z-1">
   <div class="mb-32 flex justify-start">
     <div class="md:max-w-6/8">
-      <h1 class="text-4xl sm:text-7xl text-zinc-100 mb-4">About Us</h1>
+      <h1 class="text-4xl sm:text-7xl text-zinc-100 mb-4">Who We Are</h1>
       <p class="text sm:text-md text-secondary">
-        We were born from the conviction that technology should be accessible and transformative. Our team combines years of experience in web development with artificial intelligence innovation to create solutions that not only work, but drive our clients' growth. We believe in the power of well-executed ideas and the importance of building lasting relationships based on trust and exceptional results.
+        We're a team based in Las Vegas that helps bussinesses to grow, from its very starting point through its whole consolidation in order for them to be more productive, thanks to a proper use of technologies and Artificial Intelligence. 
       </p>
     </div>
   </div>
@@ -49,6 +55,49 @@ const members = [
         />
       ))
     }
+  </div>
+
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-32">
+    <div class="">
+      <div class="mb-4 flex items-center gap-x-4">
+        <Bolt width={48} class='text-theme' />
+        <h4 class="text-4xl font-semibold text-theme">Mission</h4>
+      </div>
+
+      <p class="text-zinc-100 text-xl">At XlynX AI we get along with:</p>
+
+      <p class="mt-4 text-zinc-300">
+        • Small Businesses → making their very first digital step with their own websites and online presence.
+      </p>
+
+      <p class="mt-2 text-zinc-300">
+        • Medium and Large Businesses → helping them to automate processes, save time, enhance productivity and strengthen their position on the market. 
+      </p>
+    </div>
+
+    <div class="">
+      <div class="mb-4 flex items-center gap-x-4">
+        <Eye width={48} class='text-theme' />
+        <h4 class="text-4xl font-semibold text-theme">Value</h4>
+      </div>
+
+      <p class="text-zinc-100 text-xl">We're not an expend but but your bussiness' smartest investment: The assistant that pays itself</p>
+
+      <div class="swiper mt-4">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <ValueTestimonial testimonial="It's like having a receptionist what never sleeps." />
+          </div>
+          <div class="swiper-slide">
+            <ValueTestimonial testimonial="Most trustable member of the team." />
+          </div>
+          <div class="swiper-slide">
+            <ValueTestimonial testimonial="It's like hiring a group of assistants for the price of a single subscription." />
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="mb-32">
@@ -88,3 +137,27 @@ const members = [
     </div>
   </div>
 </section>
+
+
+<script>
+  import Swiper from 'swiper'
+  import { Pagination, Autoplay } from 'swiper/modules';
+  import 'swiper/css';
+  import 'swiper/css/pagination';
+
+  const swiper = new Swiper('.swiper', {
+    modules: [Pagination, Autoplay],
+    direction: 'horizontal',
+    loop: true,
+    autoplay: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+      dynamicBullets: true
+    },
+    scrollbar: {
+      el: '.swiper-scrollbar',
+      draggable: true,
+    },
+  })
+</script>

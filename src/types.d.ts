@@ -9,3 +9,13 @@ export type WpPost = {
   readAlsoPosts?: WpPost[],
   date: string
 }
+
+export type ServiceType = 'web-development' | 'ai-integration'
+
+export type Project = {
+  name: string
+  description: string
+  type: ServiceType,
+  featuredImageUrl: string,
+  href: string
+}

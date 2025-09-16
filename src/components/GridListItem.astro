@@ -1,0 +1,20 @@
+---
+interface Props {
+  icon: any,
+  text: string
+}
+
+const { icon: Icon, text } = Astro.props
+---
+
+<article class="flex items-center gap-x-4">
+  <div class="">
+    {
+      Icon ? (
+        <Icon class="text-theme" width={42} />
+      ) : null
+    }
+  </div>
+
+  <div class="text-zinc-100 text-2xl">{text}</div>
+</article>

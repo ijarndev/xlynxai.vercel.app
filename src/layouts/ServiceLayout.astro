@@ -22,26 +22,15 @@ const {
 	<section class="relative px-8 md:px-14 lg:px-40 xl:px-50 md:pt-50 lg:pt-40 pt-28 pb-20 bg-gradient-to-br from-[#151515] via-[#151515] to-[#00B4FB]/10"> <!-- hero -->			
 		<div class="grid grid-cols-1 xl:grid-cols-2 gap-10">
 			<div class="">
-
-				<style>
-					.animate-expand {
-						animation-name: expand;
-						animation-duration: 1s;
-						animation-iteration-count: 1;
-						animation-fill-mode: forwards;
-					}
-
-					@keyframes expand {
-						to {
-							width: fit-content;
-						}
-					}
-				</style>
-
-				<div class="animate-expand w-0 text-nowrap overflow-hidden py-2 px-4 mb-6 inline-grid grid-cols-[1fr_auto] items-center gap-x-4 rounded-full bg-[#00B4FB]/10 text-white">
-					<div class="size-3 rounded-full bg-[#00B4FB]"></div>
-					<span set:html={valueExpression} />
-				</div>
+				{
+					valueExpression ? (
+						<div class="animate-pulse text-sm border-1 border-[#00B4FB] md:text-nowrap overflow-hidden py-2 px-4 mb-6 inline-grid grid-cols-[1fr_auto] items-center gap-x-4 rounded-full bg-[#00B4FB]/10 text-white">
+							<div class="size-3 rounded-full bg-[#00B4FB]"></div>
+							<span set:html={valueExpression} />
+						</div>
+					) : null
+				}
+				
 				<h1 class="text-zinc-100 text-3xl md:text-5xl xl:text-7xl font-semibold"><span class="inline-block">{title}</span></h1>
 				<p class="mt-4 text-zinc-300 md:text-2xl w-full"><span class="inline-block">{subtitle}</span></p>
 		
@@ -64,7 +53,7 @@ const {
 		</div>
 	</section>
 
-	<section class="grid markdown px-8 md:px-14 lg:px-40 xl:px-50 pb-20 relative z-1 border-b-2 border-dashed border-gray-400/10">
+	<div class="grid markdown px-8 md:px-14 lg:px-40 xl:px-50 pb-20 relative z-1 border-b-2 border-dashed border-gray-400/10">
 		<slot />
-	</section>
+	</div>
 </Layout>

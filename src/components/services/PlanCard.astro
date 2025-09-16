@@ -1,0 +1,48 @@
+---
+import CheckCircle from 'astro-heroicons/outline/CheckCircle.astro'
+import Button from '../ui/Button.astro'
+
+interface Props {
+  name: string
+  subtitle: string
+  description: string
+  features: string[]
+  ctaHref: string
+  isPopular: boolean
+}
+
+const { name, subtitle, description, features, ctaHref, isPopular } = Astro.props
+
+const pupularStyles = `${isPopular ? 'border-2 !border-[#00B4FB]' : ''}`
+---
+
+<article
+  class=`relative ${pupularStyles} flex flex-col px-4 py-6 text-center rounded-xl border border-zinc-100/10 bg-zinc-800`
+>
+  {
+    isPopular ? (
+      <div class="text-zinc-100 text-sm py-1 px-3 rounded-md background-theme -top-4 left-1/2 -translate-x-1/2 absolute">Most Popular</div>
+    ) : null
+  }
+
+  <div>
+    <h2 class="text-xl text-zinc-100 font-medium">{name}</h2>
+    <p class="mt-4 text-theme">{subtitle}</p>
+    <p class="mt-4 text-sm text-secondary px-10">{description}</p>
+  </div>
+
+  <ul class="mt-6 flex flex-col gap-y-1 px-10">
+    {
+      features.map(feature => (
+        <li class="flex items-center gap-x-4">
+          <CheckCircle width={32} class='text-theme' />
+          <span class="text-zinc-100">{feature}</span>
+        </li>  
+      ))
+    }
+  </ul>
+
+  <a href={ctaHref} class="*:w-full flex-1 flex items-end pt-8">
+    <Button>Get Started</Button>
+  </a>
+</article>

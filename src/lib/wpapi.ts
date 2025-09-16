@@ -1,11 +1,12 @@
 import WPAPI from "wpapi";
-import type { WpPost } from "../types";
+import type { Project, ServiceType, WpPost } from "../types";
 
 const wp = new WPAPI({
   endpoint: 'https://wordpress.xlynxai.com/wp-json'
 })
 
-wp.blogPost = wp.registerRoute("wp/v2", "/blog-post/(?P<id>\\d+)?");
+wp.blogPost = wp.registerRoute("wp/v2", "/blog-post/(?P<id>\\d+)?")
+wp.project = wp.registerRoute("wp/v2", "/project/(?P<id>\\d+)?")
 
 export async function getAllPosts () {
   const posts = await wp.blogPost().embed().get()
@@ -20,7 +21,6 @@ export async function getAllPosts () {
           slug: readAlsoPost.slug,
           title: readAlsoPost.title.rendered.length <= 35 ? readAlsoPost.title.rendered.substring(0, 35) : `${readAlsoPost.title.rendered.substring(0, 35)}...` 
         }))
-
 
         const serializedPost: WpPost = {
           featuredImageUrl: post._embedded["wp:featuredmedia"][0].source_url,
@@ -40,7 +40,6 @@ export async function getAllPosts () {
     return serializedPosts
   } catch (e) {
     throw new Error('Failed to fetch blog posts: ' + e)
-    return null
   }
 }
 
@@ -63,4 +62,26 @@ export async function getRecentPosts () {
   }))
   
   return serializedPosts
+}
+
+export async function getProjects (type: ServiceType) {  
+  try {
+    const projects = await wp.project().embed().get()
+
+    const serializedProjects: Project[] = await Promise.all(
+      projects.filter((p: any) => p.acf.project_type == type)
+        .map((project: any) => ({
+          name: project.title.rendered,
+          description: project.acf.description,
+          type: project.acf.project_type,
+          featuredImageUrl: project._embedded["wp:featuredmedia"][0].source_url,
+          href: project.acf.target_url
+        }))
+    )
+
+    console.log(serializedProjects)
+    return serializedProjects
+  } catch (e) {
+    throw new Error('Failed to fetch projects: ' + e)
+  }
 }

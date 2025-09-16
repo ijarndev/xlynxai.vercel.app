@@ -8,7 +8,7 @@ import ReadAlsoItem from "../../components/blog/ReadAlsoItem.astro"
 export const getStaticPaths = (async () => {
   const posts = await getAllPosts()
 
-  if (!posts || posts.length == 0) return
+  if (!posts || posts.length == 0) return []
 
   return posts.map((post: WpPost) => ({
     params: {

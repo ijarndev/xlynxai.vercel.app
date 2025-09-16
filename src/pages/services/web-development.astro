@@ -113,12 +113,10 @@ const mockData = {
       ],
       isPopular: false,
     },
-  ],
-  portfolio: [] as Project[]
+  ]
 };
 
-const portfolioProjects = await getProjects('web-development')
-mockData.portfolio = portfolioProjects
+const portfolio = await getProjects('web-development')
 ---
 
 <ServiceLayout
@@ -219,11 +217,11 @@ mockData.portfolio = portfolioProjects
       </div>
 
       {
-        mockData.portfolio.length > 0 ? (
+        portfolio.length > 0 ? (
           
           <div class="grid gap-10 md:grid-cols-2 2xl:grid-cols-3 pt-20">
             {
-              mockData.portfolio.map(project => (
+              portfolio.map(project => (
                 <ProjectCard
                   name={project.name}
                   type={project.type}

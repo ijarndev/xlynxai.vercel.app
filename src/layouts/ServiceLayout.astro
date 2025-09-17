@@ -4,15 +4,24 @@ import Button from '../components/ui/Button.astro'
 import ArrowRight from 'astro-heroicons/solid/ArrowRight.astro'
 import Layout from './Layout.astro'
 
+interface Props {
+	title: string
+	subtitle: string
+	heroImage: { src: string, rotated: boolean }
+	ctaText: string
+	ctaHref?: string
+	valueExpression?: string
+}
+
 const {
-  frontmatter,
   title = "Service",
   subtitle = "Service description",
 	heroImage,
 	ctaText = "Call to action",
-	ctaHref = "#",
 	valueExpression
 } = Astro.props
+
+const rotatedHeroImgClasses = `${ heroImage.rotated ? 'xl:rotate-z-10 !max-h-[600px]' : null }`
 ---
 
 <Layout
@@ -20,7 +29,7 @@ const {
 	description={`${title} - ${subtitle}. Professional AI services and solutions by XLynX AI.`}
 >
 	<section class="relative px-8 md:px-14 lg:px-40 xl:px-50 md:pt-50 lg:pt-40 pt-28 pb-20 bg-gradient-to-br from-[#151515] via-[#151515] to-[#00B4FB]/10"> <!-- hero -->			
-		<div class="grid grid-cols-1 xl:grid-cols-2 gap-10">
+		<div class="grid grid-cols-1 items-center xl:grid-cols-2 gap-10">
 			<div class="">
 				{
 					valueExpression ? (
@@ -48,7 +57,7 @@ const {
 			</div>
 
 			<div class="grid grow place-content-center">
-				<img src={heroImage} class="w-full" alt="">
+				<img src={heroImage.src} class=`${rotatedHeroImgClasses} w-full` alt="">
 			</div>
 		</div>
 	</section>

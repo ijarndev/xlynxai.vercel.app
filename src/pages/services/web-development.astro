@@ -124,7 +124,10 @@ const portfolio = await getProjects('web-development')
   subtitle="Modern design, responsive to any device and thought so your business gains trust since the very first click"
   ctaText="I Want My Free Quote"
   ctaHref=""
-  heroImage={webDevelopment.src}
+  heroImage={{
+    src: webDevelopment.src,
+    rotated: false
+  }}
   valueExpression="Prices start at just <strong>$199</strong> and your website can be live in just a few days"
 >
   <section class="pt-20">
@@ -240,25 +243,6 @@ const portfolio = await getProjects('web-development')
       }
     </div>
 
-    <div class="py-20 flex flex-col items-center px-4 sm:px-6 lg:px-8 bg-card bg-zinc-950 mt-30 rounded-xl">
-      <div class="text-lg px-6 py-3 inline-flex rounded-xl items-center text-zinc-100 border border-zinc-100/10">
-        <Shield width={32} class="mr-2" />
-        <span>Registered Company in Nevada</span>
-      </div>
 
-      <h3 class="text-4xl text-zinc-100 mt-10">"You're not just another client, you're a growth partner"</h3>
-      <p class="mt-5 text-secondary">We're committed to your success and building long-term relationships</p>
-
-      <div class="mt-10">
-        <a
-          href="javascript:void(0)"
-					data-cal-link="luis-roberto-leyva-galban-kze0qq/30min"
-					data-cal-namespace="30min"
-					data-cal-config='{"layout":"month_view"}'
-        >
-          <Button>Request Your Website Now</Button>
-        </a>
-      </div>
-    </div>
   </section>
 </ServiceLayout>

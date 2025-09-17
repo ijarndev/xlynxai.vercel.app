@@ -127,7 +127,7 @@ const mockData = {
         </div>
       </div>
       
-      <div class="grid gap-10 grid-cols-2 place-content-center">
+      <div class="grid gap-10 sm:grid-cols-2 place-content-center">
         <article class="border border-zinc-100/10 p-10 rounded-xl flex gap-y-5 flex-col items-center">
           <Clock width={48} class="text-red-500" />
           <p class="text-red-500 text-medium">Time Wasted</p>
@@ -147,7 +147,7 @@ const mockData = {
     <h2 class="text-4xl text-zinc-100 text-center font-semibold">Our Solution</h2>
     <p class="text-secondary text-center">A digital copilot that works alongside your team</p>
   
-    <div class="grid grid-cols-2 xl:grid-cols-4 gap-10 xl:gap-20 mt-10">
+    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-10 xl:gap-20 mt-10">
       {
         mockData.solutions.map(solution => (
           <SolutionCard
@@ -183,11 +183,11 @@ const mockData = {
         }
       </div>
 
-      <div class="p-10 rounded-xl border border-zinc-100/10">
+      <div class="p-4 sm:p-10 rounded-xl border border-zinc-100/10">
         <h3 class="text-center text-zinc-100 font-semibold text-2xl">Cost Comparison</h3>
 
         <div class="mt-10">
-          <div class="p-10 bg-red-500/10 flex items-center rounded-xl">
+          <div class="p-4 sm:p-10 bg-red-500/10 flex items-center rounded-xl">
             <div class="flex-1">
               <p class="text-xl text-zinc-100">Traditional Employee</p>
               <p class="text-sm text-secondary">Per week</p>
@@ -199,7 +199,7 @@ const mockData = {
             </div>
           </div>
 
-          <div class="p-10 mt-4 bg-sky-500/10 flex items-center rounded-xl">
+          <div class="p-4 sm:p-10 mt-4 bg-sky-500/10 flex items-center rounded-xl">
             <div class="flex-1">
               <p class="text-xl text-zinc-100">AI System</p>
               <p class="text-sm text-secondary">Per month</p>
@@ -218,7 +218,7 @@ const mockData = {
   <section class="mt-30">
     <h2 class="text-4xl text-zinc-100 text-center font-semibold">High Value Cases</h2>
 
-    <div class="mt-20 grid gap-10 grid-cols-2 xl:grid-cols-3">
+    <div class="mt-20 grid gap-10 sm:grid-cols-2 xl:grid-cols-3">
       {
         mockData.highValueCases.map(hvc => (
           <SolutionCard
@@ -239,7 +239,7 @@ const mockData = {
       </div>
 
       <h3 class="text-4xl text-zinc-100 mt-10">Risk-Free Setup</h3>
-      <p class="mt-5 max-w-1/2 text-center text-secondary">Free setup for the first month: You try without risk. With demonstrable results, decide if you continue with a monthly subscription, or cancel without commitment.</p>
+      <p class="mt-5 sm:max-w-1/2 text-center text-secondary">Free setup for the first month: You try without risk. With demonstrable results, decide if you continue with a monthly subscription, or cancel without commitment.</p>
 
       <div class="mt-10">
         <a

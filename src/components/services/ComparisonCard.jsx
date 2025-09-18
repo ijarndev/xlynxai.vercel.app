@@ -52,7 +52,9 @@ export default function ComparisonCard({
         <ul>
           {items.map((item, i) => (
             <li key={i} className="flex items-center gap-x-3">
-              <span className={typeClasses.itemIcon}>✔</span>
+              <span className={typeClasses.itemIcon}>
+                { type === 'negative' ? <XMark width={24} className='text-red-500' /> : <Check width={24} className='text-sky-500' /> }
+              </span>
               <p className="text-zinc-100">{item}</p>
             </li>
           ))}

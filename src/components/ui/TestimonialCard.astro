@@ -2,12 +2,13 @@
 import quotationIcon from '../../assets/svg/quotation.svg'
 
 interface Props {
-  name: string
-  position: string
-  testimonial: string
+  message: string
+  author: string
+  authorPosition: string
+  authorCompany: string
 }
 
-const { name, position, testimonial }: Props = Astro.props
+const { message, author, authorPosition, authorCompany }: Props = Astro.props
 ---
 
 <article class="!flex flex-col sm:flex-row gap-x-10 swiper-slide">
@@ -16,10 +17,10 @@ const { name, position, testimonial }: Props = Astro.props
   </div>
 
   <div
-    class="py-4"
+    class="py-4 flex-1"
   >
-    <p class="text- italic">"{testimonial}"</p>
-    <p class="mt-6 font-bold">{name}</p>
-    <p class="text-sm text-secondary">{position}</p>
+    <p class="text-xl italic">"{message}"</p>
+    <p class="mt-6 font-bold">{author}</p>
+    <p class="text-sm text-secondary">{authorPosition} at {authorCompany}</p>
   </div>
 </article>

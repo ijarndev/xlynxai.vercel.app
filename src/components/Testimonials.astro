@@ -1,5 +1,9 @@
 ---
 import TestimonialCard from "./ui/TestimonialCard.astro"
+import { getReviews } from "../lib/wpapi"
+import { record } from "astro:schema"
+
+const reviews = await getReviews()
 
 const mock = [
   {
@@ -22,11 +26,12 @@ const mock = [
     <div class="swiper">
       <div class="swiper-wrapper">
         {
-          mock.map((testimonial) => (
+          reviews.map(r => (
           <TestimonialCard
-              name={testimonial.name}
-              position={testimonial.position}
-              testimonial={testimonial.testimonial}
+              author={r.author}
+              authorPosition={r.authorPosition}
+              authorCompany={r.authorCompany}
+              message={r.message}
             />
           ))
         }

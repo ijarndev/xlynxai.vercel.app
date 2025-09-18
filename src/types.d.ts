@@ -19,3 +19,10 @@ export type Project = {
   featuredImageUrl: string,
   href: string
 }
+
+export type Review = {
+  message: string
+  author: string
+  authorCompany: string
+  authorPosition: string
+}

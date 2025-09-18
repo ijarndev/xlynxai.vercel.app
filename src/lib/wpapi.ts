@@ -1,5 +1,5 @@
 import WPAPI from "wpapi";
-import type { Project, ServiceType, WpPost } from "../types";
+import type { Project, Review, ServiceType, WpPost } from "../types";
 
 const wp = new WPAPI({
   endpoint: 'https://wordpress.xlynxai.com/wp-json'
@@ -7,6 +7,7 @@ const wp = new WPAPI({
 
 wp.blogPost = wp.registerRoute("wp/v2", "/blog-post/(?P<id>\\d+)?")
 wp.project = wp.registerRoute("wp/v2", "/project/(?P<id>\\d+)?")
+wp.review = wp.registerRoute("wp/v2", "/review/(?P<id>\\d+)?")
 
 export async function getAllPosts () {
   const posts = await wp.blogPost().embed().get()
@@ -83,5 +84,26 @@ export async function getProjects (type: ServiceType) {
     return serializedProjects
   } catch (e) {
     throw new Error('Failed to fetch projects: ' + e)
+  }
+}
+
+
+export async function getReviews () {  
+  try {
+    const reviews = await wp.review().embed().get()
+
+    const serializedReviews: Review[] = await Promise.all(
+      reviews.map((project: any) => ({
+          message: project.acf.review_message,
+          author: project.acf.author,
+          authorCompany: project.acf.author_company,
+          authorPosition: project.acf.author_position
+        }))
+    )
+
+    console.log(serializedReviews)
+    return serializedReviews
+  } catch (e) {
+    throw new Error('Failed to fetch reviews: ' + e)
   }
 }

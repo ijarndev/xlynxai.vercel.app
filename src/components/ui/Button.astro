@@ -10,6 +10,6 @@ const { fullWidth = false, freeBadge = false } = Astro.props;
 const extraClasses = fullWidth ? 'w-full' : 'w-fit';
 ---
 
-<button class={`relative py-3 px-5 bg-gradient-to-br from-[#00B4FB] via-[#00B4FB] to-[#00B4FB]/40 rounded-full text-zinc-900 hover:-translate-y-1 transition-transform cursor-pointer ${extraClasses}`}>
+<button class={`relative py-3 px-5 bg-gradient-to-br border from-[#00B4FB] via-[#00B4FB] to-[#00B4FB]/40 rounded-full text-zinc-900 hover:-translate-y-1 transition-transform cursor-pointer ${extraClasses}`}>
   <slot />
 </button>

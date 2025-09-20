@@ -1,14 +1,17 @@
 ---
-import Check from 'astro-heroicons/solid/Check.astro'
-import Button from './ui/Button.astro'
-import Anchor from './ui/Anchor.astro'
+import Check from "astro-heroicons/solid/Check.astro";
+import Button from "./ui/Button.astro";
+import Anchor from "./ui/Anchor.astro";
 ---
 
-<section class="overflow-hidden group rounded-bl-[100px] md:rounded-bl-[200px] h-screen bg-gradient-to-br from-transparent via-[#00B4FB]/3 to-[#00B4FB]/15 px-8 md:px-14 lg:px-40 xl:px-50 pt-20 md:pt-50 lg:pt-40 sm:pt-40 pb-30 mb-10 relative z-1 border-b-2 border-dashed border-gray-400/10">
-
+<section
+  class="overflow-hidden group rounded-bl-[100px] md:rounded-bl-[200px] h-screen bg-gradient-to-br from-transparent via-[#00B4FB]/3 to-[#00B4FB]/15 px-8 md:px-14 lg:px-40 xl:px-50 pt-20 md:pt-50 lg:pt-40 sm:pt-40 pb-30 mb-10 relative z-1 border-b-2 border-dashed border-gray-400/10"
+>
   <div class="flex pt-10 xl:mb-0">
     <div>
-      <h1 class="mb-8 text-center sm:text-left text-4xl md:text-6xl lg:text-6xl xl:text-7xl 2xl:text-8xl 2xl:max-w-4/5 font-bold text-primary">
+      <h1
+        class="mb-8 text-center sm:text-left text-4xl md:text-6xl lg:text-6xl xl:text-7xl 2xl:max-w-4/5 font-bold text-primary"
+      >
         <span class="block">NEXT-GEN</span>
         <span class="text-theme">WEB DEVELOPMENT</span>
         &
@@ -16,49 +19,51 @@ import Anchor from './ui/Anchor.astro'
       </h1>
 
       <h2 class="xl:w-2/5 text-secondary mb-20 text-xl">
-        Launch your website, automate your business, and scale with AI-Powered systems — we take care of everything.
+        Launch your website, automate your business, and scale with AI-Powered
+        systems — we take care of everything.
       </h2>
+
+      <div
+        class="md:*:w-auto *:w-full md:*:*:w-auto *:*:w-auto flex flex-wrap items-center gap-x-4"
+      >
+        <div class="*:text-nowrap *:w-full sm:*:w-auto relative mb-8 sm:mb-0">
+          <a
+            href="javascript:void(0)"
+            data-cal-link="luis-roberto-leyva-galban-kze0qq/30min"
+            data-cal-namespace="30min"
+            data-cal-config='{"layout":"month_view"}'
+            class="w-full"
+          >
+            <Button fullWidth>LAUNCH YOUR WEBSITE</Button>
+          </a>
+        </div>
+
+        <div class="*:text-nowrap">
+          <div
+            data-cal-link="luis-roberto-leyva-galban-kze0qq/30min"
+            data-cal-namespace="30min"
+            data-cal-config='{"layout":"month_view"}'
+            class="w-full text-center"
+          >
+            <button class="px-5 py-3 border box-border border-zinc-100/20 cursor-pointer text-zinc-100 rounded-full"> AUTOMATE YOUR BUSINESS </button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div id="particles1" class="hidden lg:block xl:min-w-1/6"></div>
   </div>
 
   <div class="flex items-start justify-start flex-col sm:flex-row gap-x-20">
-    <div class="md:*:w-auto *:w-full md:*:*:w-auto *:*:w-auto flex flex-wrap items-center gap-x-10">
-      <div class="*:text-nowrap *:w-full sm:*:w-auto relative mb-8 sm:mb-0">
-        <a
-          href="javascript:void(0)"
-					data-cal-link="luis-roberto-leyva-galban-kze0qq/30min"
-					data-cal-namespace="30min"
-					data-cal-config='{"layout":"month_view"}'
-          class="w-full"
-        >
-          <Button fullWidth>LAUNCH YOUR WEBSITE</Button>
-        </a>
-      </div>
-
-      <div class="*:text-nowrap">
-        <div
-          data-cal-link="luis-roberto-leyva-galban-kze0qq/30min"
-          data-cal-namespace="30min"
-          data-cal-config='{"layout":"month_view"}'
-          class="w-full text-center"
-        >
-          <Anchor href='#'>
-            AUTOMATE YOUR BUSINESS
-          </Anchor>
-        </div>
-      </div>
+    <div
+      id="particles2"
+      class="lg:-rotate-45 xl:mb-10 lg:block flex-1 flex justify-end"
+    >
     </div>
-
-    <div id="particles2" class="lg:-rotate-45 xl:mb-10 lg:block flex-1 flex justify-end"></div>
   </div>
-
 </section>
 
-
-
 <script is:inline>
-  particlesJS.load('particles1', PARTICLES_CONFIG_URL);
-  particlesJS.load('particles2', PARTICLES_CONFIG_URL);
+  particlesJS.load("particles1", PARTICLES_CONFIG_URL);
+  particlesJS.load("particles2", PARTICLES_CONFIG_URL);
 </script>

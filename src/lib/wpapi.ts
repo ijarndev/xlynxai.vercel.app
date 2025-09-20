@@ -101,9 +101,10 @@ export async function getReviews () {
         }))
     )
 
-    console.log(serializedReviews)
+    if (!reviews) return []
+    
     return serializedReviews
   } catch (e) {
-    throw new Error('Failed to fetch reviews: ' + e)
+    console.log('Failed to fetch reviews: ' + e)
   }
 }

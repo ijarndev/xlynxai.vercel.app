@@ -4,6 +4,10 @@ import { getAllPosts } from '../../lib/wpapi'
 import type { WpPost } from '../../types'
 import Anchor from "../../components/ui/Anchor.astro"
 import ReadAlsoItem from "../../components/blog/ReadAlsoItem.astro"
+import Button from "../../components/ui/Button.astro"
+import { NewsletterForm } from "../../components/NewsletterForm"
+
+import { actions } from 'astro:actions'
 
 export const getStaticPaths = (async () => {
   const posts = await getAllPosts()
@@ -42,20 +46,22 @@ const { featuredImage, title, content, author, authorAvatar, readAlsoPosts } = A
   </div>
 
   <div class="px-8 md:px-14 lg:px-40 xl:px-50 pt-18">
-    <div class="grid grid-cols-1 md:grid-cols-[1fr_3fr_1fr] justify-items-stretch">
+    <div class="grid gap-10 grid-cols-1 md:grid-cols-[1fr_3fr_1fr] justify-items-stretch">
       <div class="">
-        <h4 class="text-lg text-zinc-100">Read Also</h4>
+        <div class="md:sticky top-45">
+          <h4 class="text-lg text-zinc-100">Read Also</h4>
       
-        <div class="mt-4 space-y-2">
-          {
-            readAlsoPosts?.map(post => (
-              <ReadAlsoItem
-                imageUrl={post.featuredImageUrl}
-                title={post.title}
-                slug={post.slug}
-              />
-            ))
-          }
+          <div class="mt-4 space-y-2">
+            {
+              readAlsoPosts?.map(post => (
+                <ReadAlsoItem
+                  imageUrl={post.featuredImageUrl}
+                  title={post.title}
+                  slug={post.slug}
+                />
+              ))
+            }
+          </div>
         </div>
       </div>
 
@@ -79,7 +85,14 @@ const { featuredImage, title, content, author, authorAvatar, readAlsoPosts } = A
         />
       </div>
       
-      <div class=""></div>
+      <div class="">
+        <div class="p-4 bg-zinc-900 rounded-xl md:sticky top-45">
+          <h3 class="text-zinc-100 text-xl text-medium">Subscribe to Newsletter</h3>
+          <p class="text-secondary text-xs">Get updates in your inbox to stay up to date</p>
+        
+          <NewsletterForm subcribeActionUrl={actions.subscribeToNewsletter} client:only />
+        </div>
+      </div>
     </div>
   </div>
 </Layout>

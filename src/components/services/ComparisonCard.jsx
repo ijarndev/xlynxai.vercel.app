@@ -13,7 +13,7 @@ export default function ComparisonCard({
   items,
   type = "neutral",
 }) {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
 
   const typeClasses = {
     card: type === "negative" ? "bg-red-500/10" : "bg-sky-500/10",
@@ -24,7 +24,6 @@ export default function ComparisonCard({
   return (
     <div
       className={`p-4 sm:p-8 ${typeClasses.card} cursor-pointer rounded-xl`}
-      onClick={() => setOpen(!open)}  
     >
       <div className="flex items-center">
         <div className="flex-1">
@@ -36,12 +35,6 @@ export default function ComparisonCard({
           <p className={`${typeClasses.mainValue} text-xl font-semibold`}>{mainValue}</p>
           <p className="text-sm text-zinc-100">{subValue}</p>
         </div>
-
-        <button className="pl-5">
-          {
-            open ? <ChevronUp width={28} className="text-zinc-100" /> : <ChevronDown width={28} className="text-zinc-100" />
-          }
-        </button>
       </div>
 
       <div

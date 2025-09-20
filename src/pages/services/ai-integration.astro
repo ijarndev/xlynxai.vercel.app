@@ -47,6 +47,28 @@ const mockData = {
       description: "Filters and organizes leads before reaching staff"
     }
   ],
+  benefits: [
+    {
+      icon: Clock,
+      name: "More Time",
+      description: "For the owner and team to focus on what matters"
+    },
+    {
+      icon: Users,
+      name: "More Customers",
+      description: "Serve more clients without hiring more staff"
+    },
+    {
+      icon: ArrowTrendingUp,
+      name: "More Revenue",
+      description: "Fewer missed appointments, more closed sales"
+    },
+    {
+      icon: Money,
+      name: "Minimal Cost",
+      description: "Less than 2 days of employee wages for 30 days of work"
+    },
+  ],
   costComparison: [
     {
       name: "Traditional Employee",
@@ -65,7 +87,7 @@ const mockData = {
     {
       name: "AI Employee (XLynX AI)",
       subTitle: "Per month",
-      mainValue: "$299+",
+      mainValue: "$199+",
       subValue: "24/7 Availability",
       type: "positive",
       items: [
@@ -144,22 +166,10 @@ const mockData = {
           <p class="text-secondary text-sm">Hours spent on repetitive tasks</p>
         </article>
 
-        <article class="border border-zinc-100/10 p-10 rounded-xl flex gap-y-5 flex-col items-center">
+          <article class="border border-zinc-100/10 p-10 rounded-xl flex gap-y-5 flex-col items-center">
           <Money width={48} class="text-red-500" />
           <p class="text-red-500 text-medium">Money Lost</p>
           <p class="text-secondary text-sm">Missed opportunities and sales</p>
-        </article>
-
-        <article class="border border-zinc-100/10 p-10 rounded-xl flex gap-y-5 flex-col items-center">
-          <Money width={48} class="text-red-500" />
-          <p class="text-red-500 text-medium">Human Limits</p>
-          <p class="text-secondary text-sm">AI needs no rest</p>
-        </article>
-
-        <article class="border border-zinc-100/10 p-10 rounded-xl flex gap-y-5 flex-col items-center">
-          <Money width={48} class="text-red-500" />
-          <p class="text-red-500 text-medium">Human Limits</p>
-          <p class="text-secondary text-sm">Lorem Ipsum</p>
         </article>
       </div>
     </div>
@@ -190,7 +200,9 @@ const mockData = {
   <section class="mt-30">
     <h2 class="text-4xl text-zinc-100 text-center font-semibold">The Central Benefit: <span class="text-theme">Time</span></h2>
 
+    <div class="grid grid-cols-1 xl:grid-cols-2 gap-20 mt-20">
 
+    </div>
   </section>
 
   <section class="mt-30">
@@ -207,7 +219,7 @@ const mockData = {
         ))
       }
     </div>
-
+ 
   </section>
 
     <div class="py-20 flex flex-col items-center px-4 sm:px-6 lg:px-8 bg-card bg-zinc-950 mt-30 rounded-xl">

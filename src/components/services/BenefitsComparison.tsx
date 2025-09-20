@@ -31,7 +31,7 @@ export function BenefitsComparison() {
       {
         icon: Users,
         name: "Customers",
-        description: "Serve more clients without hiring more staff",
+        description: "Serve more clients without hiring more staff", 
         positive: [
           "Unlimited concurrent users",
           "Consistent service quality",

@@ -2,6 +2,7 @@
 import Check from "astro-heroicons/solid/Check.astro";
 import Button from "./ui/Button.astro";
 import Anchor from "./ui/Anchor.astro";
+import BlurText from "./BlurText";
 ---
 
 <section
@@ -9,14 +10,42 @@ import Anchor from "./ui/Anchor.astro";
 >
   <div class="flex pt-10 xl:mb-0">
     <div>
-      <h1
+      <!-- <h1
         class="mb-8 text-center sm:text-left text-4xl md:text-6xl lg:text-6xl xl:text-7xl 2xl:max-w-4/5 font-bold text-primary"
       >
         <span class="block">NEXT-GEN</span>
         <span class="text-theme">WEB DEVELOPMENT</span>
         &
         <span class="text-theme">AI INTEGRATION</span>
-      </h1>
+      </h1> -->
+    <h1
+      class=""
+    >
+      <BlurText
+        client:only
+        text="NEXT-GEN"
+        delay={150}
+        animateBy="words"
+        direction="top"
+        className="text-center sm:text-left text-4xl md:text-6xl lg:text-6xl xl:text-7xl 2xl:max-w-4/5 font-bold text-primary"
+      />
+      <BlurText
+        client:only
+        text="WEB DEVELOPMENT"
+        delay={150}
+        animateBy="words"
+        direction="top"
+        className="text-center sm:text-left text-4xl md:text-6xl lg:text-6xl xl:text-7xl 2xl:max-w-4/5 font-bold text-theme"
+      />
+      <BlurText
+        client:only
+        text="& AI INTEGRATION"
+        delay={150}
+        animateBy="words"
+        direction="top"
+        className="mb-8 text-center sm:text-left text-4xl md:text-6xl lg:text-6xl xl:text-7xl 2xl:max-w-4/5 font-bold text-primary"
+      />
+    </h1>
 
       <h2 class="xl:w-2/5 text-secondary mb-20 text-xl">
         Launch your website, automate your business, and scale with AI-Powered

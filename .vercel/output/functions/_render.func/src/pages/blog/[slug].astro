@@ -1,0 +1,98 @@
+---
+import Layout from "../../layouts/Layout.astro"
+import { getAllPosts } from '../../lib/wpapi'
+import type { WpPost } from '../../types'
+import Anchor from "../../components/ui/Anchor.astro"
+import ReadAlsoItem from "../../components/blog/ReadAlsoItem.astro"
+import Button from "../../components/ui/Button.astro"
+import { NewsletterForm } from "../../components/NewsletterForm"
+
+import { actions } from 'astro:actions'
+
+export const getStaticPaths = (async () => {
+  const posts = await getAllPosts()
+
+  if (!posts || posts.length == 0) return []
+
+  return posts.map((post: WpPost) => ({
+    params: {
+      slug: post.slug
+    },
+    props: {
+      featuredImage: post.featuredImageUrl,
+      title: post.title,
+      content: post.content,
+      author: post.author,
+      authorAvatar: post.authorAvatar,
+      slug: post.slug,
+      readAlsoPosts: post.readAlsoPosts
+    }
+  }))
+})
+
+const { featuredImage, title, content, author, authorAvatar, readAlsoPosts } = Astro.props
+---
+
+<Layout
+  title={`${title} | XLynx AI`}
+  description={`Read ${title} on XLynx AI's blog. Written by ${author}`}
+>
+  <div class="sticky top-10 background-default px-8 md:px-14 lg:px-40 xl:px-50 pt-10 md:pt-50 lg:pt-18 border-b border-zinc-800/50">
+    <div class="pb-4 text-sm">
+      <Anchor href="/blog">Blog</Anchor>
+      <span class="mx-2 text-secondary">/</span>
+      <span class="text-zinc-100">{title}</span>
+    </div>
+  </div>
+
+  <div class="px-8 md:px-14 lg:px-40 xl:px-50 pt-18">
+    <div class="grid gap-10 grid-cols-1 md:grid-cols-[1fr_3fr_1fr] justify-items-stretch">
+      <div class="">
+        <div class="md:sticky top-45">
+          <h4 class="text-lg text-zinc-100">Read Also</h4>
+      
+          <div class="mt-4 space-y-2">
+            {
+              readAlsoPosts?.map(post => (
+                <ReadAlsoItem
+                  imageUrl={post.featuredImageUrl}
+                  title={post.title}
+                  slug={post.slug}
+                />
+              ))
+            }
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div>
+          <h1 class="text-4xl text-zinc-100">{title}</h1>
+        </div>
+
+        <div class="flex items-center gap-x-4 mt-4 border-b border-zinc-800/50 pb-4">
+          <img src={authorAvatar} class="size-[36px] rounded-full bg-zinc-800" alt={`${author}_profile_pic`}>
+          <div>
+            <p class="text-zinc-100">{author}</p>
+          </div>
+        </div>
+
+        <img src={featuredImage} class="w-full" alt="post_featured_image">
+
+        <div
+          set:html={content}
+          class="mt-12 text-secondary prose lg:prose-lg prose-invert max-w-none"
+        />
+      </div>
+      
+      <div class="">
+        <div class="p-4 bg-zinc-900 rounded-xl md:sticky top-45">
+          <h3 class="text-zinc-100 text-xl text-medium">Subscribe to Newsletter</h3>
+          <p class="text-secondary text-xs">Get updates in your inbox to stay up to date</p>
+        
+          <NewsletterForm subcribeActionUrl={actions.subscribeToNewsletter} client:only />
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

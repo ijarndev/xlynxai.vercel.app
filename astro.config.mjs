@@ -2,6 +2,7 @@
 import { defineConfig } from 'astro/config'
 import tailwindcss from '@tailwindcss/vite'
 import node from '@astrojs/node'
+import vercelAdapter from '@astrojs/vercel'
 
 import react from '@astrojs/react';
 
@@ -12,4 +13,6 @@ export default defineConfig({
   },
 
   integrations: [react()],
+  adapter: vercelAdapter(),
+  output: 'server'
 });

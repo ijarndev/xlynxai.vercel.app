@@ -1,0 +1,245 @@
+---
+import ServiceLayout from "../../layouts/ServiceLayout.astro";
+import SolutionCard from "../../components/services/SolutionCard.astro";
+import Button from '../../components/ui/Button.astro'
+
+import Clock from "astro-heroicons/outline/Clock.astro";
+import Money from 'astro-heroicons/outline/CurrencyDollar.astro'
+import Warning from 'astro-heroicons/outline/ExclamationTriangle.astro'
+import Calendar from 'astro-heroicons/outline/Calendar.astro'
+import ChatBubble from 'astro-heroicons/outline/ChatBubbleLeft.astro'
+import Lifebuoy from 'astro-heroicons/outline/Lifebuoy.astro'
+import Users from "astro-heroicons/outline/Users.astro";
+import ArrowTrendingUp from "astro-heroicons/outline/ArrowTrendingUp.astro";
+import Building from 'astro-heroicons/outline/BuildingOffice2.astro'
+import Scale from 'astro-heroicons/outline/Scale.astro'
+import Truck from 'astro-heroicons/outline/Truck.astro'
+import Briefcase from "astro-heroicons/outline/Briefcase.astro";
+import FaceSmile from 'astro-heroicons/outline/FaceSmile.astro'
+import Sun from 'astro-heroicons/outline/Sun.astro'
+import Shield from "astro-heroicons/outline/ShieldCheck.astro";
+
+import whatsappBot from '../../assets/img/whatsapp-bot.png'
+import GridListItem from "../../components/GridListItem.astro";
+import type { Icon } from "astro/runtime/client/dev-toolbar/ui-library/icons.js";
+import ComparisonCard from "../../components/services/ComparisonCard.jsx";
+
+const mockData = {
+  solutions: [
+    {
+      icon: Calendar,
+      name: "Auto Scheduling",
+      description: "Books appointments automatically"
+    },
+    {
+      icon: ChatBubble,
+      name: "Smart Reminders",
+      description: "Send confirmations and follow-ups"
+    },
+    {
+      icon: Lifebuoy,
+      name: "24/7 Support",
+      description: "Answers FAQs via WhatsApp, SMS, Email, calls"
+    },
+    {
+      icon: Users,
+      name: "Contact Management",
+      description: "Filters and organizes leads before reaching staff"
+    }
+  ],
+  benefits: [
+    {
+      icon: Clock,
+      name: "More Time",
+      description: "For the owner and team to focus on what matters"
+    },
+    {
+      icon: Users,
+      name: "More Customers",
+      description: "Serve more clients without hiring more staff"
+    },
+    {
+      icon: ArrowTrendingUp,
+      name: "More Revenue",
+      description: "Fewer missed appointments, more closed sales"
+    },
+    {
+      icon: Money,
+      name: "Minimal Cost",
+      description: "Less than 2 days of employee wages for 30 days of work"
+    },
+  ],
+  costComparison: [
+    {
+      name: "Traditional Employee",
+      subTitle: "Per week",
+      mainValue: "$400+",
+      subValue: "Limited Hours",
+      type: "negative",
+      items: [
+        "$60,000+ per year (plus benefits, insurance, taxes)",
+        "40 hrs/week max",
+        "Gets sick, needs breaks & vacations",
+        "Makes mistakes",
+        "Language barrier"
+      ]
+    },
+    {
+      name: "AI Employee (XLynX AI)",
+      subTitle: "Per month",
+      mainValue: "$199+",
+      subValue: "24/7 Availability",
+      type: "positive",
+      items: [
+        "Small monthly fee (less than a couple days of salary)",
+        "Works 24/7, 365 days non-stop",
+        "Never sick, never tired", 
+        "Zero mistakes, consistent results",
+        "Scales infinitely — 10 or 10,000 clients = same cost",
+        "Speaks every language in the world"
+      ]
+    }
+  ],
+  highValueCases: [
+    {
+      icon: Building,
+      name: "Clinics & Hospitals",
+      description: "Automatic scheduling and reminders. Fewer no-shows → more billable consultations."
+    },
+    {
+      icon: Scale,
+      name: "Lawyers and Notaries",
+      description: "Automated confirmations and follow-ups. More billable hours, fewer interruptions."
+    },
+    {
+      icon: Truck,
+      name: "Auto Dealerships",
+      description: "Test drive and maintenance appointments. Post-sale follow-up → more closed sales."
+    },
+    {
+      icon: Briefcase,
+      name: "Consultancies & Financial Firms",
+      description: "VIP client meetings scheduled seamlessly. Professionalism = investment trust."
+    },
+    {
+      icon: FaceSmile,
+      name: "Dental & Aesthetic Clinics",
+      description: "Smart reminders → fewer cancellations. Higher monthly billing."
+    },
+    {
+      icon: Sun,
+      name: "Luxury Hotels & Resorts",
+      description: "Confirmed reservations + automated upselling. Premium service without more staff."
+    }
+  ]
+}
+---
+
+<ServiceLayout
+  title="Automate Your Business With AI"
+  subtitle="You'll have a system that works 24/7 for you and your team for less than 2 days of an employee costs"
+  ctaText="Test It Now for Free"
+  ctaHref=""
+  heroImage={{
+    src: whatsappBot.src,
+    rotated: true
+  }}
+>
+  <section class="pt-20">
+    <h2 class="text-4xl text-zinc-100 text-center font-semibold">The Problem</h2>
+
+    <div class="grid grid-cols-1 xl:grid-cols-2 mt-20 gap-20">
+      <div class="text-secondary text-lg">
+        <p>Manual management of calls, repetitive messages, scheduling appointments, and following up with customers can consume a significant amount of time that impacts business productivity</p>
+        <p class="mt-8">This lost time translates to missed sales opportunities, as customers expect quick responses—often within minutes—and slow follow-up can make them lose interest and seek competitors.</p>
+      
+        <div class="mt-10 font-medium text-xl flex items-center gap-x-10">
+          <Warning class="text-red-500" width={48} />
+          <span class="text-red-500">Time Lost = Money Lost</span>
+        </div>
+      </div>
+      
+      <div class="grid gap-10 sm:grid-cols-2 place-content-center">
+        <article class="border border-zinc-100/10 p-10 rounded-xl flex gap-y-5 flex-col items-center">
+          <Clock width={48} class="text-red-500" />
+          <p class="text-red-500 text-medium">Time Wasted</p>
+          <p class="text-secondary text-sm">Hours spent on repetitive tasks</p>
+        </article>
+
+          <article class="border border-zinc-100/10 p-10 rounded-xl flex gap-y-5 flex-col items-center">
+          <Money width={48} class="text-red-500" />
+          <p class="text-red-500 text-medium">Money Lost</p>
+          <p class="text-secondary text-sm">Missed opportunities and sales</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="mt-30">
+    <h2 class="text-4xl text-zinc-100 text-center font-semibold">Our Solution</h2>
+    <p class="text-secondary text-center">A digital copilot that works alongside your team</p>
+  
+    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-10 xl:gap-20 mt-10">
+      {
+        mockData.solutions.map(solution => (
+          <SolutionCard
+            icon={solution.icon}
+            title={solution.name}
+            description={solution.description}
+          />
+        ))
+      }
+    </div>
+
+    <div class="mt-10 px-4 py-10 bg-[#00B4FB]/10 rounded-xl">
+      <h3 class="text-center text-xl font-semibold text-zinc-100">Key Message</h3>
+      <p class="mt-5 text-lg text-zinc-200 text-center">We don't replace receptionists or assistants—we optimize repetitive processes so they can focus on customers and high-value tasks.</p>
+    </div>
+  </section>
+
+  <section class="mt-30">
+    <h2 class="text-4xl text-zinc-100 text-center font-semibold">The Central Benefit: <span class="text-theme">Time</span></h2>
+
+    <div class="grid grid-cols-1 xl:grid-cols-2 gap-20 mt-20">
+
+    </div>
+  </section>
+
+  <section class="mt-30">
+    <h2 class="text-4xl text-zinc-100 text-center font-semibold">High Value Cases</h2>
+
+    <div class="mt-20 grid gap-10 sm:grid-cols-2 xl:grid-cols-3">
+      {
+        mockData.highValueCases.map(hvc => (
+          <SolutionCard
+            icon={hvc.icon}
+            title={hvc.name}
+            description={hvc.description}
+          />
+        ))
+      }
+    </div>
+ 
+  </section>
+
+    <div class="py-20 flex flex-col items-center px-4 sm:px-6 lg:px-8 bg-card bg-zinc-950 mt-30 rounded-xl">
+      <div class="text-lg px-6 py-3 inline-flex rounded-xl items-center text-zinc-100 border border-zinc-100/10">
+        <Shield width={32} class="mr-2" />
+        <span>Try Free 30 Days</span>
+      </div>
+
+      <h3 class="text-4xl text-zinc-100 mt-10">Risk-Free Setup</h3>
+      <p class="mt-5 sm:max-w-1/2 text-center text-secondary">Free setup for the first month: You try without risk. With demonstrable results, decide if you continue with a monthly subscription, or cancel without commitment.</p>
+
+      <div class="mt-10">
+        <a
+          href="javascript:void(0)"
+					data-cal-link="luis-roberto-leyva-galban-kze0qq/30min"
+					data-cal-namespace="30min"
+					data-cal-config='{"layout":"month_view"}'
+        >
+          <Button>Start Free Trial</Button>
+        </a>
+      </div>
+    </div>
+</ServiceLayout>

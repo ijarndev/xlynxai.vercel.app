@@ -1,27 +1,87 @@
 ---
 import ServiceCard from "./ui/ServiceCard.astro"
-import RocketLaunch from 'astro-heroicons/outline/RocketLaunch.astro'
+import RotatingText from "./RotatingText"
 
 import { services } from '../data/services.ts'
+import web from '../assets/img/wwd/webdev.webp'
+import ai from '../assets/img/wwd/bot-arm.webp'
+import design from '../assets/img/wwd/design.webp'
+import seo from '../assets/img/wwd/seo.webp'
+
+const mockData = [
+  {
+    name: "Web",
+    description: "Performat and scalable web applications.",
+    href: '/services/web-development',
+    image: web.src
+  },
+  {
+    name: "Artificial Intelligence",
+    description: "Bussiness automations powered by an artificial brain.",
+    href: '/services/ai-integration',
+    image: ai.src
+  },
+  {
+    name: "Design",
+    description: "Your UI made usable and beautiful.",
+    href: null,
+    image: design.src
+  },
+  {
+    name: "SEO",
+    description: "Get found on Google and beyond.",
+    href: null,
+    image: seo.src
+  }
+]
 ---
 
 <section class="rounded-tr-[200px] px-8 md:px-14 lg:px-40 xl:px-50 pb-20 pt-10 z-1 relative border-b-2 border-dashed border-gray-400/10"> 
-  <h2 class="text-3xl sm:text-7xl text-primary mb-2">Our Services</h2>
-  <p class="text-secondary text-sm sm:max-w-3/4 mb-12">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque temporibus perspiciatis animi a? Nulla quisquam voluptatum doloribus provident eius dignissimos!</p>
+  <h2 class="text-3xl sm:text-7xl text-primary mb-2 text-center">What We Do</h2>
+  <!-- <p class="text-secondary text-sm sm:max-w-3/4 mb-12">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque temporibus perspiciatis animi a? Nulla quisquam voluptatum doloribus provident eius dignissimos!</p> -->
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+  <div class="text-2xl md:text-4xl mt-20 flex font-extrabold gap-x-4 justify-center items-center">
+    <span class="text-zinc-100">Creative</span>
+    
+    <RotatingText
+      client:only
+      texts={['websites', 'AI solutions', 'designs', 'marketing', 'apps']}
+      mainClassName="px-2 md:px-4 background-theme overflow-hidden py-3 justify-center rounded-lg"
+      staggerFrom={"last"}
+      initial={{ y: "100%" }}
+      animate={{ y: 0 }}
+      exit={{ y: "-120%" }}
+      staggerDuration={0.025}
+      splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+      transition={{ type: "spring", damping: 30, stiffness: 400 }}
+      rotationInterval={2000}
+    />
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-4 gap-8 mt-20">
     {
-      services.map((service, index) => (
-        <a href={service.homeHref}>
-          <ServiceCard
-            name={service.name.toUpperCase()}
-            description={service.description}
-            icon={service.icon}
-            index={index+1}
-            isPopular={ service.isPopular || null }
-          />
-        </a>
-      ))
+      mockData.map((service, index) => {
+        if (service.href) {
+          return (
+            <a href={service.href}>
+              <ServiceCard
+                name={service.name.toUpperCase()}
+                description={service.description}
+                isLink
+                image={service.image}
+              />
+            </a>
+          )
+        } else {
+          return (
+            <ServiceCard
+              name={service.name.toUpperCase()}
+              description={service.description}
+              image={service.image}
+            />
+          )
+        }
+      })
     }
   </div>
 </section>

@@ -2,6 +2,8 @@
 import ServiceLayout from "../../layouts/ServiceLayout.astro";
 import SolutionCard from "../../components/services/SolutionCard.astro";
 import Button from '../../components/ui/Button.astro'
+import { BenefitsComparison } from "@/components/services/BenefitsComparison";
+import { motion } from 'framer-motion'
 
 import Clock from "astro-heroicons/outline/Clock.astro";
 import Money from 'astro-heroicons/outline/CurrencyDollar.astro'
@@ -200,9 +202,9 @@ const mockData = {
   <section class="mt-30">
     <h2 class="text-4xl text-zinc-100 text-center font-semibold">The Central Benefit: <span class="text-theme">Time</span></h2>
 
-    <div class="grid grid-cols-1 xl:grid-cols-2 gap-20 mt-20">
-
-    </div>
+    <BenefitsComparison
+      client:only
+    />
   </section>
 
   <section class="mt-30">

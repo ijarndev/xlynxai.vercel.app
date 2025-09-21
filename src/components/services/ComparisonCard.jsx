@@ -22,17 +22,18 @@ export default function ComparisonCard({
   };
 
   return (
+    <>
     <div
-      className={`p-4 sm:p-8 ${typeClasses.card} cursor-pointer rounded-xl`}
+      className={`p-4 sm:p-8 ${typeClasses.card} cursor-pointer rounded-xl animate-bounce-once`}
     >
       <div className="flex items-center">
         <div className="flex-1">
-          <p className="text-xl text-zinc-100">{name}</p>
-          <p className="text-sm text-secondary">{subtitle}</p>
+          {/* <p className="text-xl text-zinc-100">{name}</p> */}
+          <p className={`${typeClasses.mainValue} text-xl font-semibold`}>{mainValue}</p>
+          {/* <p className="text-sm text-secondary">{subtitle}</p> */}
         </div>
 
         <div className="text-right">
-          <p className={`${typeClasses.mainValue} text-xl font-semibold`}>{mainValue}</p>
           <p className="text-sm text-zinc-100">{subValue}</p>
         </div>
       </div>
@@ -54,5 +55,6 @@ export default function ComparisonCard({
         </ul>
       </div>
     </div>
+    </>
   );
 }

@@ -80,10 +80,12 @@ export async function getProjects (type: ServiceType) {
         }))
     )
 
-    console.log(serializedProjects)
+    if (!serializedProjects || serializedProjects.length == 0) return []
+    
     return serializedProjects
   } catch (e) {
-    throw new Error('Failed to fetch projects: ' + e)
+    console.log('Failed to fetch projects: ' + e)
+    return []
   }
 }
 
@@ -106,5 +108,6 @@ export async function getReviews () {
     return serializedReviews
   } catch (e) {
     console.log('Failed to fetch reviews: ' + e)
+    return []
   }
 }

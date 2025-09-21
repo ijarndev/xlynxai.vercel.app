@@ -13,14 +13,20 @@ const reviews = await getReviews()
     <div class="swiper">
       <div class="swiper-wrapper">
         {
-          reviews?.map(r => (
-          <TestimonialCard
-              author={r.author}
-              authorPosition={r.authorPosition}
-              authorCompany={r.authorCompany}
-              message={r.message}
-            />
-          ))
+          reviews.length > 0 ? (
+            reviews?.map(r => (
+              <TestimonialCard
+                author={r.author}
+                authorPosition={r.authorPosition}
+                authorCompany={r.authorCompany}
+                message={r.message}
+              />
+            ))
+          ) : (
+            <div class="text-center py-20">
+              We still don't have any success cases here
+            </div>
+          )
         }
       </div>
     </div>

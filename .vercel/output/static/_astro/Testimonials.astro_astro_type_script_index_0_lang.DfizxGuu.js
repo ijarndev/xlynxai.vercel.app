@@ -1,1 +1,0 @@
-import{S as a,P as r,A as e}from"./pagination.CEh6xqhp.js";/* empty css                   */new a(".swiper",{modules:[r,e],direction:"horizontal",loop:!0,autoplay:!0,pagination:{el:".swiper-pagination",clickable:!0,dynamicBullets:!0},scrollbar:{el:".swiper-scrollbar",draggable:!0}});

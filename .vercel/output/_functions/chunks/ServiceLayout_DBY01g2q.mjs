@@ -1,7 +1,7 @@
 import { e as createComponent, f as createAstro, m as maybeRenderHead, i as spreadAttributes, r as renderTemplate, l as renderComponent, p as renderSlot, u as unescapeHTML } from './astro/server_BWQvXihV.mjs';
 import 'clsx';
 /* empty css                          */
-import { a as $$Layout, $ as $$Button } from './Layout_BYhv8hup.mjs';
+import { a as $$Layout, $ as $$Button } from './Layout_DprA3Fpv.mjs';
 import { $ as $$ArrowRight } from './ArrowRight_C3NCsPBX.mjs';
 /* empty css                          */
 

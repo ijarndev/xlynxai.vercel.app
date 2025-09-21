@@ -1,10 +1,10 @@
 import { e as createComponent, f as createAstro, m as maybeRenderHead, l as renderComponent, r as renderTemplate, i as spreadAttributes, h as addAttribute } from '../../chunks/astro/server_BWQvXihV.mjs';
 import { w as webDevelopment, $ as $$MagnifyingGlass, a as $$BenefitCard } from '../../chunks/BenefitCard_BrWY76vq.mjs';
-import { b as $$ServiceLayout, $ as $$Briefcase, a as $$Clock } from '../../chunks/ServiceLayout_Dwpc3o87.mjs';
+import { b as $$ServiceLayout, $ as $$Briefcase, a as $$Clock } from '../../chunks/ServiceLayout_DBY01g2q.mjs';
 import 'clsx';
 import { a as $$ShieldCheck, $ as $$Users } from '../../chunks/ShieldCheck_BMadhh6O.mjs';
-import { $ as $$Button } from '../../chunks/Layout_BYhv8hup.mjs';
-import { b as getProjects } from '../../chunks/wpapi_BARwLM4G.mjs';
+import { $ as $$Button } from '../../chunks/Layout_DprA3Fpv.mjs';
+import { b as getProjects } from '../../chunks/wpapi_CSfvwGpS.mjs';
 export { renderers } from '../../renderers.mjs';
 
 const $$Astro$8 = createAstro();

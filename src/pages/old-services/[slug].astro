@@ -28,7 +28,7 @@ if (!currentService) return Astro.redirect('/404')
   subtitle={currentService.subtitle}
   ctaText={currentService.ctaText}
   ctaHref={currentService.ctaHref}
-  heroImage={currentService.heroImage?.src}
+  heroImage={{ src: currentService.heroImage?.src ?? "", rotated: false }}
   valueExpression={currentService.valueExpression}
 >
   <!-- solutions -->

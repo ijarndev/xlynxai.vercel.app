@@ -1,5 +1,5 @@
 import { e as createComponent, f as createAstro, m as maybeRenderHead, h as addAttribute, r as renderTemplate, i as spreadAttributes, l as renderComponent, n as renderScript } from '../chunks/astro/server_BWQvXihV.mjs';
-import { $ as $$Button, a as $$Layout } from '../chunks/Layout_BYhv8hup.mjs';
+import { $ as $$Button, a as $$Layout } from '../chunks/Layout_DprA3Fpv.mjs';
 import 'clsx';
 import { $ as $$Bolt } from '../chunks/Bolt_CxcvgPOX.mjs';
 export { renderers } from '../renderers.mjs';

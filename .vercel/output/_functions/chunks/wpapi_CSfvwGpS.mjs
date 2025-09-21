@@ -60,10 +60,11 @@ async function getProjects(type) {
         href: project.acf.target_url
       }))
     );
-    console.log(serializedProjects);
+    if (!serializedProjects || serializedProjects.length == 0) return [];
     return serializedProjects;
   } catch (e) {
-    throw new Error("Failed to fetch projects: " + e);
+    console.log("Failed to fetch projects: " + e);
+    return [];
   }
 }
 async function getReviews() {
@@ -81,6 +82,7 @@ async function getReviews() {
     return serializedReviews;
   } catch (e) {
     console.log("Failed to fetch reviews: " + e);
+    return [];
   }
 }
 

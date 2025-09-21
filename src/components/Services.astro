@@ -16,7 +16,7 @@ const mockData = [
     image: web.src
   },
   {
-    name: "Artificial Intelligence",
+    name: "AI",
     description: "Bussiness automations powered by an artificial brain.",
     href: '/services/ai-integration',
     image: ai.src
@@ -37,16 +37,16 @@ const mockData = [
 ---
 
 <section class="rounded-tr-[200px] px-8 md:px-14 lg:px-40 xl:px-50 pb-20 pt-10 z-1 relative border-b-2 border-dashed border-gray-400/10"> 
-  <h2 class="text-3xl sm:text-7xl text-primary mb-2 text-center">What We Do</h2>
+  <!-- <h2 class="text-3xl sm:text-7xl text-primary mb-2 text-center">What We Do</h2> -->
   <!-- <p class="text-secondary text-sm sm:max-w-3/4 mb-12">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque temporibus perspiciatis animi a? Nulla quisquam voluptatum doloribus provident eius dignissimos!</p> -->
 
-  <div class="text-2xl md:text-4xl mt-20 flex font-extrabold gap-x-4 justify-center items-center">
-    <span class="text-zinc-100">Creative</span>
+  <div class="text-3xl md:text-7xl mt-20 sm:grid-cols-2 gap-x-4 text-center space-y-10 xl:flex flex-flow items-center justify-center">
+    <span class="text-primary mb-4 md:mb-0 block text-center">We make creative</span>
     
     <RotatingText
       client:only
       texts={['websites', 'AI solutions', 'designs', 'marketing', 'apps']}
-      mainClassName="px-2 md:px-4 background-theme overflow-hidden py-3 justify-center rounded-lg"
+      mainClassName="px-2 md:px-4 text-theme border-t border-b border-r border-[#00b4fb]/5 py-2 overflow-hidden justify-center rounded-tr-lg rounded-br-lg"
       staggerFrom={"last"}
       initial={{ y: "100%" }}
       animate={{ y: 0 }}

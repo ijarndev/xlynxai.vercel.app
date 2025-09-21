@@ -1,7 +1,7 @@
 import { e as createComponent, f as createAstro, m as maybeRenderHead, h as addAttribute, r as renderTemplate, l as renderComponent, n as renderScript } from '../chunks/astro/server_BWQvXihV.mjs';
 import 'clsx';
-import { a as $$Layout } from '../chunks/Layout_BYhv8hup.mjs';
-import { a as getRecentPosts } from '../chunks/wpapi_BARwLM4G.mjs';
+import { a as $$Layout } from '../chunks/Layout_DprA3Fpv.mjs';
+import { a as getRecentPosts } from '../chunks/wpapi_CSfvwGpS.mjs';
 export { renderers } from '../renderers.mjs';
 
 const $$Astro = createAstro();

@@ -149,31 +149,33 @@ const mockData = {
 >
   <section class="pt-20">
     <h2 class="text-4xl text-zinc-100 text-center font-semibold">The Problem</h2>
+    <p class="text-secondary text-center mt-5">Running a business means juggling many tasks. Without automation, you're losing precious time and opportunities.</p>
 
-    <div class="grid grid-cols-1 xl:grid-cols-2 mt-20 gap-20">
-      <div class="text-secondary text-lg">
-        <p>Manual management of calls, repetitive messages, scheduling appointments, and following up with customers can consume a significant amount of time that impacts business productivity</p>
-        <p class="mt-8">This lost time translates to missed sales opportunities, as customers expect quick responses—often within minutes—and slow follow-up can make them lose interest and seek competitors.</p>
-      
-        <div class="mt-10 font-medium text-xl flex items-center gap-x-10">
-          <Warning class="text-red-500" width={48} />
-          <span class="text-red-500">Time Lost = Money Lost</span>
-        </div>
-      </div>
-      
-      <div class="grid gap-10 sm:grid-cols-2 place-content-center">
-        <article class="border border-zinc-100/10 p-10 rounded-xl flex gap-y-5 flex-col items-center">
-          <Clock width={48} class="text-red-500" />
-          <p class="text-red-500 text-medium">Time Wasted</p>
-          <p class="text-secondary text-sm">Hours spent on repetitive tasks</p>
-        </article>
+    <div class="grid grid-cols-1 xl:grid-cols-4 mt-20 gap-20">
 
-          <article class="border border-zinc-100/10 p-10 rounded-xl flex gap-y-5 flex-col items-center">
-          <Money width={48} class="text-red-500" />
-          <p class="text-red-500 text-medium">Money Lost</p>
-          <p class="text-secondary text-sm">Missed opportunities and sales</p>
-        </article>
-      </div>
+      <article class="border border-zinc-100/10 p-10 rounded-xl flex gap-y-5 flex-col items-center">
+        <Clock width={48} class="text-red-500" />
+        <p class="text-red-500 text-medium">Time Wasted</p>
+        <p class="text-secondary text-sm">Hours spent on repetitive tasks</p>
+      </article>
+
+      <article class="border border-zinc-100/10 p-10 rounded-xl flex gap-y-5 flex-col items-center">
+        <Money width={48} class="text-red-500" />
+        <p class="text-red-500 text-medium">Money Lost</p>
+        <p class="text-secondary text-sm">Missed opportunities and sales</p>
+      </article>
+
+      <article class="border border-zinc-100/10 p-10 rounded-xl flex gap-y-5 flex-col items-center">
+        <Users width={48} class="text-red-500" />
+        <p class="text-red-500 text-medium">Staff Burnout</p>
+        <p class="text-secondary text-sm">Team overwhelmed with routine work</p>
+      </article>
+
+      <article class="border border-zinc-100/10 p-10 rounded-xl flex gap-y-5 flex-col items-center">
+        <ChatBubble width={48} class="text-red-500" />
+        <p class="text-red-500 text-medium">Poor Response Time</p>
+        <p class="text-secondary text-sm">Slow replies lead to lost clients</p>
+      </article>
     </div>
   </section>
 
@@ -193,10 +195,10 @@ const mockData = {
       }
     </div>
 
-    <div class="mt-10 px-4 py-10 bg-[#00B4FB]/10 rounded-xl">
+    <!-- <div class="mt-10 px-4 py-10 bg-[#00B4FB]/10 rounded-xl">
       <h3 class="text-center text-xl font-semibold text-zinc-100">Key Message</h3>
       <p class="mt-5 text-lg text-zinc-200 text-center">We don't replace receptionists or assistants—we optimize repetitive processes so they can focus on customers and high-value tasks.</p>
-    </div>
+    </div> -->
   </section>
 
   <section class="mt-30">

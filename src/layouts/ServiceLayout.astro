@@ -4,6 +4,7 @@ import Button from "../components/ui/Button.astro";
 import ArrowRight from "astro-heroicons/solid/ArrowRight.astro";
 import Layout from "./Layout.astro";
 import Squares from "@/components/Squares";
+import CalWrapper from "@/components/CalWrapper.astro";
 
 interface Props {
   title: string;
@@ -73,17 +74,16 @@ const rotatedHeroImgClasses = `${heroImage.rotated ? "xl:rotate-z-10 !max-h-[600
           <span class="inline-block">{subtitle}</span>
         </p>
 
-        <div
-          class="*:flex *:gap-x-2 mt-12"
-          data-cal-link="luis-roberto-leyva-galban-kze0qq/30min"
-          data-cal-namespace="30min"
-          data-cal-config='{"layout":"month_view"}'
-        >
-          <Button>
-            {ctaText}
-            <ArrowRight width={22} />
-          </Button>
-        </div>
+        <CalWrapper>
+          <div
+            class="*:flex *:gap-x-2 mt-12"
+          >
+            <Button>
+              {ctaText}
+              <ArrowRight width={22} />
+            </Button>
+          </div>
+        </CalWrapper>
       </div>
     </div>
   </section>

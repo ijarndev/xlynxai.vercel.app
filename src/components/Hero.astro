@@ -3,6 +3,7 @@ import Check from "astro-heroicons/solid/Check.astro";
 import Button from "./ui/Button.astro";
 import Anchor from "./ui/Anchor.astro";
 import BlurText from "./BlurText";
+import CalWrapper from "./CalWrapper.astro";
 ---
 
 <section
@@ -56,31 +57,27 @@ import BlurText from "./BlurText";
         class="md:*:w-auto *:w-full md:*:*:w-auto *:*:w-auto flex flex-wrap items-center gap-x-4"
       >
         <div class="*:text-nowrap *:w-full sm:*:w-auto relative mb-8 sm:mb-0">
-          <a
-            href="javascript:void(0)"
-            data-cal-link="luis-roberto-leyva-galban-kze0qq/30min"
-            data-cal-namespace="30min"
-            data-cal-config='{"layout":"month_view"}'
-            class="w-full"
-          >
-            <Button fullWidth>LAUNCH YOUR WEBSITE</Button>
-          </a>
+          <CalWrapper>
+            <a
+              href="javascript:void(0)"
+              class="w-full"
+            >
+              <Button fullWidth>LAUNCH YOUR WEBSITE</Button>
+            </a>
+          </CalWrapper>
         </div>
 
         <div class="*:text-nowrap">
-          <div
-            data-cal-link="luis-roberto-leyva-galban-kze0qq/30min"
-            data-cal-namespace="30min"
-            data-cal-config='{"layout":"month_view"}'
-            class="w-full text-center"
-          >
-            <button class="px-5 py-3 border box-border border-zinc-100/20 cursor-pointer text-zinc-100 rounded-full"> AUTOMATE YOUR BUSINESS </button>
-          </div>
+          <CalWrapper>
+            <div
+              class="w-full text-center"
+            >
+              <button class="px-5 py-3 border box-border border-zinc-100/20 cursor-pointer text-zinc-100 rounded-full"> AUTOMATE YOUR BUSINESS </button>
+            </div>
+          </CalWrapper>
         </div>
       </div>
     </div>
-
-    <div id="particles1" class="hidden lg:block xl:min-w-1/6"></div>
   </div>
 
   <div class="flex items-start justify-start flex-col sm:flex-row gap-x-20">
@@ -93,6 +90,5 @@ import BlurText from "./BlurText";
 </section>
 
 <script is:inline>
-  particlesJS.load("particles1", PARTICLES_CONFIG_URL);
   particlesJS.load("particles2", PARTICLES_CONFIG_URL);
 </script>

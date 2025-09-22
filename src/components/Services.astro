@@ -40,13 +40,13 @@ const mockData = [
   <!-- <h2 class="text-3xl sm:text-7xl text-primary mb-2 text-center">What We Do</h2> -->
   <!-- <p class="text-secondary text-sm sm:max-w-3/4 mb-12">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque temporibus perspiciatis animi a? Nulla quisquam voluptatum doloribus provident eius dignissimos!</p> -->
 
-  <div class="text-3xl md:text-7xl mt-20 sm:grid-cols-2 gap-x-4 text-center space-y-10 xl:flex flex-flow items-center justify-center">
-    <span class="text-primary mb-4 md:mb-0 block text-center">We make creative</span>
+  <div class="text-3xl sm:text-4xl md:text-7xl mt-20 sm:grid-cols-2 gap-x-4 text-left space-y-10 xl:flex flex-flow items-center justify-start">
+    <span class="text-primary mb-4 md:mb-0 block">We make creative</span>
     
     <RotatingText
       client:only
-      texts={['websites', 'AI solutions', 'designs', 'marketing', 'apps']}
-      mainClassName="px-2 md:px-4 text-theme border-t border-b border-r border-[#00b4fb]/5 py-2 overflow-hidden justify-center rounded-tr-lg rounded-br-lg"
+      texts={['websites', 'AI', 'designs', 'software', 'apps']}
+      mainClassName="px-2 md:px-4 text-theme border-t border-b border-r sm:border-[#00b4fb]/5 py-2 overflow-hidden justify-center rounded-tr-lg rounded-br-lg"
       staggerFrom={"last"}
       initial={{ y: "100%" }}
       animate={{ y: 0 }}

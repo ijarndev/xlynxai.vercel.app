@@ -25,6 +25,7 @@ import whatsappBot from '../../assets/img/whatsapp-bot.png'
 import GridListItem from "../../components/GridListItem.astro";
 import type { Icon } from "astro/runtime/client/dev-toolbar/ui-library/icons.js";
 import ComparisonCard from "../../components/services/ComparisonCard.jsx";
+import CalWrapper from "@/components/CalWrapper.astro";
 
 const mockData = {
   solutions: [
@@ -236,14 +237,13 @@ const mockData = {
       <p class="mt-5 sm:max-w-1/2 text-center text-secondary">Free setup for the first month: You try without risk. With demonstrable results, decide if you continue with a monthly subscription, or cancel without commitment.</p>
 
       <div class="mt-10">
-        <a
-          href="javascript:void(0)"
-					data-cal-link="luis-roberto-leyva-galban-kze0qq/30min"
-					data-cal-namespace="30min"
-					data-cal-config='{"layout":"month_view"}'
-        >
-          <Button>Start Free Trial</Button>
-        </a>
+        <CalWrapper>
+          <a
+            href="javascript:void(0)"
+          >
+            <Button>Start Free Trial</Button>
+          </a>
+        </CalWrapper>
       </div>
     </div>
 </ServiceLayout>

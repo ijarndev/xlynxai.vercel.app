@@ -12,6 +12,7 @@ import ValueTestimonial from "./about/ValueTestimonial.astro"
 import randy from '../assets/img/randy.jpg'
 import raven from '../assets/img/raven.jpg'
 import lalo from '../assets/img/lalo.jpeg'
+import CalWrapper from "./CalWrapper.astro"
 
 const members = [
   {
@@ -127,14 +128,13 @@ const members = [
   <div class="mt-24">
     <h3 class="text-zinc-100 mb-10 text-center text-2xl">Your business' future starts today, let us show you how.</h3>
     <div class="text-center">
-      <a
-        href="javascript:void(0)"
-        data-cal-link="luis-roberto-leyva-galban-kze0qq/30min"
-        data-cal-namespace="30min"
-        data-cal-config='{"layout":"month_view"}'
-      >
-        <Button>SEE HOW WE CAN HELP</Button>
-      </a>
+      <CalWrapper>
+        <a
+          href="javascript:void(0)"
+        >
+          <Button>SEE HOW WE CAN HELP</Button>
+        </a>
+      </CalWrapper>
     </div>
   </div>
 </section>

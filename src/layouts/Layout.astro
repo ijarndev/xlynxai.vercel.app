@@ -6,6 +6,7 @@ import Button from "../components/ui/Button.astro";
 import "../styles/global.css";
 import XMark from "astro-heroicons/outline/XMark.astro";
 import Analytics from '@vercel/analytics/astro'
+import CalWrapper from "@/components/CalWrapper.astro";
 
 interface Props {
   title: string
@@ -47,18 +48,18 @@ const { title, description } = Astro.props
 
 		<Analytics />
 
-		<!-- Cal element-click embed code begins -->
+<!-- Cal element-click embed code begins -->
 <script type="text/javascript">
   (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-Cal("init", "30min", {origin:"https://app.cal.com"});
+Cal("init", "xlynxai-webchat", {origin:"https://app.cal.com"});
 
   
   // Important: Please add the following attributes to the element that should trigger the calendar to open upon clicking.
-  // `data-cal-link="luis-roberto-leyva-galban-kze0qq/30min"`
-  // data-cal-namespace="30min"
-  // `data-cal-config='{"layout":"month_view"}'`
+  // data-cal-link="xlynxai/xlynxai-webchat"
+  // data-cal-namespace="xlynxai-webchat"
+  // data-cal-config='{"layout":"month_view","theme":"dark"}'
 
-  Cal.ns["30min"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+  Cal.ns["xlynxai-webchat"]("ui", {"theme":"dark","cssVarsPerTheme":{"light":{"cal-brand":"#000000"}},"hideEventTypeDetails":false,"layout":"month_view"});
   </script>
   <!-- Cal element-click embed code ends -->
 
@@ -129,18 +130,18 @@ Cal("init", "30min", {origin:"https://app.cal.com"});
         <li><Anchor href="/services/ai-integration">AI Integration</Anchor></li>
         <li><Anchor href="/about">About Us</Anchor></li>
         <li><Anchor href="/blog">Blog</Anchor></li>
+        <li><Anchor href="/contact">Contact</Anchor></li>
       </ul>
 
       <div class="*:w-full *:*:w-full">
 				<div class="*:text-nowrap *:w-full sm:*:w-auto relative mb-8 sm:mb-0">
-					<a
-						href="javascript:void(0)"
-						data-cal-link="luis-roberto-leyva-galban-kze0qq/30min"
-						data-cal-namespace="30min"
-						data-cal-config='{"layout":"month_view"}'
-					>
-						<Button>SCHEDULE A MEETING</Button>
-					</a>
+					<CalWrapper>
+            <a
+              href="javascript:void(0)"
+            >
+              <Button>SCHEDULE A MEETING</Button>
+            </a>
+          </CalWrapper>
       </div>
     </aside>
 

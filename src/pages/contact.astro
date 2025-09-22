@@ -1,0 +1,84 @@
+---
+import '@/styles/global.css'
+import Layout from "@/layouts/Layout.astro"
+
+import Phone from 'astro-heroicons/outline/Phone.astro'
+import Envelope from 'astro-heroicons/outline/Envelope.astro'
+import MapPin from 'astro-heroicons/outline/MapPin.astro'
+
+const contactInfo = [
+  {
+    icon: Phone,
+    title: "Phone",
+    details: ["+1 (702) 582-1515"],
+    description: "Mon-Fri 9AM-6PM",
+  },
+  {
+    icon: Envelope,
+    title: "Email",
+    details: ["contact@xlynxai.com"],
+    description: "We'll respond within 24 hours",
+  },
+  {
+    icon: MapPin,
+    title: "Location",
+    details: ["Las Vegas, Nevada"],
+  },
+  {
+    icon: "clock",
+    title: "Business Hours",
+    details: ["Monday - Friday: 9:00 AM - 6:00 PM", "Saturday: 10:00 AM - 4:00 PM", "Sunday: Closed"],
+    description: "Eastern Standard Time",
+  },
+]
+---
+
+<Layout
+  title="Contact Us | XLynX AI"
+  description="Get in touch with XLynX AI for inquiries, support, or to discuss your AI project needs. We're here to help!"
+>
+<section class="pt-40 px-4">
+  <div class="max-w-6xl mx-auto">
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-zinc-100 mb-4">Get in Touch</h2>
+      <p class="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
+        Ready to start your next project? We'd love to hear from you. Reach out through any of the channels below.
+      </p>
+    </div>
+
+    <!-- Contact Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {contactInfo.map((item) => (
+        <div class="p-8 bg-zinc-100 border-border rounded-xl hover:border-primary/50 transition-colors duration-300">
+          <div class="flex items-start gap-4">
+            <!-- Icon -->
+            <div class="flex-shrink-0 p-3 background-theme rounded-lg text-primary">
+              <item.icon class="w-6 h-6" />
+            </div>
+
+            <!-- Content -->
+            <div class="flex-1">
+              <h3 class="text-xl font-semibold text-card-foreground mb-3">{item.title}</h3>
+
+              <!-- Details -->
+              <div class="space-y-1 mb-3">
+                {item.details.map((detail) => (
+                  <p class="text-card-foreground font-medium">
+                    {detail}
+                  </p>
+                ))}
+              </div>
+
+              <!-- Description -->
+              <p class="text-muted-foreground text-sm">{item.description}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+</Layout>

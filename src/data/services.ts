@@ -23,7 +23,7 @@ import n8n from '../assets/svg/n8n.svg'
 import CurrencyDollar from 'astro-heroicons/outline/CurrencyDollar.astro'
 import Clock from 'astro-heroicons/outline/Clock.astro'
 import Sparkles from 'astro-heroicons/outline/Sparkles.astro'
-import aiHeroImage from '../assets/svg/ai-agent.svg'
+import aiHeroImage from '../assets/img/services/ai-hero.png'
 
 export const services = [
   {

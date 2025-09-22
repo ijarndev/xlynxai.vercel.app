@@ -3,6 +3,7 @@ import Hero from '../components/Hero.astro';
 import Services from '../components/Services.astro';
 import Testimonials from '../components/Testimonials.astro';
 import Layout from '../layouts/Layout.astro';
+import { ServicesShowcase } from '../components/ServicesShowcase';
 ---
 
 <Layout
@@ -14,6 +15,12 @@ import Layout from '../layouts/Layout.astro';
 		<Services />
 	</div>
 	
+	<div class="pb-32">
+		<ServicesShowcase
+			client:only
+		/>
+	</div>
+
 	<div class="pb-32">
 		<Testimonials />
 	</div>

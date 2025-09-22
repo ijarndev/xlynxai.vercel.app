@@ -43,7 +43,7 @@ const rotatedHeroImgClasses = `${heroImage.rotated ? "xl:rotate-z-10 !max-h-[600
     class="relative px-8 md:px-14 lg:px-40 xl:px-50 md:pt-50 lg:pt-40 pt-28 pb-20 bg-gradient-to-br from-[#151515] via-[#151515]/50 to-[#00B4FB]/10"
   >
     <!-- hero -->
-    <div class="absolute top-0 left-0 w-full h-full z-0">
+    <div class="absolute top-0 left-0 w-full h-full z-0 opacity-10">
       <Squares
         client:only
         speed={0.1}
@@ -87,7 +87,7 @@ const rotatedHeroImgClasses = `${heroImage.rotated ? "xl:rotate-z-10 !max-h-[600
       </div>
         
       <div class="grid place-content-center">
-        <img class="z-1" src={heroImage.src}>
+        <img class="z-1 max-w-[300px] md:max-w-[600px] aspect-square" src={heroImage.src}>
       </div>
     </div>
   </section>

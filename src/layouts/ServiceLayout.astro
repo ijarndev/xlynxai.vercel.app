@@ -56,15 +56,6 @@ const rotatedHeroImgClasses = `${heroImage.rotated ? "xl:rotate-z-10 !max-h-[600
 
     <div class="grid grid-cols-1 items-center xl:grid-cols-2 gap-10">
       <div class="z-1">
-        {
-          valueExpression ? (
-            <div class="animate-pulse text-sm border-1 border-[#00B4FB] md:text-nowrap overflow-hidden py-2 px-4 mb-6 inline-grid grid-cols-[1fr_auto] items-center gap-x-4 rounded-full bg-[#00B4FB]/10 text-white">
-              <div class="size-3 rounded-full bg-[#00B4FB]" />
-              <span set:html={valueExpression} />
-            </div>
-          ) : null
-        }
-
         <h1
           class="text-zinc-100 text-3xl md:text-5xl xl:text-7xl font-semibold"
         >
@@ -74,9 +65,18 @@ const rotatedHeroImgClasses = `${heroImage.rotated ? "xl:rotate-z-10 !max-h-[600
           <span class="inline-block">{subtitle}</span>
         </p>
 
+        {
+          valueExpression ? (
+            <div class="animate-pulse mt-4 text-sm border-1 border-[#00B4FB] md:text-nowrap overflow-hidden py-2 px-4 mb-6 inline-grid grid-cols-[1fr_auto] items-center gap-x-4 rounded-full bg-[#00B4FB]/10 text-white">
+              <div class="size-3 rounded-full bg-[#00B4FB]" />
+              <span set:html={valueExpression} />
+            </div>
+          ) : null
+        }
+
         <CalWrapper>
           <div
-            class="*:flex *:gap-x-2 mt-12"
+            class="*:flex *:gap-x-2 mt-10"
           >
             <Button>
               {ctaText}

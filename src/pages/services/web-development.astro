@@ -1,5 +1,6 @@
 ---
-import webDevelopment from "../../assets/svg/website-building.svg";
+import webDevelopment from "@/assets/img/services/web-hero.png";
+
 import GridListItem from "../../components/GridListItem.astro";
 import ServiceLayout from "../../layouts/ServiceLayout.astro";
 import BenefitCard from "../../components/services/BenefitCard.astro";
@@ -17,9 +18,6 @@ import Cube from "astro-heroicons/outline/CubeTransparent.astro";
 import PlanCard from "../../components/services/PlanCard.astro";
 
 import { getProjects } from '../../lib/wpapi'
-import type { Project } from '../../types'
-import ProjectCard from "../../components/services/ProjectCard.astro";
-import Button from "../../components/ui/Button.astro";
 
 const mockData = {
   serviceIncludes: [

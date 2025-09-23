@@ -5,6 +5,7 @@ import GridListItem from "../../components/GridListItem.astro";
 import ServiceLayout from "../../layouts/ServiceLayout.astro";
 import BenefitCard from "../../components/services/BenefitCard.astro";
 import WorkFlowStep from "../../components/services/WorkFlowStep.astro";
+import Steps from "@/components/services/Steps";
 
 import Briefcase from "astro-heroicons/outline/Briefcase.astro";
 import Envelope from "astro-heroicons/outline/Envelope.astro";
@@ -182,35 +183,7 @@ const portfolio = await getProjects('web-development')
         <p class="mt-4 text-lg text-zinc-300">Simple steps to get your website live</p>
       </div>
 
-      <div class="mt-30 grid gap-10 md:grid-cols-4 md:gap-0 realtive">
-        <div class="w-full h-2 background-theme absolute left-0 -top-1/2 translate-y-1/2 z-2"></div>
-
-        <div>
-          <WorkFlowStep
-            number={1}
-            title="Free Consultation"
-            description="We analyze your needs and discuss your vision"
-          />
-        </div>
-
-        <WorkFlowStep
-          number={2}
-          title="Design & Customization"
-          description="We adapt the website to your brand and style"
-        />
-
-        <WorkFlowStep
-          number={3}
-          title="Delivery & Training"
-          description="We teach you how to use it effectively"
-        />
-
-        <WorkFlowStep
-          number={4}
-          title="Initial Support"
-          description="First 30 days for basic adjustments"
-        />
-      </div>
+      <Steps client:only />
     </div>
 
     <!-- <div class="mt-30">

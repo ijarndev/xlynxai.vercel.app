@@ -15,13 +15,16 @@ import Palette from "@heroicons/react/24/outline/SwatchIcon";
 import dashboard from "@/assets/img/showcase/dashboard.avif";
 import ecommerce from "@/assets/img/showcase/ecommerce.avif";
 import landing from "@/assets/img/showcase/landing.avif";
-import chatbot from "@/assets/img/showcase/chatbot.jpg";
+import portfolio from "@/assets/img/showcase/portfolio.avif";
+import chatbot from "@/assets/img/showcase/chatbot.png";
 import integration from "@/assets/img/showcase/integration.jpg";
 import automation from "@/assets/img/showcase/automation.jpg";
 
 import { useEffect, useState } from "react";
 import SpotlightCard from "./SpotlightCard";
 import { Button } from "@/components/ui/button";
+import { CardDescription } from "./ui/card";
+import Photo from "@heroicons/react/24/outline/PhotoIcon";
 
 interface ServiceSlide {
   id: string;
@@ -62,6 +65,14 @@ const services = {
         image: landing.src,
         href: "services/web-development",
       },
+      {
+        id: "portfolios",
+        title: "Portfolio Websites",
+        description: "Showcase your work with stunning portfolio websites designed to highlight your achievements and professional expertise.",
+        icon: <Photo className="w-8 h-8" />,
+        image: portfolio.src,
+        href: "services/web-development"
+      }
     ],
   },
   "ai-automation": {
@@ -212,13 +223,13 @@ export function ServicesShowcase() {
                             <img
                               src={slide.image || "/placeholder.svg"}
                               alt={slide.title}
-                              className="w-full h-full object-cover rounded-xl"
+                              className="h-full w-auto object-cover rounded-xl"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                           </div>
 
                           {/* Content */}
-                          <div className="mt-3 md:mt-auto md:p-8 flex flex-col justify-center">
+                          <div className="mt-3 md:mt-0 md:px-8 flex flex-col justify-center">
                             <div className="flex items-center gap-4 mb-6">
                               <div className="p-3 bg-primary/10 rounded-lg text-primary">
                                 {slide.icon}
@@ -231,7 +242,7 @@ export function ServicesShowcase() {
                               {slide.description}
                             </p>
                             <a href={slide.href} className="!cursor-pointer *:w-full md:w-auto">
-                              <Button className="self-start bg-primary hover:bg-primary/90 text-primary-foreground">
+                              <Button className="self-start bg-zinc-100 hover:bg-zinc-300 cursor-pointer text-zinc-900">
                                 Learn More
                               </Button>
                             </a>

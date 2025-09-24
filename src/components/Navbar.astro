@@ -8,12 +8,12 @@ import CalWrapper from "./CalWrapper.astro"
 --- 
 <div class="fixed top-6 left-0 px-8 pd:px-14 flex justify-center lg:px-40 xl:px-50 w-full z-2">
   <header class="rounded-full flex-1 bg-zinc-100/5 backdrop-blur-sm shadow-md justify-between px-4 flex items-center py-2 z-2">
-    <a href="/" class="text-primary font-semibold text-4xl">
+    <a href="/" class="text-primary w-1/4 font-semibold text-4xl">
       <img src={lynx.src} alt="lynx_logo" class="w-28 sm:w-32">
     </a>
 
-    <nav class="2xl:flex items-center hidden">
-      <ul class="text-secondary *:flex *:items-center flex gap-x-8 *:hover:text-zinc-100 z-1 relative">
+    <nav class="2xl:flex items-center hidden mx-auto">
+      <ul class="*:text-nowrap text-secondary *:flex *:items-center flex gap-x-8 *:hover:text-zinc-100 z-1 relative">
         <li><Anchor href="/">Home</Anchor></li>
         <li><Anchor href="/services/web-development">Web Development</Anchor></li>
         <li><Anchor href="/services/ai-integration">AI Integration</Anchor></li>
@@ -23,7 +23,7 @@ import CalWrapper from "./CalWrapper.astro"
       </ul>
     </nav>
 
-    <div class="*:text-nowrap *:w-full sm:*:w-auto relative mb-8 sm:mb-0 hidden">
+    <div class="*:text-nowrap justify-end w-1/4 *:w-full sm:*:w-auto relative mb-8 sm:mb-0 hidden 2xl:flex">
       <CalWrapper>
         <a
           href="javascript:void(0)"

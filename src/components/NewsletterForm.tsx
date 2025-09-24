@@ -3,7 +3,6 @@ import { actions } from "astro:actions";
 import { Toaster } from "./ui/sonner";
 import { toast } from "sonner";
 
-
 export function NewsletterForm() {
   const [isLoading, setIsLoading] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);

@@ -2,14 +2,7 @@ import { defineAction } from 'astro:actions';
 import { z } from 'astro:schema';
 import { Resend } from 'resend'
 
-const resend = new Resend('re_MfmsaiYu_JR5i87RjPhnEJnzeTqXunFyY');
-
-/*
-import { Resend } from 'resend';
-
-
-
-*/
+const resend = new Resend('re_MfmsaiYu_JR5i87RjPhnEJnzeTqXunFyY'); // TODO: renew API key and move to env
 
 export const server = {
   subscribeToNewsletter: defineAction({

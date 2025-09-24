@@ -1,53 +1,40 @@
 ---
 import Anchor from "./ui/Anchor.astro"
-import lynx from '../assets/img/lynx.png'
-import lynxText from '../assets/img/lynx-text.webp'
+import lynxText from '../assets/img/v_lynx.png'
+import lynx from '@/assets/img/lynx-text.webp'
 import Bars3 from 'astro-heroicons/outline/Bars3.astro'
 import Button from "./ui/Button.astro"
 import CalWrapper from "./CalWrapper.astro"
 --- 
+<div class="fixed top-6 left-0 px-8 pd:px-14 flex justify-center lg:px-40 xl:px-50 w-full z-2">
+  <header class="rounded-full flex-1 bg-zinc-100/5 backdrop-blur-sm shadow-md justify-between px-4 flex items-center py-2 z-2">
+    <a href="/" class="text-primary font-semibold text-4xl">
+      <img src={lynx.src} alt="lynx_logo" class="w-28 sm:w-32">
+    </a>
 
-<style>
-  .navbar-bg-scroll {
-    animation-name: navbarBg;
-    animation-duration: 1s;
-    animation-timeline: scroll(100, 100);
-  }
-  @keyframes navbarBg {
-    from {
-      background: transparent;
-    }
-    to {
-      background: white;
-    }
-  }
-</style>
-<header class="fixed w-full top-0 background-default px-8 md:px-14 lg:px-40 xl:px-50 flex justify-between items-center py-2 z-2">
-  <a href="/" class="text-primary font-semibold text-4xl">
-    <img src={lynxText.src} alt="lynx_logo" class="w-28 sm:w-48">
-  </a>
+    <nav class="2xl:flex items-center hidden">
+      <ul class="text-secondary *:flex *:items-center flex gap-x-8 *:hover:text-zinc-100 z-1 relative">
+        <li><Anchor href="/">Home</Anchor></li>
+        <li><Anchor href="/services/web-development">Web Development</Anchor></li>
+        <li><Anchor href="/services/ai-integration">AI Integration</Anchor></li>
+        <li><Anchor href="/about">About us</Anchor></li>
+        <li><Anchor href="/blog">Blog</Anchor></li>
+        <li><Anchor href="/contact">Contact</Anchor></li>
+      </ul>
+    </nav>
 
-  <nav class="2xl:flex items-center hidden">
-    <ul class="text-secondary *:flex *:items-center flex gap-x-8 *:hover:text-zinc-100 z-1 relative">
-      <li><Anchor href="/">Home</Anchor></li>
-      <li><Anchor href="/services/web-development">Web Development</Anchor></li>
-      <li><Anchor href="/services/ai-integration">AI Integration</Anchor></li>
-      <li><Anchor href="/about">About us</Anchor></li>
-      <li><Anchor href="/blog">Blog</Anchor></li>
-      <li><Anchor href="/contact">Contact</Anchor></li>
+    <div class="*:text-nowrap *:w-full sm:*:w-auto relative mb-8 sm:mb-0 hidden">
+      <CalWrapper>
+        <a
+          href="javascript:void(0)"
+        >
+          <Button>SCHEDULE A MEETING</Button>
+        </a>
+      </CalWrapper>
+    </div>
 
-      <div class="*:text-nowrap *:w-full sm:*:w-auto relative mb-8 sm:mb-0">
-        <CalWrapper>
-          <a
-            href="javascript:void(0)"
-          >
-            <Button>SCHEDULE A MEETING</Button>
-          </a>
-        </CalWrapper>
-    </ul>
-  </nav>
-
-  <button class="cursor-pointer 2xl:hidden menu-show-btn">
-    <Bars3 width={32} color='#fff' />
-  </button>
-</header>
+    <button class="cursor-pointer 2xl:hidden menu-show-btn">
+      <Bars3 width={32} color='#fff' />
+    </button>
+  </header> 
+</div>

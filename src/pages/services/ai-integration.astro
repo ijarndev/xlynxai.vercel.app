@@ -29,22 +29,22 @@ const mockData = {
     {
       icon: Calendar,
       name: "Auto Scheduling",
-      description: "Books appointments automatically"
+      description: "No more back-and-forth. AI books appointments instantly and keeps your calendar full."
     },
     {
       icon: ChatBubble,
       name: "Smart Reminders",
-      description: "Send confirmations and follow-ups"
+      description: "Automatic confirmations and follow-ups so you never lose a client to forgetfulness."
     },
     {
       icon: Lifebuoy,
       name: "24/7 Support",
-      description: "Answers FAQs via WhatsApp, SMS, Email, calls"
+      description: "AI answers FAQs and handles customer inquiries via SMS, email or phone —anytime, day or night."
     },
     {
       icon: Users,
       name: "Contact Management",
-      description: "Filters and organizes leads before reaching staff"
+      description: "AI sorts, filters and qualifies leads so your team only talks to serious prospects."
     }
   ],
   benefits: [
@@ -104,42 +104,43 @@ const mockData = {
     {
       icon: Building,
       name: "Clinics & Hospitals",
-      description: "Automatic scheduling and reminders. Fewer no-shows → more billable consultations."
+      description: "Auto scheduling & reminders. Fewer no-shows → more revenue. Faster response → higher satisfaction & loyalty."
     },
     {
       icon: Scale,
-      name: "Lawyers and Notaries",
-      description: "Automated confirmations and follow-ups. More billable hours, fewer interruptions."
+      name: "Lawyers & Notaries",
+      description: "Automated confirmations & follow-ups. Clients stay informed & loyal. Zero interruptions → full focus on high-value cases."
     },
     {
       icon: Truck,
       name: "Auto Dealerships",
-      description: "Test drive and maintenance appointments. Post-sale follow-up → more closed sales."
+      description: "Instant test-drive bookings → more prospects through the door. Automated service reminders. Post-sale follow ups & referrals."
     },
     {
       icon: Briefcase,
       name: "Consultancies & Financial Firms",
-      description: "VIP client meetings scheduled seamlessly. Professionalism = investment trust."
+      description: "Seamless VIP scheduling. Automated 24/7 updates → trust & retention. Stronger client relationships = bigger deals."
     },
     {
       icon: FaceSmile,
       name: "Dental & Aesthetic Clinics",
-      description: "Smart reminders → fewer cancellations. Higher monthly billing."
+      description: "Smart reminders → fewer cancellations. More appointments → higher monthly revenue. Proactive follow-ups → clients return more often."
     },
     {
       icon: Sun,
-      name: "Luxury Hotels & Resorts",
-      description: "Confirmed reservations + automated upselling. Premium service without more staff."
+      name: "Real Estate Agencies",
+      description: "Instant lead capture & replies → no opportunities lost. Automated property showings. Ongoing nurturing → more closing and referrals."
     }
   ]
 }
 ---
 
 <ServiceLayout
-  title="Automate Your Business With AI"
-  subtitle="You'll have a system that works 24/7 for you and your team for less than 2 days of an employee costs"
+  title="Put AI to Work — nad Let Your Business Run Itself"
+  subtitle="AI works better, faster and cheaper than any employee — and it never takes a break."
   ctaText="Test It Now for Free"
   ctaHref=""
+  valueExpression="AI isn't optional, it's inevitable. Early adopters win big — be late and get left behind."
   heroImage={{
     src: heroImage.src,
     rotated: true
@@ -147,39 +148,39 @@ const mockData = {
 >
   <section class="pt-20">
     <h2 class="text-4xl text-zinc-100 text-center font-semibold">The Problem</h2>
-    <p class="text-secondary text-center mt-5">Running a business means juggling many tasks. Without automation, you're losing precious time and opportunities.</p>
+    <p class="text-secondary text-center mt-5">Running a business means juggling many tasks. Without automation, you're losing energy, time, money and customers every single day.</p>
 
     <div class="grid grid-cols-1 xl:grid-cols-4 mt-20 gap-20">
 
       <article class="border border-zinc-100/10 p-10 rounded-xl flex gap-y-5 flex-col items-center">
         <Clock width={48} class="text-red-500" />
         <p class="text-red-500 text-medium">Time Wasted</p>
-        <p class="text-secondary text-sm">Hours spent on repetitive tasks</p>
+        <p class="text-secondary text-sm">Countless hours lost on repetitive low-value tasks that AI could handle instantly.</p>
       </article>
 
       <article class="border border-zinc-100/10 p-10 rounded-xl flex gap-y-5 flex-col items-center">
         <Money width={48} class="text-red-500" />
         <p class="text-red-500 text-medium">Money Lost</p>
-        <p class="text-secondary text-sm">Missed opportunities and sales</p>
+        <p class="text-secondary text-sm">Missed leads and sales because your system can't keep up.</p>
       </article>
 
       <article class="border border-zinc-100/10 p-10 rounded-xl flex gap-y-5 flex-col items-center">
         <Users width={48} class="text-red-500" />
         <p class="text-red-500 text-medium">Staff Burnout</p>
-        <p class="text-secondary text-sm">Team overwhelmed with routine work</p>
+        <p class="text-secondary text-sm">Employees overwhelmed by routine work instead of focusing on growth-driving activities.</p>
       </article>
 
       <article class="border border-zinc-100/10 p-10 rounded-xl flex gap-y-5 flex-col items-center">
         <ChatBubble width={48} class="text-red-500" />
-        <p class="text-red-500 text-medium">Poor Response Time</p>
-        <p class="text-secondary text-sm">Slow replies lead to lost clients</p>
+        <p class="text-red-500 text-medium">Slow Response = Lost Clients</p>
+        <p class="text-secondary text-sm">Delayed replies make prospects walk away to competitors who move faster.</p>
       </article>
     </div>
   </section>
 
   <section class="mt-30">
     <h2 class="text-4xl text-zinc-100 text-center font-semibold">Our Solution</h2>
-    <p class="text-secondary text-center">A digital copilot that works alongside your team</p>
+    <p class="text-secondary text-center">Running a business today means juggling endless tasks. Without automation, you're losing energy, time, money and customers every single day.</p>
   
     <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-10 xl:gap-20 mt-10">
       {
@@ -200,7 +201,7 @@ const mockData = {
   </section>
 
   <section class="mt-30" id="pricecomp">
-    <h2 class="text-4xl text-zinc-100 text-center font-semibold">The Central Benefit: <span class="text-theme">Time</span></h2>
+    <h2 class="text-4xl text-zinc-100 text-center font-semibold">Strategic Benefits of <span class="text-theme">AI</span></h2>
 
     <BenefitsComparison
       client:only
@@ -224,7 +225,7 @@ const mockData = {
  
   </section>
 
-    <div class="py-20 flex flex-col items-center px-4 sm:px-6 lg:px-8 bg-card bg-zinc-950 mt-30 rounded-xl">
+    <div class="py-20 flex flex-col items-center px-4 sm:px-6 lg:px-8 bg-zinc-950 mt-30 rounded-xl">
       <div class="text-lg px-6 py-3 inline-flex rounded-xl items-center text-zinc-100 border border-zinc-100/10">
         <Shield width={32} class="mr-2" />
         <span>Try Free 30 Days</span>

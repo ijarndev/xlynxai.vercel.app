@@ -19,26 +19,26 @@ export default function Steps () {
           <StepItem
             number={1}
             title="Free Consultation"
-            description="We analyze your needs and discuss your vision"
+            description="We review your goals and needs"
           />
         </div>
 
         <StepItem
           number={2}
           title="Design & Customization"
-          description="We adapt the website to your brand and style"
+          description="Your site, tailored to your brand and style"
         />
 
         <StepItem
           number={3}
           title="Delivery & Training"
-          description="We teach you how to use it effectively"
+          description="We hand it over and show you how"
         />
 
         <StepItem
           number={4}
           title="Initial Support"
-          description="First 30 days for basic adjustments"
+          description="30 days of adjustments included"
         />
       </div>
   )

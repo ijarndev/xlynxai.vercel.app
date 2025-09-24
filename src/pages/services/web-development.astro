@@ -19,55 +19,61 @@ import Cube from "astro-heroicons/outline/CubeTransparent.astro";
 import PlanCard from "../../components/services/PlanCard.astro";
 
 import { getProjects } from '../../lib/wpapi'
+import { Description } from "@radix-ui/react-alert-dialog";
 
 const mockData = {
   serviceIncludes: [
     {
       icon: Briefcase,
-      text: "Professional Website (WordPress or similar)",
+      text: "Professional Website Build",
+      description: "Launch-ready, custom-built site — no cookie-cutter templates."
     },
     {
       icon: PencilSquare,
-      text: "Reponsive Design",
+      text: "Fully Responsive Design",
+      description: "Looks great on desktop, tablet and mobile so you win trust anywhere."
     },
     {
       icon: Envelope,
-      text: "Professional Email",
+      text: "Professional Email Setup",
+      description: "Custom domain email (you@yourbusiness.com) — because nothing kilss credibility like Gmail."
     },
     {
       icon: MagnifyingGlass,
       text: "Basic SEO Optimization",
+      description: "Built-in visibility so Google can actually find you (and so can your customers)."
     },
     {
       icon: Phone,
-      text: "Direct Integration of Any Contact Method",
+      text: "Direct Contact Integrations",
+      description: "Instant connection via forms, chat, call buttons, or any channel your customers use."
     },
     {
       icon: Shield,
-      text: "Secure and fast hosting",
+      text: "Secure & Fast Hosting",
+      description: "Quick load times, always online and strong data protection."
     },
   ],
   benefits: [
     {
       icon: Shield,
       title: "Inmediate Trust",
-      description: "Your clients see a serious business.",
+      description: "Look like the real deal rom the first click. No second-guesses if you're legit.",
     },
     {
       icon: Users,
       title: "More Customers",
-      description: "Your website is an open showcase 24/7.",
+      description: "Your site works 24/7 as your best salesperson — even while you sleep.",
     },
     {
       icon: Clock,
       title: "Time Saving",
-      description:
-        "Your customers find information about your business without a call.",
+      description: "Stop wasting hours on repetitive calls. Customers get the answers they need instantly.",
     },
     {
       icon: Cube,
       title: "Your Brand, Your Style",
-      description: "Customized and unique designs.",
+      description: "Custom design that matches your business — not a cookie cutter-template.",
     },
   ],
   plans: [
@@ -119,23 +125,23 @@ const portfolio = await getProjects('web-development')
 ---
 
 <ServiceLayout
-  title="Your Professional Website Ready in a Few Days"
-  subtitle="Modern design, responsive to any device and thought so your business gains trust since the very first click"
-  ctaText="I Want My Free Quote"
+  title="Get Your Profefessional Website Live in Just Days"
+  subtitle="Modern, fully responsive design. Built to earn trust from the first click and position your brand as the obvious choice."
+  ctaText="Schedule Your Free Consultation"
   ctaHref=""
   heroImage={{
     src: webDevelopment.src,
     rotated: false
   }}
-  valueExpression="Prices start at just <strong>$199</strong> and your website can be live in just a few days"
+  valueExpression="Starting at just <strong>$199</strong> — get online fast and start winning customers."
 >
   <section class="py-20">
-    <h2 class="text-zinc-100 text-5xl">What Does it Include?</h2>
+    <h2 class="text-zinc-100 text-5xl">What's Included in YOur Website Package:</h2>
 
-    <div class="mt-10 grid grid-cols-2 gap-10 pt-10">
+    <div class="mt-10 grid md:grid-cols-2 gap-10 pt-10">
       {
         mockData.serviceIncludes.map((include: any) => (
-          <GridListItem icon={include.icon} text={include.text} />
+          <GridListItem icon={include.icon} text={include.text} description={include.description} />
         ))
       }
     </div>
@@ -144,7 +150,7 @@ const portfolio = await getProjects('web-development')
   <section class="mt-30">
     <h2 class="text-zinc-100 text-5xl text-center">Benefits</h2>
 
-    <div class="mt-10 grid grid-cols-2 gap-10 pt-10">
+    <div class="mt-10 grid md:grid-cols-2 gap-4 pt-10">
       {
         mockData.benefits.map((benefit: any) => (
           <BenefitCard

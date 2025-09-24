@@ -11,25 +11,25 @@ import seo from '../assets/img/wwd/seo.webp'
 const mockData = [
   {
     name: "Web",
-    description: "Performat and scalable web applications.",
+    description: "High-performance, scalable web applications",
     href: '/services/web-development',
     image: web.src
   },
   {
     name: "AI",
-    description: "Bussiness automations powered by an artificial brain.",
+    description: "Smart automations powered by AI",
     href: '/services/ai-integration',
     image: ai.src
   },
   {
     name: "Design",
-    description: "Your UI made usable and beautiful.",
+    description: "User interfaces that are intuitive and beautiful",
     href: null,
     image: design.src
   },
   {
     name: "SEO",
-    description: "Get found on Google and beyond.",
+    description: "Rank higher. Get found faster. Be seen when it matters",
     href: null,
     image: seo.src
   }
@@ -41,11 +41,11 @@ const mockData = [
   <!-- <p class="text-secondary text-sm sm:max-w-3/4 mb-12">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque temporibus perspiciatis animi a? Nulla quisquam voluptatum doloribus provident eius dignissimos!</p> -->
 
   <div class="text-3xl sm:text-4xl md:text-7xl mt-20 sm:grid-cols-2 gap-x-4 text-left space-y-10 xl:flex flex-flow items-center justify-start">
-    <span class="text-primary mb-4 md:mb-0 block">We make creative</span>
+    <span class="text-primary mb-4 md:mb-0 block">We create smarter</span>
     
     <RotatingText
       client:only
-      texts={['websites', 'AI', 'designs', 'software', 'apps']}
+      texts={['websites', 'apps', 'software', 'AI solutions', 'designs']}
       mainClassName="px-2 md:px-4 text-theme border-t border-b border-r border-[#00b4fb]/5 py-2 overflow-hidden justify-center rounded-tr-lg rounded-br-lg"
       staggerFrom={"last"}
       initial={{ y: "100%" }}

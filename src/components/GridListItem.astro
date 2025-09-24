@@ -1,10 +1,11 @@
 ---
 interface Props {
   icon: any,
-  text: string
+  text: string,
+  description?: string
 }
 
-const { icon: Icon, text } = Astro.props
+const { icon: Icon, text, description } = Astro.props
 ---
 
 <article class="flex items-center gap-x-4">
@@ -16,5 +17,8 @@ const { icon: Icon, text } = Astro.props
     }
   </div>
 
-  <div class="text-zinc-100 text-2xl">{text}</div>
+  <div>
+      <div class="text-zinc-100 text-2xl">{text}</div>
+    { description && (<p class="mt-2 text-secondary text-sm">{description}</p>) }
+  </div>
 </article>

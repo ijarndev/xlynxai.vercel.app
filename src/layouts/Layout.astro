@@ -46,6 +46,15 @@ const { title, description } = Astro.props
     <meta name="author" content="XLynX AI" />
     <link rel="canonical" href={Astro.url} />
 
+    <!-- hardcoded textarea height -->
+    <style> 
+      textarea[data-test-id="chat-input"] {
+        resize: none !important;
+        height: 50px !important;
+        max-height: 50px !important;
+      }
+    </style>
+
 		<Analytics />
 
 <!-- Cal element-click embed code begins -->

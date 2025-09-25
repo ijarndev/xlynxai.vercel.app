@@ -37,15 +37,15 @@ const pupularStyles = `${isPopular ? 'border-2 !border-[#00B4FB]' : ''}`
       features.map(feature => (
         <li class="flex items-center gap-x-4">
           <CheckCircle width={32} class='text-theme' />
-          <span class="text-zinc-100">{feature}</span>
+          <span class="text-zinc-100 text-left">{feature}</span>
         </li>  
       ))
     }
   </ul>
 
-  <CalWrapper>
-    <div class="*:w-full flex-1 flex items-end pt-8">
+  <div class="**:w-full flex-1 flex items-end pt-8">
+    <CalWrapper>
       <Button>Get Started</Button>
-    </div>
-  </CalWrapper>
+    </CalWrapper>
+  </div>
 </article>

@@ -4,8 +4,11 @@ import Services from '../components/Services.astro';
 import Testimonials from '../components/Testimonials.astro';
 import Layout from '../layouts/Layout.astro';
 import { ServicesShowcase } from '../components/ServicesShowcase';
+import Contact from '../components/ui/contact-form';
+import FAQAccordion from '../components/ui/PersonalizedAccordion';
 
-export const prerender = true
+import { questionsAboutTheCompany, questionsAboutTheService, questionsAboutTheProduct } from '../data/services';
+
 ---
 
 <Layout
@@ -13,19 +16,39 @@ export const prerender = true
 	description="XLynx AI provides cutting-edge artificial intelligence solutions and services to help businesses innovate and transform their operations. Expert consulting, custom AI development, and intelligent automation solutions."
 >
 	<Hero />
-	<div class="pb-32">
-		<Services />
-	</div>
 	
-	<div class="pb-32">
+	<section class="pb-32">
+		<Services />
+	</section>
+	
+	<section class="pb-32">
 		<ServicesShowcase
 			client:only
 		/>
-	</div>
+	</section>
 
-	<div class="pb-32">
+	<section class="pb-32">
 		<Testimonials />
-	</div>
+	</section>
+
+	<section class="pb-32">
+		<div class="container mx-auto px-4">
+			<h2 class="text-3xl font-bold text-center mb-12 text-zinc-100">Frequently Asked Questions</h2>
+			
+			<div class="space-y-12 gap-4 flex flex-col items-center">
+				<FAQAccordion items={questionsAboutTheCompany} title="About Our Company" client:load />
+				<FAQAccordion items={questionsAboutTheService} title="About Our Services" client:load />
+				<FAQAccordion items={questionsAboutTheProduct} title="About Our Products" client:load />
+			</div>
+		</div>
+	</section>
+
+	<section class="pb-32">
+		<div class="flex flex-col items-center justify-center px-4">
+			<h2 class="text-3xl font-bold text-center mb-12 text-zinc-100">Get In Touch</h2>			
+				<Contact client:load />
+		</div>
+	</section>
 
 	<div class="fixed top-0 left-0 right-0 mx-2 lg:mx-20 xl:mx-30 md:mx-6 h-full border-l-2 border-r-2 border-dashed border-l-[#00B4FB]/5 border-r-gray-400/5 z-0"></div>
 </Layout>

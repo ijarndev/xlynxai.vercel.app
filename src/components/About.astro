@@ -63,8 +63,8 @@ const members = [
   <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-32">
     <div class="">
       <div class="mb-4 flex items-center gap-x-4">
-        <Bolt width={48} class='text-theme' />
-        <h4 class="text-4xl font-semibold text-theme">Mission</h4>
+        <Bolt width={48} class='text-theme' aria-hidden="true" />
+        <h3 class="text-4xl font-semibold text-theme">Mission</h3>
       </div>
 
       <p class="text-zinc-100 text-xl">At XlynX AI we empower businesses of all sizes:</p>
@@ -80,8 +80,8 @@ const members = [
 
     <div class="">
       <div class="mb-4 flex items-center gap-x-4">
-        <Eye width={48} class='text-theme' />
-        <h4 class="text-4xl font-semibold text-theme">Value</h4>
+        <Eye width={48} class='text-theme' aria-hidden="true" />
+        <h3 class="text-4xl font-semibold text-theme">Value</h3>
       </div>
 
       <p class="text-zinc-100 text-xl">We're not an expense — we're your smarter investment: the assistant that pays for itself.</p>
@@ -129,11 +129,11 @@ const members = [
     <h3 class="text-zinc-100 mb-10 text-center text-2xl">Start your business future today — smarter, faster and powered by AI.</h3>
     <div class="text-center">
       <CalWrapper>
-        <a
-          href="javascript:void(0)"
+        <button
+          aria-label="See how we help - Schedule a consultation"
         >
           <Button>See How We Help</Button>
-        </a>
+        </button>
       </CalWrapper>
     </div>
   </div>

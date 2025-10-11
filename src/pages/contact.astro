@@ -32,24 +32,24 @@ const contactInfo = [
   title="Contact Us | XLynX AI"
   description="Get in touch with XLynX AI for inquiries, support, or to discuss your AI project needs. We're here to help!"
 >
-<section class="pt-40 px-4">
+<section class="pt-40 px-4" aria-labelledby="contact-main-heading">
   <div class="max-w-6xl mx-auto">
     <!-- Header -->
     <div class="text-center mb-16">
-      <h2 class="text-4xl md:text-5xl font-bold text-zinc-100 mb-4">Get in Touch</h2>
+      <h2 id="contact-main-heading" class="text-4xl md:text-5xl font-bold text-zinc-100 mb-4">Get in Touch</h2>
       <p class="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
         Ready to start your next project? We'd love to hear from you. Reach out through any of the channels below.
       </p>
     </div>
 
     <!-- Contact Cards Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <address class="grid grid-cols-1 md:grid-cols-2 gap-8 not-italic" aria-label="Contact information">
       {contactInfo.map((item) => (
         <div class="p-8 bg-zinc-100 border-border rounded-xl hover:border-primary/50 transition-colors duration-300">
           <div class="flex items-start gap-4">
             <!-- Icon -->
             <div class="flex-shrink-0 p-3 background-theme rounded-lg text-primary">
-              <item.icon class="w-6 h-6" />
+              <item.icon class="w-6 h-6" aria-hidden="true" />
             </div>
 
             <!-- Content -->
@@ -69,13 +69,13 @@ const contactInfo = [
               <p class="text-muted-foreground text-sm">{item.description}</p>
 
               { item.mapHtml && (
-                <div set:html={item.mapHtml} class="mt-4"></div>
+                <div set:html={item.mapHtml} class="mt-4" title="Las Vegas, Nevada location"></div>
               ) }
             </div>
           </div>
         </div>
       ))}
-    </div>
+    </address>
 
   </div>
 </section>

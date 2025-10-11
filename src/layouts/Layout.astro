@@ -123,14 +123,21 @@ Cal("init", "xlynxai-webchat", {origin:"https://app.cal.com"});
   <body class="background-default font-regular">
     <aside
       class="bg-zinc-800/90 p-8 flex flex-col backdrop-blur-sm fixed h-[100dvh] w-4/5 z-4 -right-full transition-all side-menu"
+      aria-label="Mobile navigation menu"
+      aria-hidden="true"
+      id="mobile-menu"
     >
       <div class="flex justify-end">
-        <button class="text-theme menu-hide-btn"
-          ><XMark width={28} stroke-width={3} /></button
+        <button 
+          class="text-theme menu-hide-btn focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-zinc-800"
+          aria-label="Close menu"
+          id="menu-close"
         >
+          <XMark width={28} stroke-width={3} aria-hidden="true" />
+        </button>
       </div>
 
-      <ul class="flex-1 text-lg font-medium space-y-3 *:*:!text-zinc-100 pt-2">
+      <ul class="flex-1 text-lg font-medium space-y-3 *:*:!text-zinc-100 pt-2" role="navigation" aria-label="Mobile navigation links">
         <li><Anchor href="/">Home</Anchor></li>
         <li>
           <Anchor href="/services/web-development">Web Development</Anchor>
@@ -154,7 +161,9 @@ Cal("init", "xlynxai-webchat", {origin:"https://app.cal.com"});
     </aside>
 
     <Navbar />
-    <slot />
+    <main role="main">
+      <slot />
+    </main>
     <Footer />
   </body>
 </html>
@@ -171,11 +180,45 @@ Cal("init", "xlynxai-webchat", {origin:"https://app.cal.com"});
   const $menu = document.querySelector(".side-menu");
   const $menuHideBtn = document.querySelector(".menu-hide-btn");
   const $menuShowBtn = document.querySelector(".menu-show-btn");
+  const $menuToggle = document.getElementById("menu-toggle");
 
-  $menuHideBtn?.addEventListener("click", () =>
-    $menu?.classList.replace("right-0", "-right-full")
-  );
-  $menuShowBtn?.addEventListener("click", () =>
-    $menu?.classList.replace("-right-full", "right-0")
-  );
+  function closeMenu() {
+    $menu?.classList.replace("right-0", "-right-full");
+    $menu?.setAttribute("aria-hidden", "true");
+    $menuToggle?.setAttribute("aria-expanded", "false");
+    $menuToggle?.setAttribute("aria-label", "Open menu");
+    $menuToggle?.focus();
+  }
+
+  function openMenu() {
+    $menu?.classList.replace("-right-full", "right-0");
+    $menu?.setAttribute("aria-hidden", "false");
+    $menuToggle?.setAttribute("aria-expanded", "true");
+    $menuToggle?.setAttribute("aria-label", "Close menu");
+    // Focus first link in menu
+    const firstLink = $menu?.querySelector("a");
+    firstLink?.focus();
+  }
+
+  $menuHideBtn?.addEventListener("click", closeMenu);
+  $menuShowBtn?.addEventListener("click", openMenu);
+
+  // ESC key handler
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && $menu?.classList.contains("right-0")) {
+      closeMenu();
+    }
+  });
+
+  // Keyboard handler for menu toggle button
+  $menuToggle?.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      if ($menu?.classList.contains("right-0")) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    }
+  });
 </script>

@@ -4,12 +4,18 @@ import freeHighlightSvg from '../../assets/svg/free-highlight.svg'
 interface Props {
   fullWidth?: boolean
   freeBadge?: boolean
+  ariaLabel?: string
+  variant?: 'primary' | 'secondary'
 }
 
-const { fullWidth = false, freeBadge = false } = Astro.props;
+const { fullWidth = false, freeBadge = false, ariaLabel = '', variant = 'primary' } = Astro.props;
 const extraClasses = fullWidth ? 'w-full' : 'w-fit';
+
+const variantClasses = variant === 'secondary' 
+  ? 'border border-zinc-100/20 bg-transparent text-zinc-100 hover:bg-zinc-100/10' 
+  : 'bg-gradient-to-br from-[#00B4FB] via-[#00B4FB] to-[#00B4FB]/40 text-zinc-900';
 ---
 
-<button class={`relative py-3 px-5 bg-gradient-to-br from-[#00B4FB] via-[#00B4FB] to-[#00B4FB]/40 rounded-full text-zinc-900 hover:-translate-y-1 transition-transform cursor-pointer ${extraClasses}`}>
+<button aria-label={ariaLabel} class={`relative py-3 px-5 rounded-full hover:-translate-y-1 transition-transform cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-zinc-900 ${variantClasses} ${extraClasses}`}>
   <slot />
 </button>

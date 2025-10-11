@@ -36,7 +36,7 @@ const pupularStyles = `${isPopular ? 'border-2 !border-[#00B4FB]' : ''}`
     {
       features.map(feature => (
         <li class="flex items-center gap-x-4">
-          <CheckCircle width={32} class='text-theme' />
+          <CheckCircle width={32} class='text-theme' aria-hidden="true" />
           <span class="text-zinc-100 text-left">{feature}</span>
         </li>  
       ))

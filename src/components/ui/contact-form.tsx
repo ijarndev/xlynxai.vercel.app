@@ -8,7 +8,7 @@ const Contact = () => {
   const [state, handleSubmit] = useForm("movkkjjk")
 
   if (state.succeeded) {
-    return <p>Thanks for joining!</p>
+    return <p role="status" aria-live="polite">Thanks for joining!</p>
   }
 
   const [formData, setFormData] = useState({
@@ -36,9 +36,10 @@ const Contact = () => {
               name="firstName"
               disabled={state.submitting}
               className="w-full h-12 pl-10 pr-4 border border-zinc-700 bg-zinc-900/50 text-zinc-100 rounded-md focus:outline-none focus:border-blue-500 transition-colors"
+              aria-describedby="firstName-error"
               required
             />
-            <ValidationError field="firstName" prefix="First Name" errors={state.errors} className="text-red-400 text-sm mt-1" />
+            <ValidationError field="firstName" prefix="First Name" errors={state.errors} className="text-red-400 text-sm mt-1" id="firstName-error" />
           </div>
           <div className="relative [&:*]:disabled:opacity-50">
             <User className="text-zinc-400 absolute top-3 left-3 h-5 w-5 pointer-events-none" />
@@ -50,9 +51,10 @@ const Contact = () => {
               value={formData.lastName}
               onChange={(e) => handleChange("lastName", e.target.value)}
               className="w-full h-12 pl-10 pr-4 border border-zinc-700 bg-zinc-900/50 text-zinc-100 rounded-md focus:outline-none focus:border-blue-500 transition-colors"
+              aria-describedby="lastName-error"
               required
             />
-            <ValidationError field="lastName" prefix="Last Name" errors={state.errors} className="text-red-400 text-sm mt-1" />
+            <ValidationError field="lastName" prefix="Last Name" errors={state.errors} className="text-red-400 text-sm mt-1" id="lastName-error" />
           </div>
         </div>
 
@@ -66,9 +68,10 @@ const Contact = () => {
             value={formData.phone}
             onChange={(e) => handleChange("phone", e.target.value)}
             className="w-full h-12 pl-10 pr-4 border border-zinc-700 bg-zinc-900/50 text-zinc-100 rounded-md focus:outline-none focus:border-blue-500 transition-colors"
+            aria-describedby="phone-error"
             required
           />
-          <ValidationError field="phone" prefix="Phone" errors={state.errors} className="text-red-400 text-sm mt-1" />
+          <ValidationError field="phone" prefix="Phone" errors={state.errors} className="text-red-400 text-sm mt-1" id="phone-error" />
         </div>
 
         <div className="relative [&:*]:disabled:opacity-50">
@@ -81,9 +84,10 @@ const Contact = () => {
             value={formData.email}
             onChange={(e) => handleChange("email", e.target.value)}
             className="w-full h-12 pl-10 pr-4 border border-zinc-700 bg-zinc-900/50 text-zinc-100 rounded-md focus:outline-none focus:border-blue-500 transition-colors"
+            aria-describedby="email-error"
             required
           />
-          <ValidationError field="email" prefix="Email" errors={state.errors} className="text-red-400 text-sm mt-1" />
+          <ValidationError field="email" prefix="Email" errors={state.errors} className="text-red-400 text-sm mt-1" id="email-error" />
         </div>
 
         <div className="relative [&:*]:disabled:opacity-50">
@@ -94,9 +98,10 @@ const Contact = () => {
             value={formData.message}
             onChange={(e) => handleChange("message", e.target.value)}
             className="w-full min-h-32 p-4 border border-zinc-700 bg-zinc-900/50 text-zinc-100 rounded-md focus:outline-none focus:border-blue-500 transition-colors resize-none"
+            aria-describedby="message-error"
             required
           />
-          <ValidationError field="message" prefix="Message" errors={state.errors} className="text-red-400 text-sm mt-1" />
+          <ValidationError field="message" prefix="Message" errors={state.errors} className="text-red-400 text-sm mt-1" id="message-error" />
         </div>
         
         <button

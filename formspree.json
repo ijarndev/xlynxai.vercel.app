@@ -1,0 +1,29 @@
+{
+    "forms": {
+        "xlynxai": {
+        "name": "Contact Form",
+        "actions": [{"type": "email", "to": "felabio@xlynxai.com"}],
+        "fields": {
+            "firstName": {
+                "type": "text",
+                "required": true
+            },
+            "lastName": {
+                "type": "text",
+                "required": true
+            },
+            "phone": {
+                "type": "text"
+            },
+            "email": {
+                "type": "text",
+                "required": true
+            },
+            "message": {
+                "type": "text",
+                "required": true
+            }
+        }
+        }
+    }
+}

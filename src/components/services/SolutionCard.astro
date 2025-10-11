@@ -11,7 +11,7 @@ const { icon: Icon, title, description } = Astro.props
 <article class="text-center py-4 px-6 bg-zinc-800 border border-zinc-400/20 rounded-xl">
   <div class="flex justify-center pt-2 pb-4 text-theme">
     {
-      Icon ? <Icon width={56} /> : null
+      Icon ? <Icon width={56} aria-hidden="true" /> : null
     }
   </div>
   

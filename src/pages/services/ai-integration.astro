@@ -146,40 +146,40 @@ const mockData = {
     rotated: true
   }}
 >
-  <section class="pt-20">
-    <h2 class="text-4xl text-zinc-100 text-center font-semibold">The Problem</h2>
+  <section class="pt-20" aria-labelledby="problem-heading">
+    <h2 id="problem-heading" class="text-4xl text-zinc-100 text-center font-semibold">The Problem</h2>
     <p class="text-secondary text-center mt-5">Running a business means juggling many tasks. Without automation, you're losing energy, time, money and customers every single day.</p>
 
     <div class="grid grid-cols-1 xl:grid-cols-4 mt-20 gap-20">
 
       <article class="border border-zinc-100/10 p-10 rounded-xl flex gap-y-5 flex-col items-center">
-        <Clock width={48} class="text-red-500" />
+        <Clock width={48} class="text-red-500" aria-hidden="true" />
         <p class="text-red-500 text-medium">Time Wasted</p>
         <p class="text-secondary text-sm">Countless hours lost on repetitive low-value tasks that AI could handle instantly.</p>
       </article>
 
       <article class="border border-zinc-100/10 p-10 rounded-xl flex gap-y-5 flex-col items-center">
-        <Money width={48} class="text-red-500" />
+        <Money width={48} class="text-red-500" aria-hidden="true" />
         <p class="text-red-500 text-medium">Money Lost</p>
         <p class="text-secondary text-sm">Missed leads and sales because your system can't keep up.</p>
       </article>
 
       <article class="border border-zinc-100/10 p-10 rounded-xl flex gap-y-5 flex-col items-center">
-        <Users width={48} class="text-red-500" />
+        <Users width={48} class="text-red-500" aria-hidden="true" />
         <p class="text-red-500 text-medium">Staff Burnout</p>
         <p class="text-secondary text-sm">Employees overwhelmed by routine work instead of focusing on growth-driving activities.</p>
       </article>
 
       <article class="border border-zinc-100/10 p-10 rounded-xl flex gap-y-5 flex-col items-center">
-        <ChatBubble width={48} class="text-red-500" />
+        <ChatBubble width={48} class="text-red-500" aria-hidden="true" />
         <p class="text-red-500 text-medium">Slow Response = Lost Clients</p>
         <p class="text-secondary text-sm">Delayed replies make prospects walk away to competitors who move faster.</p>
       </article>
     </div>
   </section>
 
-  <section class="mt-30">
-    <h2 class="text-4xl text-zinc-100 text-center font-semibold">Our Solution</h2>
+  <section class="mt-30" aria-labelledby="solution-heading">
+    <h2 id="solution-heading" class="text-4xl text-zinc-100 text-center font-semibold">Our Solution</h2>
     <p class="text-secondary text-center">Running a business today means juggling endless tasks. Without automation, you're losing energy, time, money and customers every single day.</p>
   
     <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-10 xl:gap-20 mt-10">
@@ -200,16 +200,16 @@ const mockData = {
     </div> -->
   </section>
 
-  <section class="mt-30" id="pricecomp">
-    <h2 class="text-4xl text-zinc-100 text-center font-semibold">Strategic Benefits of <span class="text-theme">AI</span></h2>
+  <section class="mt-30" id="pricecomp" aria-labelledby="benefits-heading">
+    <h2 id="benefits-heading" class="text-4xl text-zinc-100 text-center font-semibold">Strategic Benefits of <span class="text-theme">AI</span></h2>
 
     <BenefitsComparison
       client:only
     />
   </section>
 
-  <section class="mt-30">
-    <h2 class="text-4xl text-zinc-100 text-center font-semibold">High Value Cases</h2>
+  <section class="mt-30" aria-labelledby="cases-heading">
+    <h2 id="cases-heading" class="text-4xl text-zinc-100 text-center font-semibold">High Value Cases</h2>
 
     <div class="mt-20 grid gap-10 sm:grid-cols-2 xl:grid-cols-3">
       {
@@ -225,9 +225,9 @@ const mockData = {
  
   </section>
 
-    <div class="py-20 flex flex-col items-center px-4 sm:px-6 lg:px-8 bg-zinc-950 mt-30 rounded-xl">
+    <div class="py-20 flex flex-col items-center px-4 sm:px-6 lg:px-8 bg-zinc-950 mt-30 rounded-xl" aria-label="Risk-free setup offer">
       <div class="text-lg px-6 py-3 inline-flex rounded-xl items-center text-zinc-100 border border-zinc-100/10">
-        <Shield width={32} class="mr-2" />
+        <Shield width={32} class="mr-2" aria-hidden="true" />
         <span>Try Free 30 Days</span>
       </div>
 

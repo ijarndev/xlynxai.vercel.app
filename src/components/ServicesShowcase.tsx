@@ -157,18 +157,22 @@ export function ServicesShowcase() {
           <div className="lg:col-span-3">
             <div className="rounded-xl p-6 sticky top-8">
               {/* <h3 className="text-lg font-semibold mb-6 text-sidebar-foreground">Our Services</h3> */}
-              <nav className="space-y-3">
+              <nav className="space-y-3" aria-label="Service navigation" role="tablist">
                 {Object.entries(services).map(([key, service]) => (
                   <button
                     key={key}
                     onClick={() =>
                       handleServiceChange(key as keyof typeof services)
                     }
-                    className={`w-full text-left cursor-pointer p-4 rounded-lg transition-all duration-300 text-secondary ${
+                    className={`w-full text-left cursor-pointer p-4 rounded-lg transition-all duration-300 text-secondary focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-zinc-900 ${
                       activeService === key
                         ? "background-theme !text-zinc-100 shadow-lg"
                         : "text-sidebar-foreground hover:translate-x-1"
                     }`}
+                    role="tab"
+                    aria-selected={activeService === key}
+                    aria-controls={`service-panel-${key}`}
+                    id={`service-tab-${key}`}
                   >
                     <div className="font-medium">{service.title}</div>
                   </button>
@@ -178,7 +182,7 @@ export function ServicesShowcase() {
           </div>
 
           {/* Right Carousel */}
-          <div className="lg:col-span-9">
+          <div className="lg:col-span-9" role="tabpanel" aria-labelledby={`service-tab-${activeService}`} id={`service-panel-${activeService}`}>
             <div className="relative">
               {/* Carousel Header */}
               <div className="flex items-center justify-between mb-8">
@@ -189,6 +193,7 @@ export function ServicesShowcase() {
                   <Button
                     variant="outline"
                     size="icon"
+                    aria-label="Previous slide"
                     onClick={prevSlide}
                     className="hover:text-zinc-100 hover:bg-sky-500 border-none cursor-pointer transition-colors bg-zinc-100"
                   >
@@ -197,6 +202,7 @@ export function ServicesShowcase() {
                   <Button
                     variant="outline"
                     size="icon"
+                    aria-label="Next slide"
                     onClick={nextSlide}
                     className="hover:text-zinc-100 hover:bg-sky-500 border-none cursor-pointer transition-colors bg-zinc-100"
                   >
@@ -259,6 +265,7 @@ export function ServicesShowcase() {
                 {currentServiceData.slides.map((_, index) => (
                   <button
                     key={index}
+                    aria-label={`Slide ${index + 1}`}
                     onClick={() => setCurrentSlide(index)}
                     className={`w-3 h-3 rounded-full transition-all duration-300 ${
                       index === currentSlide

@@ -3,28 +3,27 @@
         "xlynxai": {
         "name": "Contact Form",
         "actions": [{"type": "email", "to": "felabio@xlynxai.com"}],
-        "fields": [
-            {
-                "name": "firstName",
+        "fields": {
+            "firstName": {
+                "type": "text",
+                "required": true
+            },
+            "lastName": {
+                "type": "text",
+                "required": true
+            },
+            "phone": {
                 "type": "text"
             },
-            {
-                "name": "lastName",
-                "type": "text"
+            "email": {
+                "type": "text",
+                "required": true
             },
-            {
-                "name": "phone",
-                "type": "text"
-            },
-            {
-                "name": "email",
-                "type": "text"
-            },
-            {
-                "name": "message",
-                "type": "text"
+            "message": {
+                "type": "text",
+                "required": true
             }
-        ]
+        }
         }
     }
 }
